@@ -9,11 +9,17 @@
 | 1 | [ტექნიკური დავალება და დაგეგმარება](პრაქტიკული%20დავალება%201/TECH_SPEC.md) | ✅ |
 | 2 | [როლები, თასქები, Timeline, API ენდფოინთები](პრაქტიკული%20დავალება%202/DAVALEBA_2.md) | ✅ |
 | 3 | [Story Points, კანბან დაფა, გლობალური სტილები](პრაქტიკული%20დავალება%203/DAVALEBA_3.md) | ✅ |
-| 4 – 10 | — | ⏳ |
+| 4 | [ფუნქციონალური ანალიტიკა და ვალიდაცია](პრაქტიკული%20დავალება%204/DAVALEBA_4.md) | ✅ |
+| 5 | [ტექნიკური დავალება და არქიტექტურა](პრაქტიკული%20დავალება%205/DAVALEBA_5.md) | ✅ |
+| 6 | [UX: საქონლის მიღების სცენარი](პრაქტიკული%20დავალება%206/DAVALEBA_6.md) | ✅ |
+| 7 | [UX: შესყიდვის შეკვეთის სცენარი](პრაქტიკული%20დავალება%207/DAVALEBA_7.md) | ✅ |
+| 8 | [სემანტიკური HTML5 სკელეტი](პრაქტიკული%20დავალება%208/README.md) | ✅ |
+| 9 | [Dashboard ლეიაუთი (Grid + Flexbox)](პრაქტიკული%20დავალება%209/DAVALEBA_9.md) | ✅ |
+| 10 | — | ⏳ |
 
 ## ტექნოლოგიები
 
-React · Vite · TypeScript · Tailwind CSS · React Router · React Hook Form + Zod · TanStack Table · Recharts · json-server
+React · Vite · TypeScript · Tailwind CSS · React Router · React Hook Form + Zod · TanStack Table · Lucide Icons · Recharts · json-server
 
 ## აპლიკაცია
 

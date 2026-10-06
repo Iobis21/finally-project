@@ -1,0 +1,50 @@
+/* Flexbox: იკონა და ტექსტი გვერდიგვერდ */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+}
+
+.stat-card__icon--blue { background: #dbeafe; color: #2563eb; }
+.stat-card__icon--green { background: #dcfce7; color: #16a34a; }
+.stat-card__icon--orange { background: #fef3c7; color: #d97706; }
+.stat-card__icon--red { background: #fee2e2; color: #dc2626; }
+
+.stat-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-card__title {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.stat-card__value {
+  color: var(--text);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-card__change {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}

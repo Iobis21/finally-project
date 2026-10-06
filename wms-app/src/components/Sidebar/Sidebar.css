@@ -1,0 +1,78 @@
+.sidebar {
+  grid-area: sidebar;
+  padding: var(--space-md);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  list-style: none;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar__link:hover {
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.sidebar__link--active {
+  background: #eff6ff;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.sidebar__close,
+.sidebar__overlay {
+  display: none;
+}
+
+/* მობილური: Sidebar იმალება და გამოდის მარცხნიდან */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    z-index: 40;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebar__close {
+    display: flex;
+    margin: 0 0 var(--space-md) auto;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .sidebar__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgb(0 0 0 / 0.4);
+  }
+}

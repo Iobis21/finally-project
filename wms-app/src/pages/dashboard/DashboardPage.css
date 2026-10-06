@@ -1,0 +1,24 @@
+.dashboard__title {
+  margin-bottom: var(--space-lg);
+}
+
+/* Auto-fit Grid: კარტები თავისით გადადიან ახალ ხაზზე, მედია-ქიერის გარეშე */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.dashboard__products {
+  margin-top: var(--space-xl);
+}
+
+.dashboard__products h2 {
+  margin-bottom: var(--space-md);
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
