@@ -1,7 +1,7 @@
 # პრაქტიკული დავალება 2 — დაგეგმარება და API
 
 **პროექტი:** საწყობის მართვის სისტემა (WMS)  
-**GitHub:** https://github.com/Iobis21/practical-project
+**GitHub:** https://github.com/Iobis21/finally-project
 
 ---
 

@@ -3,7 +3,7 @@
 **პროექტი:** ვარიანტი №2 — საწყობის მართვის სისტემა როლების მიხედვით  
 **შესრულება:** ინდივიდუალური  
 **თარიღი:** 07.10.2026  
-**GitHub:** https://github.com/Iobis21/practical-project
+**GitHub:** https://github.com/Iobis21/finally-project
 
 ---
 
@@ -54,7 +54,7 @@
 
 | რისთვის | რას ვიყენებ |
 |---|---|
-| ვერსიების კონტროლი | **Git + GitHub** — [Iobis21/practical-project](https://github.com/Iobis21/practical-project) |
+| ვერსიების კონტროლი | **Git + GitHub** — [Iobis21/finally-project](https://github.com/Iobis21/finally-project) |
 | თასქების მართვა | **GitHub Projects** — Kanban დაფა სვეტებით: To Do → In Progress → Done |
 | დოკუმენტაცია | **GitHub Wiki** და `README.md` — აქ ინახება ეს დოკუმენტი, რისკები და Timeline |
 | Deploy | **Vercel** — ბოლოს ავტვირთავ პროექტს ინტერნეტში |

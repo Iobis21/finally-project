@@ -75,7 +75,7 @@
 | **TanStack Table** | ცხრილები (პაგინაცია, სორტირება, ფილტრი) |
 | **Recharts** | გრაფიკები |
 | **json-server + json-server-auth** | Mock API და JWT ავტორიზაცია |
-| **Git / GitHub** | ვერსიების კონტროლი — [Iobis21/practical-project](https://github.com/Iobis21/practical-project) |
+| **Git / GitHub** | ვერსიების კონტროლი — [Iobis21/finally-project](https://github.com/Iobis21/finally-project) |
 | **GitHub Projects** | თასქების მართვა |
 | **Vercel** | Deploy |
 

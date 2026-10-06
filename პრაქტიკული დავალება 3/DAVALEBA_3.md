@@ -7,7 +7,7 @@
 | რა | ლინკი |
 |---|---|
 | კანბან დაფა (GitHub Projects) | https://github.com/users/Iobis21/projects/1 |
-| GitHub რეპოზიტორია | https://github.com/Iobis21/practical-project |
+| GitHub რეპოზიტორია | https://github.com/Iobis21/finally-project |
 | გლობალური სტილები | [wms-app/src/index.css](../wms-app/src/index.css) |
 
 ---
