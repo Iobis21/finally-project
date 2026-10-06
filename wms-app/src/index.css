@@ -1,0 +1,128 @@
+/* ==========================================================
+   WMS — გლობალური სტილები და დიზაინ-სისტემა
+   ========================================================== */
+
+@import "tailwindcss";
+
+/* ---------- 1. დიზაინ-ტოკენები (Tailwind v4 @theme) ----------
+   აქ განსაზღვრული ცვლადები ავტომატურად ხდება Tailwind კლასები:
+   --color-primary-600 → bg-primary-600, text-primary-600 ...
+   --font-sans         → font-sans
+------------------------------------------------------------- */
+@theme {
+  /* ფონტები */
+  --font-sans: "Inter", "Noto Sans Georgian", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Consolas", monospace; /* SKU და შტრიხკოდებისთვის */
+
+  /* მთავარი ფერი (ლურჯი) — ღილაკები, ბმულები, აქტიური მენიუ */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+
+  /* სტატუსების ფერები */
+  --color-success: #16a34a;   /* მარაგშია, მიწოდებულია */
+  --color-warning: #d97706;   /* კრიტიკული მარაგი, მოლოდინში */
+  --color-danger: #dc2626;    /* ამოწურულია, უარყოფილია */
+  --color-info: #0891b2;      /* გზაშია, ინფორმაცია */
+
+  /* რბილი ფონები სტატუსის Badge-ებისთვის */
+  --color-success-light: #dcfce7;
+  --color-warning-light: #fef3c7;
+  --color-danger-light: #fee2e2;
+  --color-info-light: #cffafe;
+
+  /* რადიუსები და ჩრდილები */
+  --radius-card: 0.75rem;
+  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+/* ---------- 2. სემანტიკური ცვლადები (ღია / მუქი თემა) ---------- */
+:root {
+  --bg: #f8fafc;          /* გვერდის ფონი */
+  --surface: #ffffff;     /* ბარათები, ცხრილები */
+  --border: #e2e8f0;
+  --text: #0f172a;        /* მთავარი ტექსტი */
+  --text-muted: #64748b;  /* მეორეხარისხოვანი ტექსტი */
+  --sidebar-width: 16rem;
+  --header-height: 4rem;
+}
+
+.dark {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --border: #334155;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+/* სემანტიკური ცვლადები Tailwind კლასებად: bg-surface, text-muted ... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+}
+
+/* ---------- 3. Reset და საბაზისო სტილები ----------
+   Tailwind-ის Preflight უკვე აკეთებს ძირითად Reset-ს
+   (margin/padding: 0, box-sizing: border-box და ა.შ.).
+   აქ ვამატებ მხოლოდ ჩემს საბაზისო წესებს.
+------------------------------------------------------------- */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-bg font-sans text-text;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  h1 { @apply text-2xl font-bold; }
+  h2 { @apply text-xl font-semibold; }
+  h3 { @apply text-lg font-semibold; }
+
+  a { @apply text-primary-600 hover:underline; }
+
+  /* კლავიატურით ნავიგაციისთვის ხილული ფოკუსი */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+}
+
+/* ---------- 4. რეიუზებადი კლასები ----------
+   btn და badge არის @utility, რომ სხვა კლასებში @apply-ით გამოვიყენო.
+------------------------------------------------------------- */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2
+    text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+@utility badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+@layer components {
+  .card {
+    @apply rounded-card border border-border bg-surface p-5 shadow-card;
+  }
+
+  .btn-primary { @apply btn bg-primary-600 text-white hover:bg-primary-700; }
+  .btn-secondary { @apply btn border border-border bg-surface text-text hover:bg-bg; }
+  .btn-danger { @apply btn bg-danger text-white hover:opacity-90; }
+
+  .input {
+    @apply w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm
+      placeholder:text-muted focus:border-primary-500 focus:outline-none
+      focus:ring-2 focus:ring-primary-100;
+  }
+
+  .badge-success { @apply badge bg-success-light text-success; }
+  .badge-warning { @apply badge bg-warning-light text-warning; }
+  .badge-danger { @apply badge bg-danger-light text-danger; }
+  .badge-info { @apply badge bg-info-light text-info; }
+}
