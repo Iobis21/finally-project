@@ -33,6 +33,12 @@
   --color-danger-light: #fee2e2;
   --color-info-light: #cffafe;
 
+  /* მუქი ტექსტი Badge-ებისთვის — კონტრასტი მინ. 4.5:1 (WCAG AA) */
+  --color-success-text: #15803d;
+  --color-warning-text: #b45309;
+  --color-danger-text: #b91c1c;
+  --color-info-text: #0e7490;
+
   /* რადიუსები და ჩრდილები */
   --radius-card: 0.75rem;
   --shadow-card: 0 1px 3px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04);
@@ -151,8 +157,8 @@
       focus:ring-2 focus:ring-primary-100;
   }
 
-  .badge-success { @apply badge bg-success-light text-success; }
-  .badge-warning { @apply badge bg-warning-light text-warning; }
-  .badge-danger { @apply badge bg-danger-light text-danger; }
-  .badge-info { @apply badge bg-info-light text-info; }
+  .badge-success { @apply badge bg-success-light text-success-text; }
+  .badge-warning { @apply badge bg-warning-light text-warning-text; }
+  .badge-danger { @apply badge bg-danger-light text-danger-text; }
+  .badge-info { @apply badge bg-info-light text-info-text; }
 }

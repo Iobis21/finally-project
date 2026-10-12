@@ -1,25 +1,20 @@
 import { MapPin } from 'lucide-react'
 import type { Item } from '../../types'
+import { getStockStatus, statusBadges, statusLabels } from '../../utils/stock'
 import './ProductCard.css'
 
 interface ProductCardProps {
   item: Item
 }
 
-function getStatus(item: Item) {
-  if (item.quantity === 0) return { label: 'ამოწურულია', className: 'badge-danger' }
-  if (item.quantity < item.minQuantity) return { label: 'კრიტიკული', className: 'badge-warning' }
-  return { label: 'მარაგშია', className: 'badge-success' }
-}
-
 function ProductCard({ item }: ProductCardProps) {
-  const status = getStatus(item)
+  const status = getStockStatus(item)
 
   return (
     <article className="product-card">
       <div className="product-card__top">
         <span className="product-card__sku">{item.sku}</span>
-        <span className={status.className}>{status.label}</span>
+        <span className={statusBadges[status]}>{statusLabels[status]}</span>
       </div>
       <h3 className="product-card__name">{item.name}</h3>
       <p className="product-card__category">{item.category}</p>
@@ -28,7 +23,7 @@ function ProductCard({ item }: ProductCardProps) {
           <strong>{item.quantity}</strong> ცალი
         </span>
         <span className="product-card__location">
-          <MapPin size={14} />
+          <MapPin size={14} aria-hidden="true" />
           {item.location}
         </span>
       </div>

@@ -1,0 +1,176 @@
+/* ---------- სათაური ---------- */
+.inventory__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.inventory__count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- ფილტრები (Mobile-first: ერთმანეთის ქვეშ) ---------- */
+.inventory__filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.inventory__search {
+  position: relative;
+  display: block;
+}
+
+.inventory__search svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.inventory__search .input {
+  padding-left: 38px;
+}
+
+/* ---------- მობილური: ბარათები ---------- */
+.inventory__table-wrap {
+  display: none;
+}
+
+.inventory__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  list-style: none;
+}
+
+.inventory-card {
+  padding: var(--space-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.inventory-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.inventory-card__name {
+  font-size: 1rem;
+  overflow-wrap: anywhere; /* გრძელი სახელი არ გადაფარავს Badge-ს */
+}
+
+.inventory-card__meta {
+  margin: var(--space-xs) 0 var(--space-sm);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.inventory-card__details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border);
+}
+
+.inventory-card__details dt {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.inventory-card__details dd {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.inventory__sku {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* ---------- პლანშეტი: ფილტრები ერთ ხაზზე ---------- */
+@media (min-width: 640px) {
+  .inventory__filters {
+    grid-template-columns: 1fr 180px 180px auto;
+    align-items: center;
+  }
+}
+
+/* ---------- დესკტოპი: ცხრილი ---------- */
+@media (min-width: 900px) {
+  .inventory__cards {
+    display: none;
+  }
+
+  .inventory__table-wrap {
+    display: block;
+    overflow-x: auto; /* ვიწრო ეკრანზე სქროლი, გვერდი არ იწელება */
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .inventory__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .inventory__table th,
+  .inventory__table td {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .inventory__table th {
+    background: var(--bg);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .inventory__table tbody tr {
+    border-top: 1px solid var(--border);
+  }
+
+  .inventory__table tbody tr:hover {
+    background: var(--bg);
+  }
+
+  .inventory__name {
+    font-weight: 500;
+  }
+
+  .inventory__sort {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .inventory__sort:hover {
+    color: var(--primary);
+  }
+}

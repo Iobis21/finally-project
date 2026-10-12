@@ -10,10 +10,11 @@ import {
   Users,
   X,
 } from 'lucide-react'
+import { NavLink } from 'react-router'
 import './Sidebar.css'
 
 const menu = [
-  { label: 'მთავარი', icon: LayoutDashboard, href: '/', active: true },
+  { label: 'მთავარი', icon: LayoutDashboard, href: '/' },
   { label: 'მარაგები', icon: Boxes, href: '/inventory' },
   { label: 'მიღება', icon: PackageCheck, href: '/inbound' },
   { label: 'გაცემა', icon: PackageOpen, href: '/outbound' },
@@ -35,22 +36,25 @@ function Sidebar({ isOpen, onClose }: SidebarProps) {
       {/* მუქი ფონი მობილურზე, დაჭერით იხურება */}
       {isOpen && <div className="sidebar__overlay" onClick={onClose} />}
 
-      <aside className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
+      <aside id="sidebar" className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
         <button className="sidebar__close" onClick={onClose} aria-label="მენიუს დახურვა">
           <X size={22} />
         </button>
 
-        <nav>
+        <nav aria-label="მთავარი მენიუ">
           <ul className="sidebar__list">
             {menu.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={`sidebar__link ${item.active ? 'sidebar__link--active' : ''}`}
+                <NavLink
+                  to={item.href}
+                  end={item.href === '/'}
+                  className={({ isActive }) =>
+                    `sidebar__link ${isActive ? 'sidebar__link--active' : ''}`
+                  }
                 >
-                  <item.icon size={20} />
+                  <item.icon size={20} aria-hidden="true" />
                   <span>{item.label}</span>
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
