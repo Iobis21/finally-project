@@ -1,5 +1,8 @@
 import { Link } from 'react-router'
 import { Bell, Menu, Warehouse } from 'lucide-react'
+import { useState } from 'react'
+import { roles, useRole } from '../../context/RoleContext'
+import type { Role } from '../../types'
 import './Header.css'
 
 interface HeaderProps {
@@ -8,6 +11,15 @@ interface HeaderProps {
 }
 
 function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
+  const { role, setRole } = useRole()
+  const [isProfileOpen, setIsProfileOpen] = useState(false)
+  const current = roles[role]
+
+  function changeRole(newRole: Role) {
+    setRole(newRole)
+    setIsProfileOpen(false)
+  }
+
   return (
     <header className="header">
       <div className="header__left">
@@ -31,13 +43,35 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
           <Bell size={20} />
           <span className="header__dot" />
         </button>
-        <button className="header__profile">
-          <span className="header__avatar">გბ</span>
-          <span className="header__user">
-            <strong>გიორგი ბერიძე</strong>
-            <small>საწყობის მენეჯერი</small>
-          </span>
-        </button>
+        <div className="header__profile-wrap">
+          <button
+            className="header__profile"
+            onClick={() => setIsProfileOpen(!isProfileOpen)}
+            aria-expanded={isProfileOpen}
+          >
+            <span className="header__avatar">{current.initials}</span>
+            <span className="header__user">
+              <strong>{current.user}</strong>
+              <small>{current.label}</small>
+            </span>
+          </button>
+
+          {/* როლის გადართვა */}
+          {isProfileOpen && (
+            <ul className="header__dropdown">
+              {(Object.keys(roles) as Role[]).map((r) => (
+                <li key={r}>
+                  <button
+                    className={`header__dropdown-item ${r === role ? 'header__dropdown-item--active' : ''}`}
+                    onClick={() => changeRole(r)}
+                  >
+                    {roles[r].label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </header>
   )

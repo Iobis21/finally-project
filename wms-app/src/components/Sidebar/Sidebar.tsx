@@ -11,6 +11,7 @@ import {
   X,
 } from 'lucide-react'
 import { NavLink } from 'react-router'
+import { useRole } from '../../context/RoleContext'
 import './Sidebar.css'
 
 const menu = [
@@ -31,6 +32,10 @@ interface SidebarProps {
 }
 
 function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const { canOpen } = useRole()
+  // მენიუში მხოლოდ ის გვერდები ჩანს, რაზეც როლს წვდომა აქვს
+  const visibleMenu = menu.filter((item) => canOpen(item.href))
+
   return (
     <>
       {/* მუქი ფონი მობილურზე, დაჭერით იხურება */}
@@ -43,7 +48,7 @@ function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         <nav aria-label="მთავარი მენიუ">
           <ul className="sidebar__list">
-            {menu.map((item) => (
+            {visibleMenu.map((item) => (
               <li key={item.href}>
                 <NavLink
                   to={item.href}

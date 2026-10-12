@@ -4,6 +4,7 @@ import DashboardPage from './pages/dashboard/DashboardPage'
 import InventoryPage from './pages/inventory/InventoryPage'
 import ComingSoonPage from './pages/errors/ComingSoonPage'
 import NotFoundPage from './pages/errors/NotFoundPage'
+import RoleRoute from './routes/RoleRoute'
 
 const comingSoon = [
   { path: 'inbound', title: 'მიღება' },
@@ -22,7 +23,15 @@ function App() {
         <Route index element={<DashboardPage />} />
         <Route path="inventory" element={<InventoryPage />} />
         {comingSoon.map((page) => (
-          <Route key={page.path} path={page.path} element={<ComingSoonPage title={page.title} />} />
+          <Route
+            key={page.path}
+            path={page.path}
+            element={
+              <RoleRoute path={`/${page.path}`}>
+                <ComingSoonPage title={page.title} />
+              </RoleRoute>
+            }
+          />
         ))}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
