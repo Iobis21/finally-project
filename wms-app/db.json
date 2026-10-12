@@ -1,0 +1,285 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "sku": "LAP-001",
+      "barcode": "4860001234567",
+      "name": "ლეპტოპი Lenovo",
+      "category": "ელექტრონიკა",
+      "quantity": 25,
+      "minQuantity": 10,
+      "price": 1500,
+      "location": "A-01-03"
+    },
+    {
+      "id": 2,
+      "sku": "MOU-014",
+      "barcode": "4860001234574",
+      "name": "მაუსი Logitech",
+      "category": "ელექტრონიკა",
+      "quantity": 4,
+      "minQuantity": 20,
+      "price": 45,
+      "location": "A-02-01"
+    },
+    {
+      "id": 3,
+      "sku": "CHR-220",
+      "barcode": "4860001234581",
+      "name": "საოფისე სკამი",
+      "category": "ავეჯი",
+      "quantity": 12,
+      "minQuantity": 5,
+      "price": 320,
+      "location": "B-04-02"
+    },
+    {
+      "id": 4,
+      "sku": "PAP-500",
+      "barcode": "4860001234598",
+      "name": "A4 ქაღალდი (500 ფ.)",
+      "category": "საკანცელარიო",
+      "quantity": 0,
+      "minQuantity": 50,
+      "price": 15,
+      "location": "C-01-01"
+    },
+    {
+      "id": 5,
+      "sku": "MON-027",
+      "barcode": "4860001234604",
+      "name": "მონიტორი Dell 27\"",
+      "category": "ელექტრონიკა",
+      "quantity": 18,
+      "minQuantity": 8,
+      "price": 780,
+      "location": "A-03-04"
+    },
+    {
+      "id": 6,
+      "sku": "DSK-140",
+      "barcode": "4860001234611",
+      "name": "საწერი მაგიდა",
+      "category": "ავეჯი",
+      "quantity": 7,
+      "minQuantity": 3,
+      "price": 450,
+      "location": "B-02-01"
+    },
+    {
+      "id": 7,
+      "sku": "KEY-101",
+      "barcode": "4860001234628",
+      "name": "კლავიატურა",
+      "category": "ელექტრონიკა",
+      "quantity": 9,
+      "minQuantity": 15,
+      "price": 60,
+      "location": "A-02-03"
+    },
+    {
+      "id": 8,
+      "sku": "BOX-L",
+      "barcode": "4860001234635",
+      "name": "მუყაოს ყუთი (L)",
+      "category": "შესაფუთი",
+      "quantity": 340,
+      "minQuantity": 100,
+      "price": 3,
+      "location": "D-01-01"
+    },
+    {
+      "id": 9,
+      "sku": "HDP-055",
+      "barcode": "4860001234642",
+      "name": "ყურსასმენი Sony",
+      "category": "ელექტრონიკა",
+      "quantity": 31,
+      "minQuantity": 10,
+      "price": 220,
+      "location": "A-04-01"
+    },
+    {
+      "id": 10,
+      "sku": "PEN-010",
+      "barcode": "4860001234659",
+      "name": "კალამი (10 ც.)",
+      "category": "საკანცელარიო",
+      "quantity": 120,
+      "minQuantity": 40,
+      "price": 8,
+      "location": "C-02-02"
+    },
+    {
+      "id": 11,
+      "sku": "TAP-048",
+      "barcode": "4860001234666",
+      "name": "შესაფუთი ლენტი",
+      "category": "შესაფუთი",
+      "quantity": 15,
+      "minQuantity": 30,
+      "price": 6,
+      "location": "D-01-02"
+    },
+    {
+      "id": 12,
+      "sku": "LMP-300",
+      "barcode": "4860001234673",
+      "name": "მაგიდის ლამპა",
+      "category": "ავეჯი",
+      "quantity": 22,
+      "minQuantity": 6,
+      "price": 95,
+      "location": "B-03-01"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "გიორგი",
+      "lastName": "ბერიძე",
+      "email": "manager@wms.ge",
+      "role": "manager",
+      "userType": "individual",
+      "isActive": true,
+      "createdAt": "2026-09-01T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "firstName": "ნინო",
+      "lastName": "კაპანაძე",
+      "email": "purchasing@wms.ge",
+      "role": "purchasing",
+      "userType": "individual",
+      "isActive": true,
+      "createdAt": "2026-09-02T09:00:00Z"
+    },
+    {
+      "id": 3,
+      "firstName": "ნიკა",
+      "lastName": "გელაშვილი",
+      "email": "operator@wms.ge",
+      "role": "operator",
+      "userType": "individual",
+      "isActive": true,
+      "createdAt": "2026-09-03T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "firstName": "ლევან",
+      "lastName": "მამულაშვილი",
+      "email": "logistics@wms.ge",
+      "role": "logistics",
+      "userType": "company",
+      "companyName": "FastCourier",
+      "isActive": true,
+      "createdAt": "2026-09-04T09:00:00Z"
+    }
+  ],
+  "vendors": [
+    {
+      "id": 1,
+      "name": "TechSupply",
+      "phone": "+995 555 11 22 33",
+      "email": "info@techsupply.ge",
+      "address": "თბილისი, წერეთლის 45"
+    },
+    {
+      "id": 2,
+      "name": "OfficeLine",
+      "phone": "+995 555 44 55 66",
+      "email": "sales@officeline.ge",
+      "address": "თბილისი, აღმაშენებლის 120"
+    },
+    {
+      "id": 3,
+      "name": "PackPro",
+      "phone": "+995 555 77 88 99",
+      "email": "order@packpro.ge",
+      "address": "რუსთავი, მშვიდობის 8"
+    }
+  ],
+  "orders": [
+    {
+      "id": 11,
+      "number": "PO-0011",
+      "vendorId": 2,
+      "status": "approved",
+      "expectedDate": "2026-10-14",
+      "createdBy": 2,
+      "createdAt": "2026-10-05T10:00:00Z",
+      "items": [
+        {
+          "itemId": 4,
+          "quantity": 100,
+          "price": 13
+        },
+        {
+          "itemId": 10,
+          "quantity": 50,
+          "price": 7
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "number": "PO-0012",
+      "vendorId": 1,
+      "status": "pending",
+      "expectedDate": "2026-10-16",
+      "createdBy": 2,
+      "createdAt": "2026-10-08T10:30:00Z",
+      "items": [
+        {
+          "itemId": 2,
+          "quantity": 50,
+          "price": 40
+        }
+      ]
+    }
+  ],
+  "shipments": [
+    {
+      "id": 891,
+      "orderId": 11,
+      "status": "expected",
+      "items": [
+        {
+          "itemId": 4,
+          "expected": 100,
+          "received": 0,
+          "damaged": 0
+        },
+        {
+          "itemId": 10,
+          "expected": 50,
+          "received": 0,
+          "damaged": 0
+        }
+      ]
+    }
+  ],
+  "deliveries": [
+    {
+      "id": 7,
+      "orderNumber": "SO-0031",
+      "courier": "FastCourier",
+      "address": "თბილისი, ჭავჭავაძის 12",
+      "status": "in_transit"
+    },
+    {
+      "id": 8,
+      "orderNumber": "SO-0032",
+      "courier": "Glovo",
+      "address": "თბილისი, ვაჟა-ფშაველას 71",
+      "status": "waiting"
+    },
+    {
+      "id": 9,
+      "orderNumber": "SO-0029",
+      "courier": "FastCourier",
+      "address": "ბათუმი, რუსთაველის 5",
+      "status": "delivered"
+    }
+  ]
+}

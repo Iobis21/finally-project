@@ -1,0 +1,18 @@
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+
+.skeleton-grid__item {
+  height: 140px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shine 1.2s infinite;
+}
+
+@keyframes skeleton-shine {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}

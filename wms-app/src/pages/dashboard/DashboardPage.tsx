@@ -1,10 +1,16 @@
 import { AlertTriangle, Boxes, PackageCheck, Truck } from 'lucide-react'
 import StatCard from '../../components/StatCard/StatCard'
 import ProductCard from '../../components/ProductCard/ProductCard'
-import { items } from '../../data/items'
+import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
+import { useItems } from '../../hooks/useItems'
 import './DashboardPage.css'
 
 function DashboardPage() {
+  const { items, isLoading, error, reload } = useItems()
+
+  if (isLoading) return <SkeletonGrid count={8} />
+  if (error) return <ErrorState message={error} onRetry={reload} />
+
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0)
   const lowStock = items.filter((item) => item.quantity < item.minQuantity).length
 

@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react'
 import { ArrowDown, ArrowUp, MapPin, PackageSearch, Search } from 'lucide-react'
 import EmptyState from '../../components/EmptyState/EmptyState'
-import { items } from '../../data/items'
+import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
+import { useItems } from '../../hooks/useItems'
 import type { Item, ItemStatus } from '../../types'
 import { formatPrice, getStockStatus, statusBadges, statusLabels } from '../../utils/stock'
 import './InventoryPage.css'
 
 type SortKey = 'name' | 'quantity' | 'price'
 
-const categories = [...new Set(items.map((item) => item.category))]
-
 function InventoryPage() {
+  const { items, isLoading, error, reload } = useItems()
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('')
   const [status, setStatus] = useState<ItemStatus | ''>('')
@@ -37,7 +37,10 @@ function InventoryPage() {
           sortKey === 'name' ? a.name.localeCompare(b.name, 'ka') : a[sortKey] - b[sortKey]
         return sortAsc ? result : -result
       })
-  }, [search, category, status, sortKey, sortAsc])
+  }, [items, search, category, status, sortKey, sortAsc])
+
+  // უნიკალური კატეგორიები ფილტრისთვის
+  const categories = [...new Set(items.map((item) => item.category))]
 
   function handleSort(key: SortKey) {
     if (key === sortKey) {
@@ -111,7 +114,11 @@ function InventoryPage() {
         )}
       </section>
 
-      {visibleItems.length === 0 ? (
+      {isLoading ? (
+        <SkeletonGrid count={6} />
+      ) : error ? (
+        <ErrorState message={error} onRetry={reload} />
+      ) : visibleItems.length === 0 ? (
         <EmptyState
           icon={PackageSearch}
           title="ნივთი ვერ მოიძებნა"
