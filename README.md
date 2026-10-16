@@ -24,3 +24,15 @@ React · Vite · TypeScript · Tailwind CSS · React Router · React Hook Form +
 ## აპლიკაცია
 
 კოდი: [wms-app/](wms-app/) · დაფა: [GitHub Projects](https://github.com/users/Iobis21/projects/1)
+
+## გაშვება
+
+```bash
+cd wms-app
+npm install
+npm run dev
+```
+
+- საიტი: http://localhost:5173
+- ბექენდი (json-server): http://localhost:3000/items
+- როლის შესაცვლელად დააჭირე პროფილს (ზედა მარჯვენა კუთხე)
