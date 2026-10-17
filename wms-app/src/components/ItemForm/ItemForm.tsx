@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { categories, itemSchema, type ItemForm as ItemFormValues } from '../../schemas/item.schema'
 import Button from '../ui/Button/Button'
-import FormField from './FormField'
+import FormField from '../FormField/FormField'
 import './ItemForm.css'
 
 interface ItemFormProps {

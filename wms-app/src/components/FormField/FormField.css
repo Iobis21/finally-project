@@ -1,0 +1,23 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-field__label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.form-field__label span {
+  color: var(--color-danger);
+}
+
+.form-field .input[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.form-field__error {
+  color: var(--color-danger-text);
+  font-size: 0.8rem;
+}
