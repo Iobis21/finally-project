@@ -1,12 +1,21 @@
 import { MapPin } from 'lucide-react'
 import StatusBadge from '../../../components/StatusBadge/StatusBadge'
 import type { Item } from '../../../types'
+import { useEventDelegation } from '../../../hooks/useEventDelegation'
 import { formatPrice } from '../../../utils/stock'
+import RowActions from './RowActions'
 
 // მობილური ხედი — ცხრილის ნაცვლად ბარათები
-function InventoryCards({ items }: { items: Item[] }) {
+interface InventoryCardsProps {
+  items: Item[]
+  onAction: (action: string, id: number) => void
+}
+
+function InventoryCards({ items, onAction }: InventoryCardsProps) {
+  const listRef = useEventDelegation<HTMLUListElement>(onAction)
+
   return (
-    <ul className="inventory__cards">
+    <ul ref={listRef} className="inventory__cards">
       {items.map((item) => (
         <li key={item.id} className="inventory-card">
           <div className="inventory-card__top">
@@ -34,6 +43,9 @@ function InventoryCards({ items }: { items: Item[] }) {
               </dd>
             </div>
           </dl>
+          <div className="inventory-card__actions">
+            <RowActions id={item.id} name={item.name} />
+          </div>
         </li>
       ))}
     </ul>

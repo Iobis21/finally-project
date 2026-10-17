@@ -2,13 +2,16 @@ import { ArrowDown, ArrowUp } from 'lucide-react'
 import StatusBadge from '../../../components/StatusBadge/StatusBadge'
 import type { SortKey } from '../../../hooks/useInventoryFilters'
 import type { Item } from '../../../types'
+import { useEventDelegation } from '../../../hooks/useEventDelegation'
 import { formatPrice } from '../../../utils/stock'
+import RowActions from './RowActions'
 
 interface InventoryTableProps {
   items: Item[]
   sortKey: SortKey
   sortAsc: boolean
   onSort: (key: SortKey) => void
+  onAction: (action: string, id: number) => void
 }
 
 const sortableColumns: { key: SortKey; label: string }[] = [
@@ -37,10 +40,13 @@ function SortHeader({ column, sortKey, sortAsc, onSort }: SortHeaderProps) {
   )
 }
 
-function InventoryTable({ items, sortKey, sortAsc, onSort }: InventoryTableProps) {
+function InventoryTable({ items, sortKey, sortAsc, onSort, onAction }: InventoryTableProps) {
+  // ერთი მსმენელი მთელ ცხრილზე — Event Delegation
+  const tableRef = useEventDelegation<HTMLTableElement>(onAction)
+
   return (
     <div className="inventory__table-wrap">
-      <table className="inventory__table">
+      <table ref={tableRef} className="inventory__table">
         <thead>
           <tr>
             <th scope="col">SKU</th>
@@ -50,6 +56,9 @@ function InventoryTable({ items, sortKey, sortAsc, onSort }: InventoryTableProps
             <SortHeader column={sortableColumns[2]} sortKey={sortKey} sortAsc={sortAsc} onSort={onSort} />
             <th scope="col">თარო</th>
             <th scope="col">სტატუსი</th>
+            <th scope="col">
+              <span className="sr-only">მოქმედებები</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -65,6 +74,9 @@ function InventoryTable({ items, sortKey, sortAsc, onSort }: InventoryTableProps
               <td>{item.location}</td>
               <td>
                 <StatusBadge item={item} />
+              </td>
+              <td>
+                <RowActions id={item.id} name={item.name} />
               </td>
             </tr>
           ))}
