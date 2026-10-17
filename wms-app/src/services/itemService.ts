@@ -1,5 +1,5 @@
 import type { Item } from '../types'
-import { apiGet, apiPatch } from './client'
+import { apiGet, apiPatch } from './apiClient'
 
 export function getItems() {
   return apiGet<Item[]>('/items')

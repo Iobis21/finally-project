@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getItems } from '../api/items.api'
+import { getItems } from '../services/itemService'
 import type { Item } from '../types'
 
 // ნივთების წამოღება სერვერიდან + ჩატვირთვის და შეცდომის მდგომარეობები
