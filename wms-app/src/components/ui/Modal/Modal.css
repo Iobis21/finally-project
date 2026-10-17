@@ -1,0 +1,78 @@
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-md);
+  background: rgb(15 23 42 / 0.5);
+  animation: modal-fade 0.2s ease;
+}
+
+.modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 2 * var(--space-md));
+  overflow-y: auto;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 0.25);
+  animation: modal-in 0.2s ease;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.modal__title {
+  font-size: 1.15rem;
+}
+
+.modal__close {
+  display: flex;
+  padding: var(--space-xs);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.modal__body {
+  padding: var(--space-lg);
+}
+
+/* მხოლოდ opacity და transform — GPU ანიმაცია */
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* მობილურზე — მთელი ეკრანი */
+@media (max-width: 480px) {
+  .modal__overlay {
+    padding: 0;
+  }
+
+  .modal {
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+}
