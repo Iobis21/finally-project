@@ -1,23 +1,14 @@
 // სერვერის მისამართი (json-server)
 export const API_URL = 'http://localhost:3000'
 
-// საერთო ფუნქცია GET მოთხოვნებისთვის
-export async function apiGet<T>(path: string): Promise<T> {
-  const response = await fetch(`${API_URL}${path}`)
+type Method = 'GET' | 'POST' | 'PATCH' | 'DELETE'
 
-  if (!response.ok) {
-    throw new Error(`სერვერის შეცდომა: ${response.status}`)
-  }
-
-  return response.json()
-}
-
-// საერთო ფუნქცია PATCH მოთხოვნებისთვის (ჩანაწერის ნაწილობრივი შეცვლა)
-export async function apiPatch<T>(path: string, data: Partial<T>): Promise<T> {
+// ერთი საერთო ფუნქცია ყველა მოთხოვნისთვის (DRY)
+async function request<T>(method: Method, path: string, data?: unknown): Promise<T> {
   const response = await fetch(`${API_URL}${path}`, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    method,
+    headers: data ? { 'Content-Type': 'application/json' } : undefined,
+    body: data ? JSON.stringify(data) : undefined,
   })
 
   if (!response.ok) {
@@ -26,3 +17,8 @@ export async function apiPatch<T>(path: string, data: Partial<T>): Promise<T> {
 
   return response.json()
 }
+
+export const apiGet = <T>(path: string) => request<T>('GET', path)
+export const apiPost = <T>(path: string, data: unknown) => request<T>('POST', path, data)
+export const apiPatch = <T>(path: string, data: unknown) => request<T>('PATCH', path, data)
+export const apiDelete = (path: string) => request<unknown>('DELETE', path)

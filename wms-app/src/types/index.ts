@@ -32,6 +32,9 @@ export interface Item {
   imageUrl?: string
 }
 
+// ახალი ნივთი — id-ს სერვერი თვითონ ანიჭებს
+export type NewItem = Omit<Item, 'id'>
+
 export interface Vendor {
   id: number
   name: string
