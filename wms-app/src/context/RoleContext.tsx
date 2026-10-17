@@ -2,12 +2,25 @@ import { createContext, useContext, useState, type ReactNode } from 'react'
 import type { Role } from '../types'
 
 // თითო როლის მომხმარებელი და რომელ გვერდებზე აქვს წვდომა
-export const roles: Record<Role, { label: string; user: string; initials: string; pages: string[] }> = {
+export const roles: Record<
+  Role,
+  { label: string; user: string; initials: string; pages: string[] }
+> = {
   manager: {
     label: 'საწყობის მენეჯერი',
     user: 'გიორგი ბერიძე',
     initials: 'გბ',
-    pages: ['/', '/inventory', '/inbound', '/outbound', '/orders', '/deliveries', '/map', '/users', '/reports'],
+    pages: [
+      '/',
+      '/inventory',
+      '/inbound',
+      '/outbound',
+      '/orders',
+      '/deliveries',
+      '/map',
+      '/users',
+      '/reports',
+    ],
   },
   purchasing: {
     label: 'შესყიდვების მენეჯერი',

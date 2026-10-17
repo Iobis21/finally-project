@@ -50,10 +50,25 @@ function InventoryTable({ items, sortKey, sortAsc, onSort, onAction }: Inventory
         <thead>
           <tr>
             <th scope="col">SKU</th>
-            <SortHeader column={sortableColumns[0]} sortKey={sortKey} sortAsc={sortAsc} onSort={onSort} />
+            <SortHeader
+              column={sortableColumns[0]}
+              sortKey={sortKey}
+              sortAsc={sortAsc}
+              onSort={onSort}
+            />
             <th scope="col">კატეგორია</th>
-            <SortHeader column={sortableColumns[1]} sortKey={sortKey} sortAsc={sortAsc} onSort={onSort} />
-            <SortHeader column={sortableColumns[2]} sortKey={sortKey} sortAsc={sortAsc} onSort={onSort} />
+            <SortHeader
+              column={sortableColumns[1]}
+              sortKey={sortKey}
+              sortAsc={sortAsc}
+              onSort={onSort}
+            />
+            <SortHeader
+              column={sortableColumns[2]}
+              sortKey={sortKey}
+              sortAsc={sortAsc}
+              onSort={onSort}
+            />
             <th scope="col">თარო</th>
             <th scope="col">სტატუსი</th>
             <th scope="col">

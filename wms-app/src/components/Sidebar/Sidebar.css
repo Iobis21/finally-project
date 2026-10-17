@@ -21,7 +21,9 @@
   color: var(--text-muted);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .sidebar__link:hover {

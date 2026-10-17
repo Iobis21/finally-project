@@ -16,7 +16,8 @@ import InventoryTable from './components/InventoryTable'
 import './InventoryPage.css'
 
 // რომელი მოდალია ღია: დამატება, რედაქტირება ან წაშლის დადასტურება
-type ModalState = { mode: 'add' } | { mode: 'edit'; item: Item } | { mode: 'delete'; item: Item } | null
+type ModalState =
+  { mode: 'add' } | { mode: 'edit'; item: Item } | { mode: 'delete'; item: Item } | null
 
 // გვერდი მხოლოდ აერთიანებს ნაწილებს: მონაცემები — useItems, ფილტრები — useInventoryFilters
 function InventoryPage() {

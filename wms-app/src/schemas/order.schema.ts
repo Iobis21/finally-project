@@ -33,7 +33,10 @@ export type OrderForm = z.infer<typeof orderSchema>
 
 // ---------- საქონლის მიღება (სკანირება) ----------
 export const scanSchema = z.object({
-  barcode: z.string().trim().regex(/^\d{13}$/, 'შტრიხკოდი უნდა იყოს 13 ციფრი'),
+  barcode: z
+    .string()
+    .trim()
+    .regex(/^\d{13}$/, 'შტრიხკოდი უნდა იყოს 13 ციფრი'),
 })
 
 export const damageSchema = z.object({

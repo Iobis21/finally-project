@@ -9,7 +9,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 // ზოგადი ღილაკი: ფერი იცვლება variant-ით, დანარჩენი ატრიბუტები (onClick, type...) პირდაპირ გადადის
-function Button({ variant = 'primary', isLoading = false, children, disabled, ...rest }: ButtonProps) {
+function Button({
+  variant = 'primary',
+  isLoading = false,
+  children,
+  disabled,
+  ...rest
+}: ButtonProps) {
   return (
     <button className={`btn-${variant}`} disabled={disabled || isLoading} {...rest}>
       {isLoading ? 'ინახება...' : children}

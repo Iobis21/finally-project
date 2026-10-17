@@ -55,7 +55,12 @@ function ItemForm({ initialValues, onSubmit, onCancel }: ItemFormProps) {
       </FormField>
 
       <FormField label="შტრიხკოდი" error={errors.barcode?.message}>
-        <input className="input" {...register('barcode')} inputMode="numeric" placeholder="13 ციფრი" />
+        <input
+          className="input"
+          {...register('barcode')}
+          inputMode="numeric"
+          placeholder="13 ციფრი"
+        />
       </FormField>
 
       <FormField label="კატეგორია" error={errors.category?.message}>
@@ -78,11 +83,20 @@ function ItemForm({ initialValues, onSubmit, onCancel }: ItemFormProps) {
       </FormField>
 
       <FormField label="მინ. რაოდენობა" error={errors.minQuantity?.message}>
-        <input className="input" type="number" {...register('minQuantity', { valueAsNumber: true })} />
+        <input
+          className="input"
+          type="number"
+          {...register('minQuantity', { valueAsNumber: true })}
+        />
       </FormField>
 
       <FormField label="ფასი (₾)" error={errors.price?.message}>
-        <input className="input" type="number" step="0.01" {...register('price', { valueAsNumber: true })} />
+        <input
+          className="input"
+          type="number"
+          step="0.01"
+          {...register('price', { valueAsNumber: true })}
+        />
       </FormField>
 
       {serverError && (

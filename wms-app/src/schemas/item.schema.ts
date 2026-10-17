@@ -8,7 +8,10 @@ export const itemSchema = z.object({
     .trim()
     .min(1, 'SKU სავალდებულოა')
     .regex(/^[A-Z]{2,4}-[A-Z0-9]{1,5}$/, 'ფორმატი: LAP-001 (დიდი ლათინური ასოები)'),
-  barcode: z.string().trim().regex(/^\d{13}$/, 'შტრიხკოდი უნდა იყოს 13 ციფრი'),
+  barcode: z
+    .string()
+    .trim()
+    .regex(/^\d{13}$/, 'შტრიხკოდი უნდა იყოს 13 ციფრი'),
   category: z.string().min(1, 'აირჩიეთ კატეგორია'),
   quantity: z
     .number({ message: 'შეიყვანეთ რაოდენობა' })

@@ -20,10 +20,22 @@
   border-radius: var(--radius-md);
 }
 
-.stat-card__icon--blue { background: #dbeafe; color: #2563eb; }
-.stat-card__icon--green { background: #dcfce7; color: #16a34a; }
-.stat-card__icon--orange { background: #fef3c7; color: #d97706; }
-.stat-card__icon--red { background: #fee2e2; color: #dc2626; }
+.stat-card__icon--blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+.stat-card__icon--green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.stat-card__icon--orange {
+  background: #fef3c7;
+  color: #d97706;
+}
+.stat-card__icon--red {
+  background: #fee2e2;
+  color: #dc2626;
+}
 
 .stat-card__body {
   display: flex;

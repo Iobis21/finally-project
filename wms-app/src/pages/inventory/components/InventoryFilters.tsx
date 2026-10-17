@@ -37,7 +37,11 @@ function InventoryFilters({
 
       <label>
         <span className="sr-only">კატეგორია</span>
-        <select className="input" value={category} onChange={(e) => onCategoryChange(e.target.value)}>
+        <select
+          className="input"
+          value={category}
+          onChange={(e) => onCategoryChange(e.target.value)}
+        >
           <option value="">ყველა კატეგორია</option>
           {categories.map((c) => (
             <option key={c} value={c}>

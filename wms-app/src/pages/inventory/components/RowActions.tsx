@@ -5,7 +5,12 @@ import { Pencil, Trash2 } from 'lucide-react'
 function RowActions({ id, name }: { id: number; name: string }) {
   return (
     <div className="row-actions">
-      <button className="row-actions__btn" data-action="edit" data-id={id} aria-label={`რედაქტირება: ${name}`}>
+      <button
+        className="row-actions__btn"
+        data-action="edit"
+        data-id={id}
+        aria-label={`რედაქტირება: ${name}`}
+      >
         <Pencil size={16} aria-hidden="true" />
       </button>
       <button

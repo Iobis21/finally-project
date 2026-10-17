@@ -10,7 +10,12 @@ interface ConfirmDialogProps {
 }
 
 // დადასტურების შიგთავსი Modal-ისთვის (Modal-ს children-ად გადაეცემა)
-function ConfirmDialog({ message, confirmLabel = 'წაშლა', onConfirm, onCancel }: ConfirmDialogProps) {
+function ConfirmDialog({
+  message,
+  confirmLabel = 'წაშლა',
+  onConfirm,
+  onCancel,
+}: ConfirmDialogProps) {
   const [isLoading, setIsLoading] = useState(false)
 
   async function confirm() {
