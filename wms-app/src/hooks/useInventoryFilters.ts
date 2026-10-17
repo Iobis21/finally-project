@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { Item, ItemStatus } from '../types'
 import { getStockStatus } from '../utils/stock'
+import { useDebounce } from './useDebounce'
 
 export type SortKey = 'name' | 'quantity' | 'price'
 
@@ -12,8 +13,11 @@ export function useInventoryFilters(items: Item[]) {
   const [sortKey, setSortKey] = useState<SortKey>('name')
   const [sortAsc, setSortAsc] = useState(true)
 
+  // ველში ტექსტი მაშინვე ჩანს, მაგრამ ძებნა იწყება ბეჭდვის შეწყვეტიდან 300ms-ში
+  const debouncedSearch = useDebounce(search, 300)
+
   const visibleItems = useMemo(() => {
-    const query = search.trim().toLowerCase()
+    const query = debouncedSearch.trim().toLowerCase()
 
     return items
       .filter((item) => {
@@ -31,7 +35,7 @@ export function useInventoryFilters(items: Item[]) {
           sortKey === 'name' ? a.name.localeCompare(b.name, 'ka') : a[sortKey] - b[sortKey]
         return sortAsc ? result : -result
       })
-  }, [items, search, category, status, sortKey, sortAsc])
+  }, [items, debouncedSearch, category, status, sortKey, sortAsc])
 
   const categories = useMemo(() => [...new Set(items.map((item) => item.category))], [items])
 
