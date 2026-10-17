@@ -1,6 +1,6 @@
 import { MapPin } from 'lucide-react'
 import type { Item } from '../../types'
-import { getStockStatus, statusBadges, statusLabels } from '../../utils/stock'
+import StatusBadge from '../StatusBadge/StatusBadge'
 import './ProductCard.css'
 
 interface ProductCardProps {
@@ -8,13 +8,11 @@ interface ProductCardProps {
 }
 
 function ProductCard({ item }: ProductCardProps) {
-  const status = getStockStatus(item)
-
   return (
     <article className="product-card">
       <div className="product-card__top">
         <span className="product-card__sku">{item.sku}</span>
-        <span className={statusBadges[status]}>{statusLabels[status]}</span>
+        <StatusBadge item={item} />
       </div>
       <h3 className="product-card__name">{item.name}</h3>
       <p className="product-card__category">{item.category}</p>
