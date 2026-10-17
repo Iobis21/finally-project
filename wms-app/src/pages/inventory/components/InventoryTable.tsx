@@ -12,6 +12,7 @@ interface InventoryTableProps {
   sortAsc: boolean
   onSort: (key: SortKey) => void
   onAction: (action: string, id: number) => void
+  canManage: boolean // რედაქტირების ღილაკები მხოლოდ უფლების მქონეს
 }
 
 const sortableColumns: { key: SortKey; label: string }[] = [
@@ -40,7 +41,14 @@ function SortHeader({ column, sortKey, sortAsc, onSort }: SortHeaderProps) {
   )
 }
 
-function InventoryTable({ items, sortKey, sortAsc, onSort, onAction }: InventoryTableProps) {
+function InventoryTable({
+  items,
+  sortKey,
+  sortAsc,
+  onSort,
+  onAction,
+  canManage,
+}: InventoryTableProps) {
   // ერთი მსმენელი მთელ ცხრილზე — Event Delegation
   const tableRef = useEventDelegation<HTMLTableElement>(onAction)
 
@@ -71,9 +79,11 @@ function InventoryTable({ items, sortKey, sortAsc, onSort, onAction }: Inventory
             />
             <th scope="col">თარო</th>
             <th scope="col">სტატუსი</th>
-            <th scope="col">
-              <span className="sr-only">მოქმედებები</span>
-            </th>
+            {canManage && (
+              <th scope="col">
+                <span className="sr-only">მოქმედებები</span>
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -90,9 +100,11 @@ function InventoryTable({ items, sortKey, sortAsc, onSort, onAction }: Inventory
               <td>
                 <StatusBadge item={item} />
               </td>
-              <td>
-                <RowActions id={item.id} name={item.name} />
-              </td>
+              {canManage && (
+                <td>
+                  <RowActions id={item.id} name={item.name} />
+                </td>
+              )}
             </tr>
           ))}
         </tbody>

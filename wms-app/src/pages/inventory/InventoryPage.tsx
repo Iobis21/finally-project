@@ -6,6 +6,7 @@ import ItemForm from '../../components/ItemForm/ItemForm'
 import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
 import Button from '../../components/ui/Button/Button'
 import Modal from '../../components/ui/Modal/Modal'
+import { useAuth } from '../../context/AuthContext'
 import { useInventoryFilters } from '../../hooks/useInventoryFilters'
 import { useItems } from '../../hooks/useItems'
 import type { ItemForm as ItemFormValues } from '../../schemas/item.schema'
@@ -23,6 +24,8 @@ type ModalState =
 function InventoryPage() {
   const { items, isLoading, error, reload, addItem, editItem, removeItem } = useItems()
   const filters = useInventoryFilters(items)
+  // დამატება / რედაქტირება / წაშლა — მხოლოდ იმ როლს, ვისაც manage:items უფლება აქვს (მენეჯერი)
+  const canManage = useAuth().can('manage:items')
   const [modal, setModal] = useState<ModalState>(null)
 
   const closeModal = () => setModal(null)
@@ -30,7 +33,7 @@ function InventoryPage() {
   // ცხრილიდან / ბარათებიდან მოსული მოქმედება (Event Delegation)
   function handleAction(action: string, id: number) {
     const item = items.find((i) => i.id === id)
-    if (!item) return
+    if (!item || !canManage) return
     if (action === 'edit') setModal({ mode: 'edit', item })
     if (action === 'delete') setModal({ mode: 'delete', item })
   }
@@ -73,8 +76,13 @@ function InventoryPage() {
           sortAsc={filters.sortAsc}
           onSort={filters.toggleSort}
           onAction={handleAction}
+          canManage={canManage}
         />
-        <InventoryCards items={filters.visibleItems} onAction={handleAction} />
+        <InventoryCards
+          items={filters.visibleItems}
+          onAction={handleAction}
+          canManage={canManage}
+        />
       </>
     )
   }
@@ -88,10 +96,12 @@ function InventoryPage() {
             ნაჩვენებია {filters.visibleItems.length} / {items.length}
           </p>
         </div>
-        <Button onClick={() => setModal({ mode: 'add' })}>
-          <Plus size={18} aria-hidden="true" />
-          ახალი ნივთი
-        </Button>
+        {canManage && (
+          <Button onClick={() => setModal({ mode: 'add' })}>
+            <Plus size={18} aria-hidden="true" />
+            ახალი ნივთი
+          </Button>
+        )}
       </div>
 
       <InventoryFilters
