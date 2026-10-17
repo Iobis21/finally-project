@@ -12,6 +12,9 @@ interface ModalProps {
 
 function Modal({ isOpen, title, onClose, children }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
+  // onClose ref-ში — რომ ეფექტი მხოლოდ გახსნა/დახურვისას გაეშვას და არა ყოველ რენდერზე
+  const onCloseRef = useRef(onClose)
+  onCloseRef.current = onClose
 
   useEffect(() => {
     if (!isOpen) return
@@ -21,7 +24,7 @@ function Modal({ isOpen, title, onClose, children }: ModalProps) {
     dialogRef.current?.querySelector<HTMLElement>('input, select, textarea, button')?.focus()
 
     function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') onCloseRef.current()
     }
 
     document.addEventListener('keydown', handleKey)
@@ -32,7 +35,7 @@ function Modal({ isOpen, title, onClose, children }: ModalProps) {
       document.body.style.overflow = ''
       lastFocused?.focus()
     }
-  }, [isOpen, onClose])
+  }, [isOpen])
 
   if (!isOpen) return null
 
