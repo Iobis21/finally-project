@@ -233,6 +233,27 @@
   }
 }
 
+/* ==========================================================
+   ხელმისაწვდომობა — ფოკუსი კლავიატურით ნავიგაციისას (Tab)
+   :focus-visible ჩანს მხოლოდ კლავიატურით, მაუსით დაჭერისას — არა
+   ========================================================== */
+.sidebar__link:focus-visible,
+.row-actions__btn:focus-visible,
+.inventory__sort:focus-visible,
+.header__profile:focus-visible,
+.header__icon-btn:focus-visible,
+.header__dropdown-item:focus-visible,
+.modal__close:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+.lift:focus-visible {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 3px;
+}
+
 /* ვისაც სისტემაში ანიმაციები გამორთული აქვს — ანიმაციის გარეშე */
 @media (prefers-reduced-motion: reduce) {
   *,
