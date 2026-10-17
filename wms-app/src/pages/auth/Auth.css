@@ -1,0 +1,110 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-md);
+}
+
+.auth__card {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-xl);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.auth__card--wide {
+  max-width: 560px;
+}
+
+.auth__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.auth__title {
+  margin: var(--space-sm) 0 var(--space-lg);
+  text-align: center;
+}
+
+.auth__form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .auth__form--two-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .auth__form--two-cols .form-field--full,
+  .auth__form--two-cols .auth__submit,
+  .auth__form--two-cols .auth__error {
+    grid-column: 1 / -1;
+  }
+}
+
+.auth__submit {
+  width: 100%;
+  padding-block: 0.65rem;
+}
+
+.auth__error {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-light);
+  color: var(--color-danger-text);
+  font-size: 0.9rem;
+}
+
+.auth__switch {
+  margin-top: var(--space-lg);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth__hint {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.auth__radio-group {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.auth__radio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+.auth__password-rules {
+  display: grid;
+  gap: 2px;
+  font-size: 0.8rem;
+  list-style: none;
+}
+
+.auth__password-rules li {
+  color: var(--text-muted);
+}
+
+.auth__password-rules .is-ok {
+  color: var(--color-success-text);
+}

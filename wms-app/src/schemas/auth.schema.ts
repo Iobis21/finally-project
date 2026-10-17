@@ -9,7 +9,8 @@ export const loginSchema = z.object({
 
 export type LoginForm = z.infer<typeof loginSchema>
 
-// ---------- რეგისტრაცია (ახალი თანამშრომლის დამატება) ----------
+// ---------- რეგისტრაცია ----------
+// როლს მომხმარებელი თვითონ ვერ ირჩევს — ახალი ანგარიში იღებს „ოპერატორს", როლს ცვლის მენეჯერი
 const georgianPhone = /^\+995\s?5\d{2}\s?\d{3}\s?\d{3}$/ // +995 5XX XXX XXX
 
 export const registerSchema = z
@@ -29,9 +30,6 @@ export const registerSchema = z
       .regex(/\d/, 'პაროლი უნდა შეიცავდეს ციფრს')
       .regex(/[^A-Za-z0-9]/, 'პაროლი უნდა შეიცავდეს სიმბოლოს (!@#$...)'),
     confirmPassword: z.string().min(1, 'გაიმეორეთ პაროლი'),
-    role: z.enum(['manager', 'purchasing', 'operator', 'logistics'], {
-      message: 'აირჩიეთ როლი',
-    }),
     userType: z.enum(['individual', 'company'], { message: 'აირჩიეთ მომხმარებლის ტიპი' }),
     companyName: z.string().trim().optional(),
   })
