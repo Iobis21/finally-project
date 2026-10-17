@@ -5,7 +5,15 @@ import { getStockStatus, statusBadges, statusLabels } from '../../utils/stock'
 function StatusBadge({ item }: { item: Item }) {
   const status = getStockStatus(item)
 
-  return <span className={statusBadges[status]}>{statusLabels[status]}</span>
+  return (
+    <span className={statusBadges[status]}>
+      {status !== 'in_stock' && (
+        // წითელი პულსირებადი წერტილი — კრიტიკული ან ამოწურული მარაგი
+        <span className="pulse-dot" aria-hidden="true" />
+      )}
+      {statusLabels[status]}
+    </span>
+  )
 }
 
 export default StatusBadge

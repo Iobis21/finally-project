@@ -11,7 +11,7 @@ interface StatCardProps {
 
 function StatCard({ title, value, change, icon: Icon, color }: StatCardProps) {
   return (
-    <article className="stat-card">
+    <article className="stat-card lift">
       <div className={`stat-card__icon stat-card__icon--${color}`}>
         <Icon size={24} />
       </div>

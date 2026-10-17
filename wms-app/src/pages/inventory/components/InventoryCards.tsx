@@ -17,7 +17,7 @@ function InventoryCards({ items, onAction }: InventoryCardsProps) {
   return (
     <ul ref={listRef} className="inventory__cards">
       {items.map((item) => (
-        <li key={item.id} className="inventory-card">
+        <li key={item.id} className="inventory-card lift">
           <div className="inventory-card__top">
             <h2 className="inventory-card__name">{item.name}</h2>
             <StatusBadge item={item} />

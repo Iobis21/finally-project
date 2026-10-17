@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 function ProductCard({ item }: ProductCardProps) {
   return (
-    <article className="product-card">
+    <article className="product-card lift" tabIndex={0}>
       <div className="product-card__top">
         <span className="product-card__sku">{item.sku}</span>
         <StatusBadge item={item} />
