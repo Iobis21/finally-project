@@ -1,0 +1,95 @@
+.users__header {
+  margin-bottom: var(--space-lg);
+}
+
+.users__hint {
+  margin-top: var(--space-xs);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.users__message {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-success-light);
+  color: var(--color-success-text);
+  font-size: 0.9rem;
+}
+
+.users__table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.users__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.users__table th,
+.users__table td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.users__table th {
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.users__table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+.users__me,
+.users__company {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.users__company {
+  display: block;
+}
+
+.users__select {
+  min-width: 210px;
+}
+
+.users__status {
+  border: none;
+  cursor: pointer;
+}
+
+.users__status:disabled {
+  cursor: default;
+}
+
+/* მობილური: ცხრილის რიგი ბარათად */
+@media (max-width: 700px) {
+  .users__table thead {
+    display: none;
+  }
+
+  .users__table tr {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+  }
+
+  .users__table td {
+    padding: 0;
+  }
+
+  .users__select {
+    width: 100%;
+    min-width: 0;
+  }
+}
