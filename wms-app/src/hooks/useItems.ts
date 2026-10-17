@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { getItems } from '../services/itemService'
-import type { Item } from '../types'
+import { createItem, deleteItem, getItems, updateItem } from '../services/itemService'
+import type { Item, NewItem } from '../types'
 
-// ნივთების წამოღება სერვერიდან + ჩატვირთვის და შეცდომის მდგომარეობები
+// ნივთების მართვა: წამოღება, დამატება, რედაქტირება, წაშლა.
+// კომპონენტებმა არ იციან, როგორ ხდება მოთხოვნა სერვერზე — მხოლოდ ამ ფუნქციებს იძახებენ.
 export function useItems() {
   const [items, setItems] = useState<Item[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -24,5 +25,21 @@ export function useItems() {
     load()
   }, [])
 
-  return { items, isLoading, error, reload: load }
+  // სერვერზე შენახვის შემდეგ სიას ვანახლებთ state-ში — გვერდის Refresh არ სჭირდება
+  async function addItem(data: NewItem) {
+    const created = await createItem(data)
+    setItems((prev) => [...prev, created])
+  }
+
+  async function editItem(id: number, data: NewItem) {
+    const updated = await updateItem(id, data)
+    setItems((prev) => prev.map((item) => (item.id === id ? updated : item)))
+  }
+
+  async function removeItem(id: number) {
+    await deleteItem(id)
+    setItems((prev) => prev.filter((item) => item.id !== id))
+  }
+
+  return { items, isLoading, error, reload: load, addItem, editItem, removeItem }
 }
