@@ -83,7 +83,9 @@ function UsersPage() {
                   </td>
                   <td data-label="სტატუსი">
                     <button
-                      className={u.isActive ? 'badge-success users__status' : 'badge-danger users__status'}
+                      className={
+                        u.isActive ? 'badge-success users__status' : 'badge-danger users__status'
+                      }
                       disabled={isMe}
                       onClick={() => handleToggle(u.id, name, !u.isActive)}
                       aria-label={`${name}: ${u.isActive ? 'დაბლოკვა' : 'გააქტიურება'}`}

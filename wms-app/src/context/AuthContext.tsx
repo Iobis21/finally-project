@@ -56,7 +56,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const canOpen = (path: string) => !!user && roles[user.role].pages.includes(path)
-  const can = (permission: Permission) => !!user && roles[user.role].permissions.includes(permission)
+  const can = (permission: Permission) =>
+    !!user && roles[user.role].permissions.includes(permission)
 
   return (
     <AuthContext.Provider

@@ -18,7 +18,11 @@ function Button({
   ...rest
 }: ButtonProps) {
   return (
-    <button className={`btn-${variant} ${className ?? ''}`.trim()} disabled={disabled || isLoading} {...rest}>
+    <button
+      className={`btn-${variant} ${className ?? ''}`.trim()}
+      disabled={disabled || isLoading}
+      {...rest}
+    >
       {isLoading ? 'ინახება...' : children}
     </button>
   )
