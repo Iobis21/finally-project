@@ -11,7 +11,7 @@ import {
   X,
 } from 'lucide-react'
 import { NavLink } from 'react-router'
-import { useRole } from '../../context/RoleContext'
+import { useAuth } from '../../context/AuthContext'
 import './Sidebar.css'
 
 const menu = [
@@ -32,7 +32,7 @@ interface SidebarProps {
 }
 
 function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const { canOpen } = useRole()
+  const { canOpen } = useAuth()
   // მენიუში მხოლოდ ის გვერდები ჩანს, რაზეც როლს წვდომა აქვს
   const visibleMenu = menu.filter((item) => canOpen(item.href))
 

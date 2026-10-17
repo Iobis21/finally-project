@@ -118,7 +118,21 @@
   box-shadow: var(--shadow-md);
 }
 
+.header__dropdown-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
 .header__dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   width: 100%;
   padding: var(--space-sm) var(--space-md);
   background: none;

@@ -1,8 +1,8 @@
-import { Link } from 'react-router'
-import { Bell, Menu, Warehouse } from 'lucide-react'
+import { Link, useNavigate } from 'react-router'
+import { Bell, LogOut, Menu, UserRound, Warehouse } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { roles, useRole } from '../../context/RoleContext'
-import type { Role } from '../../types'
+import { roles } from '../../config/roles'
+import { useAuth } from '../../context/AuthContext'
 import './Header.css'
 
 interface HeaderProps {
@@ -11,9 +11,9 @@ interface HeaderProps {
 }
 
 function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
-  const { role, setRole } = useRole()
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
   const [isProfileOpen, setIsProfileOpen] = useState(false)
-  const current = roles[role]
   const profileRef = useRef<HTMLDivElement>(null)
 
   // პროფილის მენიუ იხურება Esc-ით ან გარეთ დაჭერით
@@ -35,10 +35,15 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
     }
   }, [isProfileOpen])
 
-  function changeRole(newRole: Role) {
-    setRole(newRole)
+  function handleLogout() {
     setIsProfileOpen(false)
+    logout()
+    navigate('/login')
   }
+
+  if (!user) return null
+  const fullName = `${user.firstName} ${user.lastName}`
+  const initials = `${user.firstName[0]}${user.lastName[0]}`
 
   return (
     <header className="header">
@@ -69,29 +74,26 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
             onClick={() => setIsProfileOpen(!isProfileOpen)}
             aria-expanded={isProfileOpen}
             aria-haspopup="true"
-            aria-label={`პროფილი: ${current.user}, როლის შეცვლა`}
+            aria-label={`პროფილი: ${fullName}`}
           >
-            <span className="header__avatar">{current.initials}</span>
+            <span className="header__avatar">{initials}</span>
             <span className="header__user">
-              <strong>{current.user}</strong>
-              <small>{current.label}</small>
+              <strong>{fullName}</strong>
+              <small>{roles[user.role].label}</small>
             </span>
           </button>
 
-          {/* როლის გადართვა */}
           {isProfileOpen && (
-            <ul className="header__dropdown">
-              {(Object.keys(roles) as Role[]).map((r) => (
-                <li key={r}>
-                  <button
-                    className={`header__dropdown-item ${r === role ? 'header__dropdown-item--active' : ''}`}
-                    onClick={() => changeRole(r)}
-                  >
-                    {roles[r].label}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div className="header__dropdown">
+              <p className="header__dropdown-info">
+                <UserRound size={16} aria-hidden="true" />
+                {user.email}
+              </p>
+              <button className="header__dropdown-item" onClick={handleLogout}>
+                <LogOut size={16} aria-hidden="true" />
+                გასვლა
+              </button>
+            </div>
           )}
         </div>
       </div>
