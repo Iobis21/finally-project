@@ -142,7 +142,8 @@
       "role": "manager",
       "userType": "individual",
       "isActive": true,
-      "createdAt": "2026-09-01T09:00:00Z"
+      "createdAt": "2026-09-01T09:00:00Z",
+      "password": "$2a$10$y9waV73aXVzoDafDSGymOeYbbUkxPMgoLrWNm3MFZC738tjDDPHqe"
     },
     {
       "id": 2,
@@ -152,7 +153,8 @@
       "role": "purchasing",
       "userType": "individual",
       "isActive": true,
-      "createdAt": "2026-09-02T09:00:00Z"
+      "createdAt": "2026-09-02T09:00:00Z",
+      "password": "$2a$10$y9waV73aXVzoDafDSGymOeYbbUkxPMgoLrWNm3MFZC738tjDDPHqe"
     },
     {
       "id": 3,
@@ -162,7 +164,8 @@
       "role": "operator",
       "userType": "individual",
       "isActive": true,
-      "createdAt": "2026-09-03T09:00:00Z"
+      "createdAt": "2026-09-03T09:00:00Z",
+      "password": "$2a$10$y9waV73aXVzoDafDSGymOeYbbUkxPMgoLrWNm3MFZC738tjDDPHqe"
     },
     {
       "id": 4,
@@ -173,7 +176,8 @@
       "userType": "company",
       "companyName": "FastCourier",
       "isActive": true,
-      "createdAt": "2026-09-04T09:00:00Z"
+      "createdAt": "2026-09-04T09:00:00Z",
+      "password": "$2a$10$y9waV73aXVzoDafDSGymOeYbbUkxPMgoLrWNm3MFZC738tjDDPHqe"
     }
   ],
   "vendors": [

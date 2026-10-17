@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -n web,api -c blue,green \"vite\" \"npm run server\"",
-    "server": "json-server --watch db.json --port 3000",
+    "server": "json-server --watch db.json --port 3000 -m ./node_modules/json-server-auth",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "format": "prettier --write src",
@@ -29,6 +29,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "concurrently": "^10.0.6",
     "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
     "oxlint": "^1.81.0",
     "prettier": "^3.9.10",
     "typescript": "~6.0.2",
