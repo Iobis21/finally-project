@@ -1,0 +1,57 @@
+/* მობილური: ერთი სვეტი; ≥480px — ორი სვეტი */
+.item-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .item-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-field--full,
+  .item-form__actions,
+  .item-form__server-error {
+    grid-column: 1 / -1;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-field__label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.form-field__label span {
+  color: var(--color-danger);
+}
+
+.form-field .input[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.form-field__error {
+  color: var(--color-danger-text);
+  font-size: 0.8rem;
+}
+
+.item-form__server-error {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-light);
+  color: var(--color-danger-text);
+  font-size: 0.9rem;
+}
+
+.item-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+}
