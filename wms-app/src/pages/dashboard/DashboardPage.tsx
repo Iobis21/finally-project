@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { AlertTriangle, Boxes, PackageCheck, Truck } from 'lucide-react'
 import StatCard from '../../components/StatCard/StatCard'
 import ProductCard from '../../components/ProductCard/ProductCard'
@@ -11,11 +12,17 @@ function DashboardPage() {
   maybeCrash('DashboardPage')
   const { items, isLoading, error, reload, source } = useItems()
 
+  // useMemo — სტატისტიკა ითვლება მხოლოდ მაშინ, როცა items შეიცვლება
+  const stats = useMemo(
+    () => ({
+      totalQuantity: items.reduce((sum, item) => sum + item.quantity, 0),
+      lowStock: items.filter((item) => item.quantity < item.minQuantity).length,
+    }),
+    [items],
+  )
+
   if (isLoading) return <SkeletonGrid count={8} />
   if (error) return <ErrorState message={error} onRetry={reload} />
-
-  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0)
-  const lowStock = items.filter((item) => item.quantity < item.minQuantity).length
 
   return (
     <>
@@ -29,7 +36,7 @@ function DashboardPage() {
         <div className="dashboard__stats">
           <StatCard
             title="მარაგი სულ"
-            value={totalQuantity.toString()}
+            value={stats.totalQuantity.toString()}
             change={`${items.length} სახეობის ნივთი`}
             icon={Boxes}
             color="blue"
@@ -50,7 +57,7 @@ function DashboardPage() {
           />
           <StatCard
             title="კრიტიკული მარაგი"
-            value={lowStock.toString()}
+            value={stats.lowStock.toString()}
             change="საჭიროა შეკვეთა"
             icon={AlertTriangle}
             color="red"

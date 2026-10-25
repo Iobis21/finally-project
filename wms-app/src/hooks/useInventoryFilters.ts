@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import type { Item, ItemStatus } from '../types'
 import { getStockStatus } from '../utils/stock'
 import { useDebounce } from './useDebounce'
@@ -39,20 +39,24 @@ export function useInventoryFilters(items: Item[]) {
 
   const categories = useMemo(() => [...new Set(items.map((item) => item.category))], [items])
 
-  function toggleSort(key: SortKey) {
-    if (key === sortKey) {
-      setSortAsc(!sortAsc)
-    } else {
-      setSortKey(key)
-      setSortAsc(true)
-    }
-  }
+  // useCallback — ფუნქცია არ იქმნება თავიდან ყოველ რენდერზე, ამიტომ memo-ცხრილი ტყუილად არ გადაიხატება
+  const toggleSort = useCallback(
+    (key: SortKey) => {
+      if (key === sortKey) {
+        setSortAsc((asc) => !asc)
+      } else {
+        setSortKey(key)
+        setSortAsc(true)
+      }
+    },
+    [sortKey],
+  )
 
-  function resetFilters() {
+  const resetFilters = useCallback(() => {
     setSearch('')
     setCategory('')
     setStatus('')
-  }
+  }, [])
 
   return {
     search,

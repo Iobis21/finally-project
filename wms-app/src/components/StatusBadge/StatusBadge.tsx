@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import type { Item } from '../../types'
 import { getStockStatus, statusBadges, statusLabels } from '../../utils/stock'
 
@@ -16,4 +17,4 @@ function StatusBadge({ item }: { item: Item }) {
   )
 }
 
-export default StatusBadge
+export default memo(StatusBadge)

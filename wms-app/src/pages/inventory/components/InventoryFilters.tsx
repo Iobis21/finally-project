@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Search } from 'lucide-react'
 import type { ItemStatus } from '../../../types'
 import { statusLabels } from '../../../utils/stock'
@@ -70,4 +71,4 @@ function InventoryFilters({
   )
 }
 
-export default InventoryFilters
+export default memo(InventoryFilters)

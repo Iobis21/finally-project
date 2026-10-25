@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { PackageSearch, Plus } from 'lucide-react'
 import ConfirmDialog from '../../components/ConfirmDialog/ConfirmDialog'
 import EmptyState from '../../components/EmptyState/EmptyState'
@@ -53,13 +53,17 @@ function InventoryPage() {
   const closeModal = () => setModal(null)
 
   // ცხრილიდან / ბარათებიდან მოსული მოქმედება (Event Delegation)
-  function handleAction(action: string, id: number) {
-    const item = items.find((i) => i.id === id)
-    if (!item) return
-    if (action === 'writeoff' && canWriteOff) setModal({ mode: 'writeoff', item })
-    if (action === 'edit' && canManage) setModal({ mode: 'edit', item })
-    if (action === 'delete' && canManage) setModal({ mode: 'delete', item })
-  }
+  // useCallback — ცხრილს (React.memo) ყოველ რენდერზე ახალი ფუნქცია არ გადაეცემა
+  const handleAction = useCallback(
+    (action: string, id: number) => {
+      const item = items.find((i) => i.id === id)
+      if (!item) return
+      if (action === 'writeoff' && canWriteOff) setModal({ mode: 'writeoff', item })
+      if (action === 'edit' && canManage) setModal({ mode: 'edit', item })
+      if (action === 'delete' && canManage) setModal({ mode: 'delete', item })
+    },
+    [items, canManage, canWriteOff],
+  )
 
   async function handleSave(values: ItemFormValues) {
     if (modal?.mode === 'edit') {

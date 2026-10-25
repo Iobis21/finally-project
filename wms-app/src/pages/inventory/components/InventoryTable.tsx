@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { ArrowDown, ArrowUp } from 'lucide-react'
 import StatusBadge from '../../../components/StatusBadge/StatusBadge'
 import type { SortKey } from '../../../hooks/useInventoryFilters'
@@ -41,6 +42,37 @@ function SortHeader({ column, sortKey, sortAsc, onSort }: SortHeaderProps) {
     </th>
   )
 }
+
+interface InventoryRowProps {
+  item: Item
+  canEdit: boolean
+  canWriteOff: boolean
+}
+
+// React.memo — რიგი ხელახლა იხატება მხოლოდ მაშინ, როცა მისი item ან უფლებები შეიცვალა
+// (ძებნისას / სხვა რიგის რედაქტირებისას დანარჩენი რიგები არ გადაიხატება)
+const InventoryRow = memo(function InventoryRow({ item, canEdit, canWriteOff }: InventoryRowProps) {
+  return (
+    <tr>
+      <td className="inventory__sku">{item.sku}</td>
+      <td className="inventory__name">{item.name}</td>
+      <td>{item.category}</td>
+      <td>
+        <strong>{item.quantity}</strong> / {item.minQuantity}
+      </td>
+      <td>{formatPrice(item.price)}</td>
+      <td>{item.location}</td>
+      <td>
+        <StatusBadge item={item} />
+      </td>
+      {(canEdit || canWriteOff) && (
+        <td>
+          <RowActions id={item.id} name={item.name} canEdit={canEdit} canWriteOff={canWriteOff} />
+        </td>
+      )}
+    </tr>
+  )
+})
 
 function InventoryTable({
   items,
@@ -90,29 +122,7 @@ function InventoryTable({
         </thead>
         <tbody>
           {items.map((item) => (
-            <tr key={item.id}>
-              <td className="inventory__sku">{item.sku}</td>
-              <td className="inventory__name">{item.name}</td>
-              <td>{item.category}</td>
-              <td>
-                <strong>{item.quantity}</strong> / {item.minQuantity}
-              </td>
-              <td>{formatPrice(item.price)}</td>
-              <td>{item.location}</td>
-              <td>
-                <StatusBadge item={item} />
-              </td>
-              {(canEdit || canWriteOff) && (
-                <td>
-                  <RowActions
-                    id={item.id}
-                    name={item.name}
-                    canEdit={canEdit}
-                    canWriteOff={canWriteOff}
-                  />
-                </td>
-              )}
-            </tr>
+            <InventoryRow key={item.id} item={item} canEdit={canEdit} canWriteOff={canWriteOff} />
           ))}
         </tbody>
       </table>
@@ -120,4 +130,4 @@ function InventoryTable({
   )
 }
 
-export default InventoryTable
+export default memo(InventoryTable)

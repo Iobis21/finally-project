@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import './StatCard.css'
 
@@ -24,4 +25,4 @@ function StatCard({ title, value, change, icon: Icon, color }: StatCardProps) {
   )
 }
 
-export default StatCard
+export default memo(StatCard)

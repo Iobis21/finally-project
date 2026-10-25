@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { MapPin } from 'lucide-react'
 import type { Item } from '../../types'
 import StatusBadge from '../StatusBadge/StatusBadge'
@@ -29,4 +30,4 @@ function ProductCard({ item }: ProductCardProps) {
   )
 }
 
-export default ProductCard
+export default memo(ProductCard)
