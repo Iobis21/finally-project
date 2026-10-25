@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { loadItemsFallback, saveItemsCache } from '../services/itemCache'
 import { createItem, deleteItem, getItem, getItems, updateItem } from '../services/itemService'
 import type { Item, NewItem } from '../types'
@@ -12,13 +12,18 @@ export function useItems() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [source, setSource] = useState<DataSource>('server')
+  // ყოველ ჩატვირთვას აქვს ნომერი — თუ ძველი მოთხოვნის პასუხი გვიან მოვიდა, მას ვაიგნორებთ (Race Condition)
+  const requestIdRef = useRef(0)
 
   async function load() {
+    const requestId = ++requestIdRef.current
+    const timerLabel = `⏱ items:load #${requestId}` // უნიკალური სახელი — პარალელური ჩატვირთვები არ ეჯახება
     setIsLoading(true)
     setError(null)
-    console.time('⏱ items:load') // რამდენ ხანს იტვირთება მონაცემები
+    console.time(timerLabel) // რამდენ ხანს იტვირთება მონაცემები
     try {
       const data = await getItems()
+      if (requestId !== requestIdRef.current) return // უფრო ახალი მოთხოვნა უკვე გაიგზავნა
       setItems(data)
       setSource('server')
       saveItemsCache(data)
@@ -33,14 +38,15 @@ export function useItems() {
         )
       }
     } catch (err) {
+      if (requestId !== requestIdRef.current) return
       // სერვერი გათიშულია (500 ან ინტერნეტი არ არის) — გადავდივართ ლოკალურ რეჟიმზე
       console.warn('სერვერი მიუწვდომელია, ჩაირთო ლოკალური რეჟიმი:', err)
       const fallback = loadItemsFallback()
       setItems(fallback.items)
       setSource(fallback.source)
     } finally {
-      console.timeEnd('⏱ items:load')
-      setIsLoading(false)
+      console.timeEnd(timerLabel)
+      if (requestId === requestIdRef.current) setIsLoading(false)
     }
   }
 
