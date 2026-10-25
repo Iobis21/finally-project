@@ -5,6 +5,7 @@ import './ErrorBoundary.css'
 interface ErrorBoundaryProps {
   children: ReactNode
   resetKey?: string // მაგ. გვერდის მისამართი — სხვა გვერდზე გადასვლისას შეცდომა ქრება
+  onReset?: () => void // „სცადეთ ხელახლა"-ზე — მაგ. მისამართის გასუფთავება
 }
 
 interface ErrorBoundaryState {
@@ -32,7 +33,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     }
   }
 
-  handleRetry = () => this.setState({ error: null })
+  handleRetry = () => {
+    this.props.onReset?.()
+    this.setState({ error: null })
+  }
 
   render() {
     if (!this.state.error) return this.props.children

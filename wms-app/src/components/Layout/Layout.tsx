@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from 'react'
-import { Outlet, useLocation } from 'react-router'
+import { Outlet, useLocation, useNavigate } from 'react-router'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
@@ -11,6 +11,7 @@ function Layout() {
   // მობილურზე Sidebar-ის გახსნა/დახურვა
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   // გვერდის შეცვლისას მენიუ იხურება
   useEffect(() => {
@@ -40,7 +41,10 @@ function Layout() {
       <Sidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       <main className="layout__main">
         {/* თუ გვერდი „გატყდება", Header და მენიუ მაინც მუშაობს */}
-        <ErrorBoundary resetKey={location.pathname}>
+        <ErrorBoundary
+          resetKey={location.pathname}
+          onReset={() => navigate(location.pathname, { replace: true })}
+        >
           <Suspense fallback={<SkeletonGrid count={4} />}>
             <Outlet />
           </Suspense>
