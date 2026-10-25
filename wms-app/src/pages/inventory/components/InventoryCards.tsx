@@ -9,10 +9,11 @@ import RowActions from './RowActions'
 interface InventoryCardsProps {
   items: Item[]
   onAction: (action: string, id: number) => void
-  canManage: boolean
+  canEdit: boolean
+  canWriteOff: boolean
 }
 
-function InventoryCards({ items, onAction, canManage }: InventoryCardsProps) {
+function InventoryCards({ items, onAction, canEdit, canWriteOff }: InventoryCardsProps) {
   const listRef = useEventDelegation<HTMLUListElement>(onAction)
 
   return (
@@ -44,9 +45,14 @@ function InventoryCards({ items, onAction, canManage }: InventoryCardsProps) {
               </dd>
             </div>
           </dl>
-          {canManage && (
+          {(canEdit || canWriteOff) && (
             <div className="inventory-card__actions">
-              <RowActions id={item.id} name={item.name} />
+              <RowActions
+                id={item.id}
+                name={item.name}
+                canEdit={canEdit}
+                canWriteOff={canWriteOff}
+              />
             </div>
           )}
         </li>

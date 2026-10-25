@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { loadItemsFallback, saveItemsCache } from '../services/itemCache'
-import { createItem, deleteItem, getItems, updateItem } from '../services/itemService'
+import { createItem, deleteItem, getItem, getItems, updateItem } from '../services/itemService'
 import type { Item, NewItem } from '../types'
 
 export type DataSource = 'server' | 'cache' | 'demo'
@@ -59,6 +59,17 @@ export function useItems() {
     setItems((prev) => prev.map((item) => (item.id === id ? updated : item)))
   }
 
+  // ჩამოწერა — უარყოფითი ნაშთისგან დაცვით.
+  // ჩაწერამდე სერვერიდან ვიღებთ უახლეს ნაშთს: თუ სხვამ უკვე ჩამოწერა (Race Condition), ვაჩერებთ.
+  async function writeOffItem(id: number, amount: number) {
+    const fresh = await getItem(id)
+    if (amount > fresh.quantity) {
+      throw new Error(`ნაშთი შეიცვალა — ახლა მხოლოდ ${fresh.quantity} ერთეულია`)
+    }
+    const updated = await updateItem(id, { quantity: fresh.quantity - amount })
+    setItems((prev) => prev.map((item) => (item.id === id ? updated : item)))
+  }
+
   async function removeItem(id: number) {
     await deleteItem(id)
     setItems((prev) => prev.filter((item) => item.id !== id))
@@ -73,6 +84,7 @@ export function useItems() {
     reload: load,
     addItem,
     editItem,
+    writeOffItem,
     removeItem,
   }
 }

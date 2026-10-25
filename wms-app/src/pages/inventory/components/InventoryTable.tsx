@@ -12,7 +12,8 @@ interface InventoryTableProps {
   sortAsc: boolean
   onSort: (key: SortKey) => void
   onAction: (action: string, id: number) => void
-  canManage: boolean // რედაქტირების ღილაკები მხოლოდ უფლების მქონეს
+  canEdit: boolean // რედაქტირება / წაშლა — მხოლოდ უფლების მქონეს
+  canWriteOff: boolean // ჩამოწერა
 }
 
 const sortableColumns: { key: SortKey; label: string }[] = [
@@ -47,7 +48,8 @@ function InventoryTable({
   sortAsc,
   onSort,
   onAction,
-  canManage,
+  canEdit,
+  canWriteOff,
 }: InventoryTableProps) {
   // ერთი მსმენელი მთელ ცხრილზე — Event Delegation
   const tableRef = useEventDelegation<HTMLTableElement>(onAction)
@@ -79,7 +81,7 @@ function InventoryTable({
             />
             <th scope="col">თარო</th>
             <th scope="col">სტატუსი</th>
-            {canManage && (
+            {(canEdit || canWriteOff) && (
               <th scope="col">
                 <span className="sr-only">მოქმედებები</span>
               </th>
@@ -100,9 +102,14 @@ function InventoryTable({
               <td>
                 <StatusBadge item={item} />
               </td>
-              {canManage && (
+              {(canEdit || canWriteOff) && (
                 <td>
-                  <RowActions id={item.id} name={item.name} />
+                  <RowActions
+                    id={item.id}
+                    name={item.name}
+                    canEdit={canEdit}
+                    canWriteOff={canWriteOff}
+                  />
                 </td>
               )}
             </tr>

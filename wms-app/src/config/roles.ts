@@ -1,6 +1,6 @@
 import type { Role } from '../types'
 
-export type Permission = 'manage:items' | 'manage:users'
+export type Permission = 'manage:items' | 'manage:users' | 'adjust:stock'
 
 interface RoleConfig {
   label: string
@@ -23,7 +23,7 @@ export const roles: Record<Role, RoleConfig> = {
       '/users',
       '/reports',
     ],
-    permissions: ['manage:items', 'manage:users'],
+    permissions: ['manage:items', 'manage:users', 'adjust:stock'],
   },
   purchasing: {
     label: 'შესყიდვების მენეჯერი',
@@ -33,7 +33,7 @@ export const roles: Record<Role, RoleConfig> = {
   operator: {
     label: 'ოპერატორი',
     pages: ['/', '/inventory', '/inbound', '/outbound'],
-    permissions: [],
+    permissions: ['adjust:stock'], // ოპერატორს შეუძლია დაზიანებული / დაკარგული საქონლის ჩამოწერა
   },
   logistics: {
     label: 'ლოჯისტიკის თანამშრომელი',

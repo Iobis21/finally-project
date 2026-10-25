@@ -3,6 +3,7 @@ import { PackageSearch, Plus } from 'lucide-react'
 import ConfirmDialog from '../../components/ConfirmDialog/ConfirmDialog'
 import EmptyState from '../../components/EmptyState/EmptyState'
 import ItemForm from '../../components/ItemForm/ItemForm'
+import WriteOffForm from '../../components/WriteOffForm/WriteOffForm'
 import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
 import OfflineBanner from '../../components/OfflineBanner/OfflineBanner'
 import Button from '../../components/ui/Button/Button'
@@ -11,6 +12,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useInventoryFilters } from '../../hooks/useInventoryFilters'
 import { useItems } from '../../hooks/useItems'
 import type { ItemForm as ItemFormValues } from '../../schemas/item.schema'
+import type { WriteOffForm as WriteOffValues } from '../../schemas/writeOff.schema'
 import type { Item } from '../../types'
 import InventoryCards from './components/InventoryCards'
 import InventoryFilters from './components/InventoryFilters'
@@ -19,16 +21,33 @@ import './InventoryPage.css'
 
 // რომელი მოდალია ღია: დამატება, რედაქტირება ან წაშლის დადასტურება
 type ModalState =
-  { mode: 'add' } | { mode: 'edit'; item: Item } | { mode: 'delete'; item: Item } | null
+  | { mode: 'add' }
+  | { mode: 'edit'; item: Item }
+  | { mode: 'delete'; item: Item }
+  | { mode: 'writeoff'; item: Item }
+  | null
 
 // გვერდი მხოლოდ აერთიანებს ნაწილებს: მონაცემები — useItems, ფილტრები — useInventoryFilters
 function InventoryPage() {
-  const { items, isLoading, error, reload, source, isOffline, addItem, editItem, removeItem } =
-    useItems()
+  const {
+    items,
+    isLoading,
+    error,
+    reload,
+    source,
+    isOffline,
+    addItem,
+    editItem,
+    writeOffItem,
+    removeItem,
+  } = useItems()
   const filters = useInventoryFilters(items)
   // დამატება / რედაქტირება / წაშლა — მხოლოდ იმ როლს, ვისაც manage:items უფლება აქვს (მენეჯერი)
   // ოფლაინ რეჟიმში ცვლილებები არ ინახება — ამიტომ ღილაკებიც იმალება
-  const canManage = useAuth().can('manage:items') && !isOffline
+  const { can } = useAuth()
+  const canManage = can('manage:items') && !isOffline
+  // ჩამოწერა — მენეჯერი და ოპერატორი (adjust:stock)
+  const canWriteOff = can('adjust:stock') && !isOffline
   const [modal, setModal] = useState<ModalState>(null)
 
   const closeModal = () => setModal(null)
@@ -36,9 +55,10 @@ function InventoryPage() {
   // ცხრილიდან / ბარათებიდან მოსული მოქმედება (Event Delegation)
   function handleAction(action: string, id: number) {
     const item = items.find((i) => i.id === id)
-    if (!item || !canManage) return
-    if (action === 'edit') setModal({ mode: 'edit', item })
-    if (action === 'delete') setModal({ mode: 'delete', item })
+    if (!item) return
+    if (action === 'writeoff' && canWriteOff) setModal({ mode: 'writeoff', item })
+    if (action === 'edit' && canManage) setModal({ mode: 'edit', item })
+    if (action === 'delete' && canManage) setModal({ mode: 'delete', item })
   }
 
   async function handleSave(values: ItemFormValues) {
@@ -47,6 +67,12 @@ function InventoryPage() {
     } else {
       await addItem(values)
     }
+    closeModal()
+  }
+
+  async function handleWriteOff({ amount }: WriteOffValues) {
+    if (modal?.mode !== 'writeoff') return
+    await writeOffItem(modal.item.id, amount)
     closeModal()
   }
 
@@ -79,12 +105,14 @@ function InventoryPage() {
           sortAsc={filters.sortAsc}
           onSort={filters.toggleSort}
           onAction={handleAction}
-          canManage={canManage}
+          canEdit={canManage}
+          canWriteOff={canWriteOff}
         />
         <InventoryCards
           items={filters.visibleItems}
           onAction={handleAction}
-          canManage={canManage}
+          canEdit={canManage}
+          canWriteOff={canWriteOff}
         />
       </>
     )
@@ -132,6 +160,12 @@ function InventoryPage() {
           onSubmit={handleSave}
           onCancel={closeModal}
         />
+      </Modal>
+
+      <Modal isOpen={modal?.mode === 'writeoff'} title="საქონლის ჩამოწერა" onClose={closeModal}>
+        {modal?.mode === 'writeoff' && (
+          <WriteOffForm item={modal.item} onSubmit={handleWriteOff} onCancel={closeModal} />
+        )}
       </Modal>
 
       <Modal isOpen={modal?.mode === 'delete'} title="ნივთის წაშლა" onClose={closeModal}>
