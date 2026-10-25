@@ -4,6 +4,7 @@ import ConfirmDialog from '../../components/ConfirmDialog/ConfirmDialog'
 import EmptyState from '../../components/EmptyState/EmptyState'
 import ItemForm from '../../components/ItemForm/ItemForm'
 import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
+import OfflineBanner from '../../components/OfflineBanner/OfflineBanner'
 import Button from '../../components/ui/Button/Button'
 import Modal from '../../components/ui/Modal/Modal'
 import { useAuth } from '../../context/AuthContext'
@@ -22,10 +23,12 @@ type ModalState =
 
 // გვერდი მხოლოდ აერთიანებს ნაწილებს: მონაცემები — useItems, ფილტრები — useInventoryFilters
 function InventoryPage() {
-  const { items, isLoading, error, reload, addItem, editItem, removeItem } = useItems()
+  const { items, isLoading, error, reload, source, isOffline, addItem, editItem, removeItem } =
+    useItems()
   const filters = useInventoryFilters(items)
   // დამატება / რედაქტირება / წაშლა — მხოლოდ იმ როლს, ვისაც manage:items უფლება აქვს (მენეჯერი)
-  const canManage = useAuth().can('manage:items')
+  // ოფლაინ რეჟიმში ცვლილებები არ ინახება — ამიტომ ღილაკებიც იმალება
+  const canManage = useAuth().can('manage:items') && !isOffline
   const [modal, setModal] = useState<ModalState>(null)
 
   const closeModal = () => setModal(null)
@@ -103,6 +106,8 @@ function InventoryPage() {
           </Button>
         )}
       </div>
+
+      <OfflineBanner source={source} onRetry={reload} />
 
       <InventoryFilters
         search={filters.search}

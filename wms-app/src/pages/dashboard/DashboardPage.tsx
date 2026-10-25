@@ -2,13 +2,14 @@ import { AlertTriangle, Boxes, PackageCheck, Truck } from 'lucide-react'
 import StatCard from '../../components/StatCard/StatCard'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
+import OfflineBanner from '../../components/OfflineBanner/OfflineBanner'
 import { useItems } from '../../hooks/useItems'
 import { maybeCrash } from '../../utils/crashTest'
 import './DashboardPage.css'
 
 function DashboardPage() {
   maybeCrash('DashboardPage')
-  const { items, isLoading, error, reload } = useItems()
+  const { items, isLoading, error, reload, source } = useItems()
 
   if (isLoading) return <SkeletonGrid count={8} />
   if (error) return <ErrorState message={error} onRetry={reload} />
@@ -19,6 +20,7 @@ function DashboardPage() {
   return (
     <>
       <h1 className="dashboard__title">მთავარი გვერდი</h1>
+      <OfflineBanner source={source} onRetry={reload} />
 
       <section aria-labelledby="stats-title">
         <h2 id="stats-title" className="sr-only">
