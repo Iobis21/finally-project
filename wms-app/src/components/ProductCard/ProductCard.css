@@ -11,6 +11,7 @@
 
 .product-card__image {
   width: calc(100% + 2 * var(--space-md));
+  max-width: none; /* reset-ის max-width: 100% აქ არ გვჭირდება — სურათი ბარათის კიდეებამდე */
   height: auto;
   aspect-ratio: 4 / 3;
   margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) 0;
