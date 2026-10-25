@@ -3,9 +3,11 @@ import StatCard from '../../components/StatCard/StatCard'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
 import { useItems } from '../../hooks/useItems'
+import { maybeCrash } from '../../utils/crashTest'
 import './DashboardPage.css'
 
 function DashboardPage() {
+  maybeCrash('DashboardPage')
   const { items, isLoading, error, reload } = useItems()
 
   if (isLoading) return <SkeletonGrid count={8} />

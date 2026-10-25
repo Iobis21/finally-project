@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
 import Footer from '../Footer/Footer'
@@ -37,7 +38,10 @@ function Layout() {
       <Header isMenuOpen={isMenuOpen} onMenuClick={() => setIsMenuOpen(!isMenuOpen)} />
       <Sidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       <main className="layout__main">
-        <Outlet />
+        {/* თუ გვერდი „გატყდება", Header და მენიუ მაინც მუშაობს */}
+        <ErrorBoundary resetKey={location.pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
       <Footer />
     </div>
