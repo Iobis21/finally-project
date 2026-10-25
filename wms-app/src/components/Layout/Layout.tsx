@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
 import Footer from '../Footer/Footer'
+import { SkeletonGrid } from '../Loader/Loader'
 import './Layout.css'
 
 function Layout() {
@@ -40,7 +41,9 @@ function Layout() {
       <main className="layout__main">
         {/* თუ გვერდი „გატყდება", Header და მენიუ მაინც მუშაობს */}
         <ErrorBoundary resetKey={location.pathname}>
-          <Outlet />
+          <Suspense fallback={<SkeletonGrid count={4} />}>
+            <Outlet />
+          </Suspense>
         </ErrorBoundary>
       </main>
       <Footer />
