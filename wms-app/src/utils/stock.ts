@@ -19,6 +19,18 @@ export const statusBadges: Record<ItemStatus, string> = {
   out_of_stock: 'badge-danger',
 }
 
+// კატეგორიის სურათი — WebP ფორმატი, 480×360 (public/images/categories)
+const categoryImages: Record<string, string> = {
+  ელექტრონიკა: 'electronics',
+  ავეჯი: 'furniture',
+  საკანცელარიო: 'stationery',
+  შესაფუთი: 'packaging',
+}
+
+export function getCategoryImage(category: string) {
+  return `/images/categories/${categoryImages[category] ?? 'packaging'}.webp`
+}
+
 export function formatPrice(value: number) {
   return `${value.toLocaleString('ka-GE')} ₾`
 }

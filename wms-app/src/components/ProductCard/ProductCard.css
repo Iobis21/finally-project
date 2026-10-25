@@ -9,6 +9,16 @@
   box-shadow: var(--shadow-sm);
 }
 
+.product-card__image {
+  width: calc(100% + 2 * var(--space-md));
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) 0;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  object-fit: cover;
+  background: var(--bg);
+}
+
 .product-card__top,
 .product-card__bottom {
   display: flex;
