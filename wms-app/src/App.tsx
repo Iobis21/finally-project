@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout'
 import GuestRoute from './routes/GuestRoute'
 import ProtectedRoute from './routes/ProtectedRoute'
 import RoleRoute from './routes/RoleRoute'
+import { InventoryProvider } from './store/inventory/InventoryContext'
 
 // Lazy Loading: თითო გვერდი ცალკე ფაილად (chunk) იტვირთება მხოლოდ მაშინ, როცა მომხმარებელი მასზე გადავა.
 // მაგ. ოპერატორს „თანამშრომლების" გვერდის კოდი საერთოდ არ ჩამოეტვირთება.
@@ -37,7 +38,14 @@ function App() {
 
         {/* დაცული — საჭიროა შესვლა */}
         <Route element={<ProtectedRoute />}>
-          <Route element={<Layout />}>
+          {/* InventoryProvider — მარაგების გლობალური Store ყველა დაცული გვერდისთვის */}
+          <Route
+            element={
+              <InventoryProvider>
+                <Layout />
+              </InventoryProvider>
+            }
+          >
             <Route index element={<DashboardPage />} />
             <Route path="inventory" element={<InventoryPage />} />
             <Route
