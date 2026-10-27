@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router'
-import { SkeletonGrid } from './components/Loader/Loader'
 import Layout from './components/Layout/Layout'
 import GuestRoute from './routes/GuestRoute'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -28,7 +27,7 @@ const comingSoon = [
 
 function App() {
   return (
-    <Suspense fallback={<SkeletonGrid count={4} />}>
+    <Suspense fallback={<div className="page-loading" aria-busy="true" />}>
       <Routes>
         {/* საჯარო — მხოლოდ შეუსვლელისთვის */}
         <Route element={<GuestRoute />}>
