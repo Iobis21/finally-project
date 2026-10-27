@@ -72,8 +72,9 @@
   cursor: default;
 }
 
-/* მობილური: ცხრილის რიგი ბარათად */
-@media (max-width: 700px) {
+/* მობილური და პლანშეტი (≤1024px): ცხრილის რიგი ბარათად.
+   820px-იან პლანშეტზე Sidebar-ის გამო 4 სვეტი ვერ ეტეოდა და სტატუსი იჭრებოდა (კროს-ბრაუზერული ტესტი) */
+@media (max-width: 1024px) {
   .users__table thead {
     display: none;
   }
@@ -86,10 +87,20 @@
 
   .users__table td {
     padding: 0;
+    overflow-wrap: anywhere;
   }
 
   .users__select {
     width: 100%;
     min-width: 0;
+  }
+}
+
+/* პლანშეტზე ბარათის შიგნით 2 სვეტი: სახელი/ელ-ფოსტა | როლი/სტატუსი */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .users__table tr {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--space-lg);
   }
 }
