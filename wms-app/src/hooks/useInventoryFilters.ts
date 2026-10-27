@@ -1,18 +1,17 @@
-import { useCallback, useMemo, useState } from 'react'
-import type { Item, ItemStatus } from '../types'
+import { useMemo } from 'react'
+import { useInventory } from '../store/inventory/useInventory'
+import type { Item } from '../types'
 import { compareNames } from '../utils/sort'
 import { getStockStatus } from '../utils/stock'
 import { useDebounce } from './useDebounce'
 
-export type SortKey = 'name' | 'quantity' | 'price'
+export type { SortKey } from '../store/inventory/inventoryReducer'
 
-// ძებნის, ფილტრების და სორტირების ლოგიკა — გამოყოფილია გვერდის ვიზუალისგან
+// ძებნა, ფილტრები და სორტირება. ფილტრების მნიშვნელობები გლობალურ Store-შია —
+// ამიტომ გვერდის Refresh-ის ან სხვა გვერდიდან დაბრუნების შემდეგ ისინი რჩება.
 export function useInventoryFilters(items: Item[]) {
-  const [search, setSearch] = useState('')
-  const [category, setCategory] = useState('')
-  const [status, setStatus] = useState<ItemStatus | ''>('')
-  const [sortKey, setSortKey] = useState<SortKey>('name')
-  const [sortAsc, setSortAsc] = useState(true)
+  const { state, setSearch, setCategory, setStatus, toggleSort, resetFilters } = useInventory()
+  const { search, category, status, sortKey, sortAsc } = state.filters
 
   // ველში ტექსტი მაშინვე ჩანს, მაგრამ ძებნა იწყება ბეჭდვის შეწყვეტიდან 300ms-ში
   const debouncedSearch = useDebounce(search, 300)
@@ -39,25 +38,6 @@ export function useInventoryFilters(items: Item[]) {
   }, [items, debouncedSearch, category, status, sortKey, sortAsc])
 
   const categories = useMemo(() => [...new Set(items.map((item) => item.category))], [items])
-
-  // useCallback — ფუნქცია არ იქმნება თავიდან ყოველ რენდერზე, ამიტომ memo-ცხრილი ტყუილად არ გადაიხატება
-  const toggleSort = useCallback(
-    (key: SortKey) => {
-      if (key === sortKey) {
-        setSortAsc((asc) => !asc)
-      } else {
-        setSortKey(key)
-        setSortAsc(true)
-      }
-    },
-    [sortKey],
-  )
-
-  const resetFilters = useCallback(() => {
-    setSearch('')
-    setCategory('')
-    setStatus('')
-  }, [])
 
   return {
     search,
