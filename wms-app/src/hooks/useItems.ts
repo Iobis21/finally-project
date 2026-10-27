@@ -20,7 +20,7 @@ export function useItems() {
     const timerLabel = `⏱ items:load #${requestId}` // უნიკალური სახელი — პარალელური ჩატვირთვები არ ეჯახება
     setIsLoading(true)
     setError(null)
-    console.time(timerLabel) // რამდენ ხანს იტვირთება მონაცემები
+    if (import.meta.env.DEV) console.time(timerLabel) // რამდენ ხანს იტვირთება მონაცემები (მხოლოდ dev)
     try {
       const data = await getItems()
       if (requestId !== requestIdRef.current) return // უფრო ახალი მოთხოვნა უკვე გაიგზავნა
@@ -40,12 +40,12 @@ export function useItems() {
     } catch (err) {
       if (requestId !== requestIdRef.current) return
       // სერვერი გათიშულია (500 ან ინტერნეტი არ არის) — გადავდივართ ლოკალურ რეჟიმზე
-      console.warn('სერვერი მიუწვდომელია, ჩაირთო ლოკალური რეჟიმი:', err)
+      if (import.meta.env.DEV) console.warn('სერვერი მიუწვდომელია, ჩაირთო ლოკალური რეჟიმი:', err)
       const fallback = loadItemsFallback()
       setItems(fallback.items)
       setSource(fallback.source)
     } finally {
-      console.timeEnd(timerLabel)
+      if (import.meta.env.DEV) console.timeEnd(timerLabel)
       if (requestId === requestIdRef.current) setIsLoading(false)
     }
   }
