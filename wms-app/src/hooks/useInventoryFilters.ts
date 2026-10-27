@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import type { Item, ItemStatus } from '../types'
+import { compareNames } from '../utils/sort'
 import { getStockStatus } from '../utils/stock'
 import { useDebounce } from './useDebounce'
 
@@ -32,7 +33,7 @@ export function useInventoryFilters(items: Item[]) {
       })
       .sort((a, b) => {
         const result =
-          sortKey === 'name' ? a.name.localeCompare(b.name, 'ka') : a[sortKey] - b[sortKey]
+          sortKey === 'name' ? compareNames(a.name, b.name) : a[sortKey] - b[sortKey]
         return sortAsc ? result : -result
       })
   }, [items, debouncedSearch, category, status, sortKey, sortAsc])
