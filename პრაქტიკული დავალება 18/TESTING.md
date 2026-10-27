@@ -23,16 +23,17 @@
 
 ### მეთოდი
 
-ავტომატური ტესტი (**puppeteer**) ორ ბრაუზერში:
-- **Google Chrome** 156;
-- **Microsoft Edge** 156.
+ავტომატური ტესტი (**puppeteer**) სამ ბრაუზერში:
+- **Google Chrome** 156 (Blink);
+- **Microsoft Edge** 156 (Blink);
+- **Mozilla Firefox Developer Edition** 148 (Gecko, სხვა ძრავი).
 
-თითოეულში 6 ეკრანზე × 5 გვერდზე, სულ **60 კომბინაცია**. ყველა გვერდზე მოწმდება:
+თითოეულში 6 ეკრანზე × 5 გვერდზე, სულ **90 კომბინაცია**. ყველა გვერდზე მოწმდება:
 1. ჰორიზონტალური სქროლი (`scrollWidth > innerWidth`);
 2. ტექსტი ან ღილაკი, რომელიც ეკრანიდან გადის;
 3. JavaScript შეცდომები (`pageerror`).
 
-> Firefox კომპიუტერზე დაყენებული არ არის, ამიტომ მეორე ბრაუზერად Edge გამოვიყენე. Edge-ს თავისი ქართული ენის წესები აქვს და სწორედ ამან გამოავლინა ბაგი №1.
+> Edge-ს თავისი ქართული ენის წესები აქვს და სწორედ ამან გამოავლინა ბაგი №1. Firefox განსხვავებულ ძრავზე (Gecko) მუშაობს, ამიტომ მისი შემოწმება CSS-ის განსხვავებებსაც ამოწმებს.
 
 ### მოწყობილობები
 
@@ -49,13 +50,18 @@
 
 ### ფუნქციონალური შემოწმება (ორივე ბრაუზერში)
 
-| ტესტი | Chrome | Edge |
-|---|:---:|:---:|
-| მარაგების ცხრილი: 12 ნივთი | ✅ | ✅ |
-| ძებნა „ლეპ“ → 1 შედეგი (Debounce) | ✅ | ✅ |
-| სორტირება დასახელებით | ✅ (გასწორების შემდეგ) | ✅ (გასწორების შემდეგ) |
-| მოდალი + ფორმის ვალიდაცია (6 შეცდომა) | ✅ | ✅ |
-| JavaScript შეცდომები | 0 | 0 |
+| ტესტი | Chrome | Edge | Firefox |
+|---|:---:|:---:|:---:|
+| მარაგების ცხრილი: 12 ნივთი | ✅ | ✅ | ✅ |
+| ძებნა „ლეპ“ → 1 შედეგი (Debounce) | ✅ | ✅ | ✅ |
+| სორტირება დასახელებით (გასწორების შემდეგ) | ✅ | ✅ | ✅ |
+| მოდალი + ფორმის ვალიდაცია (6 შეცდომა) | ✅ | ✅ | ✅ |
+| ფონტები (Inter, Noto Sans Georgian) | ✅ | ✅ | ✅ |
+| JavaScript შეცდომები | 0 | 0 | 0 |
+
+**სორტირება გასწორების შემდეგ, სამივე ბრაუზერში იდენტურად:** ზრდადობით „კალამი, კლავიატურა, ლეპტოპი … A4 ქაღალდი“, კლებადობით პირველია „A4 ქაღალდი“.
+
+> Firefox-ის ტესტში თავიდან ჩანდა `downloadable font: download failed` შეტყობინებები. შემოწმებამ აჩვენა, რომ ტესტი გვერდებს ისე სწრაფად ცვლიდა, რომ ფონტის ჩამოტვირთვა წყდებოდა (`NS_BINDING_ABORTED`). ჩვეულებრივ გახსნისას ყველა ფონტი სწორად იტვირთება (`document.fonts`), ესე იგი ეს საიტის ბაგი არ არის.
 
 ---
 
@@ -80,7 +86,7 @@
 | **ფიქსი** | [UsersPage.css](../wms-app/src/pages/users/UsersPage.css): ≤1024px-ზე რიგები ბარათად იქცევა, 600–1024px-ზე ბარათის შიგნით 2 სვეტია |
 | **შედეგი** | ყველა მოწყობილობაზე ყველაფერი ეტევა |
 
-**საბოლოო შედეგი:** 60 / 60 კომბინაციაში არც ჰორიზონტალური სქროლია, არც გადაჭრილი ტექსტი და არც JS შეცდომა.
+**საბოლოო შედეგი:** 90 / 90 კომბინაციაში არც ჰორიზონტალური სქროლია, არც გადაჭრილი ტექსტი და არც JS შეცდომა.
 
 ---
 
@@ -88,11 +94,11 @@
 
 ყველა სქრინი: [screenshots/](screenshots/). ფაილის სახელის ფორმატია `ბრაუზერი-მოწყობილობა-გვერდი.png`.
 
-| | Chrome | Edge |
-|---|---|---|
-| iPhone SE: მარაგები | ![](screenshots/chrome-iphone-se-inventory.png) | ![](screenshots/edge-iphone-se-inventory.png) |
-| iPad: მარაგები | ![](screenshots/chrome-ipad-inventory.png) | ![](screenshots/edge-ipad-inventory.png) |
-| დესკტოპი: მარაგები | ![](screenshots/chrome-desktop-inventory.png) | ![](screenshots/edge-desktop-inventory.png) |
+| | Chrome | Edge | Firefox |
+|---|---|---|---|
+| iPhone SE: მარაგები | ![](screenshots/chrome-iphone-se-inventory.png) | ![](screenshots/edge-iphone-se-inventory.png) | ![](screenshots/firefox-iphone-se-inventory.png) |
+| iPad: მარაგები | ![](screenshots/chrome-ipad-inventory.png) | ![](screenshots/edge-ipad-inventory.png) | ![](screenshots/firefox-ipad-inventory.png) |
+| დესკტოპი: მარაგები | ![](screenshots/chrome-desktop-inventory.png) | ![](screenshots/edge-desktop-inventory.png) | ![](screenshots/firefox-desktop-inventory.png) |
 
 **თანამშრომლები, iPad Air (გასწორების შემდეგ):**
 

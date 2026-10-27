@@ -1,0 +1,231 @@
+[
+  {
+    "browser": "firefox",
+    "check": "functional",
+    "rows0": 12,
+    "searchLaptop": 1,
+    "sortedDescFirst": "A4 ქაღალდი (500 ფ.)",
+    "formErrors": 6
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-se",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-se",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-se",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-se",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-se",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-14",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-14",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-14",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-14",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "iphone-14",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "pixel-7",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "pixel-7",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "pixel-7",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "pixel-7",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "pixel-7",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad-air",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad-air",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad-air",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad-air",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "ipad-air",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "desktop",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "desktop",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "desktop",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "desktop",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "device": "desktop",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "firefox",
+    "pageErrors": [
+      "downloadable font: download failed (font-family: \"Noto Sans Georgian\" style:normal weight:500 stretch:100 src index:0): status=2152398850 source: https://fonts.gstatic.com/s/notosansgeorgian/v49/PlIVFke5O6RzLfvNNVSitxkr76PRHBC4Ytyq-Gof7PUs4S7zcGyUkcrtR3dwd6Mu.woff2",
+      "downloadable font: download failed (font-family: \"Inter\" style:normal weight:700 stretch:100 src index:0): status=2152398850 source: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0I5nvwU.woff2",
+      "downloadable font: download failed (font-family: \"Inter\" style:normal weight:400 stretch:100 src index:0): status=2152398850 source: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0I5nvwU.woff2",
+      "downloadable font: download failed (font-family: \"Noto Sans Georgian\" style:normal weight:700 stretch:100 src index:0): status=2152398850 source: https://fonts.gstatic.com/s/notosansgeorgian/v49/PlIVFke5O6RzLfvNNVSitxkr76PRHBC4Ytyq-Gof7PUs4S7zcGyUkcrtR3dwd6Mu.woff2",
+      "downloadable font: download failed (font-family: \"Noto Sans Georgian\" style:normal weight:400 stretch:100 src index:0): status=2152398850 source: https://fonts.gstatic.com/s/notosansgeorgian/v49/PlIVFke5O6RzLfvNNVSitxkr76PRHBC4Ytyq-Gof7PUs4S7zcGyUkcrtR3dwd6Mu.woff2",
+      "downloadable font: download failed (font-family: \"Inter\" style:normal weight:500 stretch:100 src index:0): status=2152398850 source: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0I5nvwU.woff2"
+    ]
+  }
+]
