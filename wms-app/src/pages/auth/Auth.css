@@ -1,9 +1,11 @@
 .auth {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* ზემოდან გასწორება (და არა ცენტრში): ვებ-ფონტის ჩატვირთვისას ბარათის სიმაღლე ოდნავ იცვლება —
+     ცენტრში ყოფნისას მთელი ბარათი „ხტებოდა" (Lighthouse CLS 0.168) */
+  align-items: flex-start;
   min-height: 100vh;
-  padding: var(--space-md);
+  padding: max(var(--space-md), 8vh) var(--space-md) var(--space-md);
 }
 
 .auth__card {
@@ -63,6 +65,11 @@
   background: var(--color-danger-light);
   color: var(--color-danger-text);
   font-size: 0.9rem;
+}
+
+.auth__switch a {
+  font-weight: 600;
+  text-decoration: underline; /* ბმული ტექსტისგან მხოლოდ ფერით არ უნდა განსხვავდებოდეს (a11y) */
 }
 
 .auth__switch {

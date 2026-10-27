@@ -95,7 +95,6 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
             onClick={() => setIsProfileOpen(!isProfileOpen)}
             aria-expanded={isProfileOpen}
             aria-haspopup="true"
-            aria-label={`პროფილი: ${fullName}`}
           >
             <span className="header__avatar">{initials}</span>
             <span className="header__user">
