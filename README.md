@@ -45,6 +45,7 @@
 | აწყობა | **Vite** |
 | მარშრუტიზაცია | **React Router** |
 | სტილები | **Tailwind CSS v4** + კომპონენტური CSS ფაილები (BEM), CSS ცვლადები |
+| სთეით-მენეჯმენტი | **Context API + useReducer** (გლობალური Store, localStorage persistence) |
 | ფორმები და ვალიდაცია | **React Hook Form** + **Zod** |
 | იკონები | **Lucide React** (SVG) |
 | HTTP | Fetch API (საერთო `apiClient` სერვისის ფენით) |
@@ -110,6 +111,7 @@ wms-app/
     ├── hooks/           ← ლოგიკა: useItems, useInventoryFilters, useDebounce, useUsers
     ├── services/        ← API მოთხოვნები (apiClient, itemService, authService)
     ├── context/         ← AuthContext (სესია, უფლებები)
+    ├── store/           ← გლობალური Store: InventoryContext + useReducer + localStorage
     ├── config/          ← როლები და უფლებები
     ├── routes/          ← ProtectedRoute, GuestRoute, RoleRoute
     ├── schemas/         ← Zod ვალიდაცია
@@ -142,6 +144,7 @@ wms-app/
 | 16 | [ოპტიმიზაცია: memo, Lazy Loading, WebP](პრაქტიკული%20დავალება%2016/DAVALEBA_16.md) |
 | 17 | [ტექნიკური აუდიტი](პრაქტიკული%20დავალება%2017/) |
 | 18 | [კროს-ბრაუზერული ტესტირება](პრაქტიკული%20დავალება%2018/TESTING.md) |
+| 19 | [სთეით-მენეჯმენტი: Context + useReducer, localStorage](პრაქტიკული%20დავალება%2019/DAVALEBA_19.md) |
 
 **პროექტის მართვა:** [GitHub Projects — კანბან დაფა](https://github.com/users/Iobis21/projects/1)
 
