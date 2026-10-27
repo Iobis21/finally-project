@@ -56,14 +56,42 @@
   background: var(--bg);
 }
 
-.header__dot {
+.header__badge {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 8px;
-  height: 8px;
-  background: #dc2626;
-  border-radius: 50%;
+  top: 0;
+  right: 0;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--color-danger);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* ნივთების მრიცხველი — გლობალური Store-იდან */
+.header__counter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.header__counter:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.header__counter strong {
+  color: var(--text);
 }
 
 .header__profile {

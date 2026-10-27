@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router'
-import { Bell, LogOut, Menu, UserRound, Warehouse } from 'lucide-react'
+import { Bell, Boxes, LogOut, Menu, UserRound, Warehouse } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { roles } from '../../config/roles'
 import { useAuth } from '../../context/AuthContext'
+import { useInventory, useInventoryCounts } from '../../store/inventory/useInventory'
 import './Header.css'
 
 interface HeaderProps {
@@ -12,6 +13,9 @@ interface HeaderProps {
 
 function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
   const { user, logout } = useAuth()
+  // გლობალური Store-იდან — Header ავტომატურად განახლდება, როცა მოდალში ნივთს დაამატებენ ან წაშლიან
+  const { total, critical } = useInventoryCounts()
+  const { setStatus } = useInventory()
   const navigate = useNavigate()
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const profileRef = useRef<HTMLDivElement>(null)
@@ -64,9 +68,25 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
       </div>
 
       <div className="header__right">
-        <button className="header__icon-btn" aria-label="შეტყობინებები, 3 წაუკითხავი">
+        <Link to="/inventory" className="header__counter" title="ნივთები საწყობში">
+          <Boxes size={18} aria-hidden="true" />
+          <span>
+            <strong>{total}</strong> ნივთი
+          </span>
+        </Link>
+
+        {/* ზარი: კრიტიკული მარაგის რაოდენობა. დაჭერით — მარაგები „კრიტიკული" ფილტრით */}
+        <button
+          className="header__icon-btn"
+          aria-label={`კრიტიკული მარაგი: ${critical}`}
+          title="კრიტიკული მარაგი"
+          onClick={() => {
+            setStatus('low_stock')
+            navigate('/inventory')
+          }}
+        >
           <Bell size={20} />
-          <span className="header__dot" />
+          {critical > 0 && <span className="header__badge">{critical}</span>}
         </button>
         <div className="header__profile-wrap" ref={profileRef}>
           <button
