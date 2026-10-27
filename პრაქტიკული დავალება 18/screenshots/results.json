@@ -1,0 +1,446 @@
+[
+  {
+    "browser": "chrome",
+    "check": "functional",
+    "rows0": 12,
+    "searchLaptop": 1,
+    "sortedDescFirst": "შესაფუთი ლენტი",
+    "formErrors": 6
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-se",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-se",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-se",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-se",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-se",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-14",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-14",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-14",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-14",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "iphone-14",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "pixel-7",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "pixel-7",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "pixel-7",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "pixel-7",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "pixel-7",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad-air",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad-air",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad-air",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad-air",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "ipad-air",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "desktop",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "desktop",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "desktop",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "desktop",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "device": "desktop",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "chrome",
+    "pageErrors": []
+  },
+  {
+    "browser": "edge",
+    "check": "functional",
+    "rows0": 12,
+    "searchLaptop": 1,
+    "sortedDescFirst": "შესაფუთი ლენტი",
+    "formErrors": 6
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-se",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-se",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-se",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-se",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-se",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-14",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-14",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-14",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-14",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "iphone-14",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "pixel-7",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "pixel-7",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "pixel-7",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "pixel-7",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "pixel-7",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad-air",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad-air",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad-air",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad-air",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "ipad-air",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "desktop",
+    "path": "/",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "desktop",
+    "path": "/inventory",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "desktop",
+    "path": "/users",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "desktop",
+    "path": "/login",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "device": "desktop",
+    "path": "/register",
+    "overflowX": 0,
+    "clipped": []
+  },
+  {
+    "browser": "edge",
+    "pageErrors": []
+  }
+]
