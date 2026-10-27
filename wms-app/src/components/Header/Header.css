@@ -196,3 +196,15 @@
     display: none; /* მობილურზე მხოლოდ ავატარი */
   }
 }
+
+/* ძალიან ვიწრო ეკრანზე (≤400px) მრიცხველში მხოლოდ რიცხვი რჩება */
+@media (max-width: 400px) {
+  .header__counter-label {
+    display: none;
+  }
+
+  .header__right,
+  .header__left {
+    gap: var(--space-sm);
+  }
+}

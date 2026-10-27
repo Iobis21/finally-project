@@ -71,7 +71,8 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
         <Link to="/inventory" className="header__counter" title="ნივთები საწყობში">
           <Boxes size={18} aria-hidden="true" />
           <span>
-            <strong>{total}</strong> ნივთი
+            <strong>{total}</strong>
+            <span className="header__counter-label"> ნივთი</span>
           </span>
         </Link>
 
