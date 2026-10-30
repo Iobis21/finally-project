@@ -1,5 +1,6 @@
 // სერვერის მისამართი (json-server + json-server-auth)
-export const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
+// ლოკალურად /api Vite-ის proxy-ით გადადის json-server-ზე, ონლაინ — Vercel-ის ფუნქციაზე
+export const API_URL = import.meta.env.VITE_API_URL ?? '/api'
 export const TOKEN_KEY = 'wms-token'
 
 type Method = 'GET' | 'POST' | 'PATCH' | 'DELETE'
