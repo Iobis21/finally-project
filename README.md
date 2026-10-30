@@ -171,4 +171,4 @@ wms-app/
 
 ## 👤 ავტორი
 
-- **[სახელი გვარი]** — [GitHub: @Iobis21](https://github.com/Iobis21)
+- **იობი შარაშენიძე** — [GitHub: @Iobis21](https://github.com/Iobis21)
