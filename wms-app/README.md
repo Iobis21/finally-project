@@ -1,11 +1,12 @@
-# WMS App
+# 📦 WMS — ფრონტენდი (wms-app)
 
-საწყობის მართვის სისტემის ფრონტენდი — React + Vite + TypeScript + Tailwind CSS.
+საწყობის მართვის სისტემის აპლიკაცია: React 19 + TypeScript + Vite + Tailwind CSS.
+
+სრული დოკუმენტაცია: **[../README.md](../README.md)**
 
 ```bash
 npm install
-npm run dev     # http://localhost:5173
-npm run build
+npm run dev     # საიტი: http://localhost:5173 · API: http://localhost:3000
 ```
 
-გლობალური სტილები და დიზაინ-სისტემა: `src/index.css`
+სატესტო ანგარიში: `manager@wms.ge` / `Wms12345!`
