@@ -3,7 +3,7 @@
 **მოდული:** პრაქტიკული პროექტი (Front-end პროგრამირება — 06.1.1.9)
 **სტუდენტი / გუნდი:** იობი შარაშენიძე — ინდივიდუალური
 **GitHub რეპოზიტორია:** https://github.com/Iobis21/finally-project
-**Live Demo:** ჯერ არ არის განთავსებული. ლოკალურად ეშვება ბრძანებით `npm install` → `npm run dev` (იხ. [README](../README.md))
+**Live Demo:** https://finally-project-3lf1.vercel.app (Vercel)
 
 ---
 
@@ -215,7 +215,7 @@ if (amount > fresh.quantity) throw new Error(`ნაშთი შეიცვა
 
 | პრიორიტეტი | ფუნქცია |
 |:---:|---|
-| 🔴 | **Live Demo:** ფრონტენდი Vercel-ზე, ბექენდი Render-ზე (ან Supabase-ზე გადატანა) |
+| 🔴 | **მუდმივი ბაზა:** ონლაინ ვერსიისთვის Supabase / PostgreSQL (Vercel-ზე API ახლა მეხსიერებაში მუშაობს) |
 | 🔴 | **საქონლის მიღება** შტრიხკოდის სკანირებით (Inbound) და **გაცემა** (Picking / Packing) |
 | 🔴 | **შესყიდვის შეკვეთები** (PO): შექმნა → დამტკიცება → მიღება |
 | 🟠 | მიწოდებები და კურიერების სტატუსები რეალურ დროში |

@@ -10,7 +10,7 @@
 | **შესრულების ფორმატი** | ინდივიდუალური |
 | **პროექტის დასახელება და სფერო** | **WMS**, როლებზე დაფუძნებული საწყობის მართვის სისტემა (ვარიანტი №2) |
 | **GitHub რეპოზიტორია** | https://github.com/Iobis21/finally-project |
-| **Live Demo** | ეშვება ლოკალურად: `git clone` → `cd finally-project/wms-app` → `npm install` → `npm run dev` |
+| **Live Demo** | **https://finally-project-3lf1.vercel.app** (Vercel) · ლოკალურად: `git clone` → `cd finally-project/wms-app` → `npm install` → `npm run dev` |
 | **სატესტო ანგარიში** | `manager@wms.ge` / `Wms12345!` |
 
 ---
@@ -163,6 +163,7 @@
 
 ## 2.4. ვერსიების კონტროლი (Git / GitHub)
 
+- **Vercel:** რეპოზიტორია მიბმულია Vercel-ზე. ყოველი `git push` main-ში საიტს ავტომატურად აახლებს (CI/CD);
 - **`.gitignore`:** `node_modules`, `dist`, `.env`, `.env.*` (სანიმუშოდ რჩება `.env.example`), `*.local`, დროებითი ფაილები;
 - **ბრენჩები:** `main` სტაბილური ვერსიაა. ფინალური დოკუმენტაცია გაკეთდა ბრენჩზე **`docs/final-readme`** და შეუერთდა **Pull Request #1**-ით;
 - **კომიტები:** 70-მდე ატომური, სემანტიკური commit (Conventional Commits). არცერთი „დიდი“ commit, რომელიც მთელ პროექტს ერთად ატვირთავს:
@@ -281,6 +282,6 @@ npm run dev        # http://localhost:5173 (საიტი) + http://localhost:
 |---|---|---|
 | 1 | **საქონლის მიღება შტრიხკოდით (Inbound)** | ოპერატორი ასკანერებს ტვირთს, სისტემა ადარებს შეკვეთას და ნაშთი ავტომატურად იზრდება |
 | 2 | **შესყიდვის შეკვეთები (Purchase Orders)** | კრიტიკული მარაგიდან ერთი დაჭერით იქმნება შეკვეთა → მენეჯერის დამტკიცება → მიღება |
-| 3 | **Live Demo და რეალური ბაზა** | ფრონტენდი Vercel-ზე, ბექენდი Render-ზე / Supabase (PostgreSQL) |
+| 3 | **მუდმივი ბაზა** | ონლაინ ვერსია უკვე Vercel-ზეა. შემდეგი ნაბიჯია Supabase (PostgreSQL), რომ მონაცემები სერვერზე სამუდამოდ ინახებოდეს |
 
 დამატებით: გაცემა (Picking/Packing), საწყობის ვიზუალური რუკა, ანგარიშები და გრაფიკები, Unit ტესტები (Vitest) და CI.

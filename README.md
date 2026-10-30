@@ -1,6 +1,6 @@
 # 📦 WMS — საწყობის მართვა, ერთ ეკრანზე
 
-🔗 **Live Demo:** ეშვება ლოკალურად (იხ. [გაშვების ინსტრუქცია](#-ლოკალურად-გაშვების-ინსტრუქცია))
+🔗 **Live Demo:** **[https://finally-project-3lf1.vercel.app](https://finally-project-3lf1.vercel.app)** (სატესტო ანგარიში: `manager@wms.ge` / `Wms12345!`)
 📂 **კატეგორია:** WMS — საწყობის მართვის სისტემა (ვარიანტი №2)
 🎓 **მოდული:** პრაქტიკული პროექტი (Front-end პროგრამირება — 06.1.1.9)
 
@@ -35,6 +35,7 @@
   - Race Condition-ის დაცვა;
   - უარყოფითი ნაშთის დაცვა;
   - **Offline / Demo Fallback**: სერვერის გათიშვისას ჩანს ბოლოს შენახული ან დემო მონაცემები ბანერით.
+- **ონლაინ ჰოსტინგი (Vercel):** ფრონტენდი და ბექენდი ერთ საიტზეა. API მუშაობს Serverless ფუნქციად (`/api`). ონლაინ ვერსიაში სერვერის მონაცემები დროებითია, ბრაუზერში კი localStorage-ში ინახება.
 - **წარმადობა:** `React.lazy` + `Suspense` (მთავარი JS 429 → 267 kB), `React.memo` / `useCallback`, WebP სურათები `loading="lazy"`-ით, Event Delegation. **Lighthouse:** Performance 95–100, Accessibility, Best Practices და SEO 100.
 - **Responsive დიზაინი:** CSS Grid / Flexbox ბადეები. 375px-ზე ჰამბურგერ მენიუ და ცხრილები ბარათებად, 768px-ზე პლანშეტის ვერსია, 1440px-ზე დესკტოპი. შემოწმებულია Chrome-ში, Edge-სა და Firefox-ში.
 - **ხელმისაწვდომობა (a11y):** სემანტიკური HTML5, კლავიატურით ნავიგაცია, `:focus-visible`, `aria-*`, კონტრასტი WCAG AA.
@@ -56,6 +57,7 @@
 | **Styling & Icons** | Tailwind CSS v4 + CSS Variables (Design Tokens), კომპონენტური CSS (BEM), Lucide React (SVG) |
 | **HTTP / API** | Fetch API (საერთო `apiClient` სერვისის ფენით, JWT ჰედერით) |
 | **Backend (Mock API)** | json-server + json-server-auth (JWT, bcrypt) |
+| **Hosting** | Vercel (სტატიკური საიტი + Serverless API ფუნქცია `api/index.js`) |
 | **Code Quality** | TypeScript strict, Prettier, Oxlint |
 
 ---
@@ -64,7 +66,9 @@
 
 ```text
 wms-app/
+├── api/index.js        # Vercel Serverless API (json-server + json-server-auth, მეხსიერებაში)
 ├── db.json             # მონაცემთა ბაზა (json-server): items, users, vendors, orders…
+├── vercel.json         # Vercel-ის კონფიგურაცია (build, /api, SPA rewrites)
 ├── public/images/      # ოპტიმიზებული WebP სურათები
 └── src/
     ├── components/     # ხელახლა გამოყენებადი UI კომპონენტები (Header, Sidebar, Modal, Button, ErrorBoundary…)
