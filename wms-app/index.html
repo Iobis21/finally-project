@@ -14,7 +14,15 @@
       name="description"
       content="WMS — საწყობის მართვის სისტემა: მარაგების კონტროლი, კრიტიკული ნაშთის შეტყობინებები, ჩამოწერა და როლებზე დაფუძნებული წვდომა."
     />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="#4f46e5" />
+    <!-- თემა ჩაირთოს React-ის ჩატვირთვამდე, რომ გვერდი თეთრად არ „აციმციმდეს" -->
+    <script>
+      try {
+        var t = localStorage.getItem('wms-theme')
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches))
+          document.documentElement.classList.add('dark')
+      } catch (e) {}
+    </script>
     <title>WMS — საწყობის მართვის სისტემა</title>
   </head>
   <body>

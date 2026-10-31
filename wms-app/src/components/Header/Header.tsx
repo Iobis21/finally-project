@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router'
-import { Bell, Boxes, LogOut, Menu, UserRound, Warehouse } from 'lucide-react'
+import { Bell, Boxes, LogOut, Menu, Moon, Sun, UserRound, Warehouse } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { roles } from '../../config/roles'
 import { useAuth } from '../../context/AuthContext'
+import { useTheme } from '../../hooks/useTheme'
 import { useInventory, useInventoryCounts } from '../../store/inventory/useInventory'
 import './Header.css'
 
@@ -13,6 +14,7 @@ interface HeaderProps {
 
 function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
   const { user, logout } = useAuth()
+  const { theme, toggleTheme } = useTheme()
   // გლობალური Store-იდან — Header ავტომატურად განახლდება, როცა მოდალში ნივთს დაამატებენ ან წაშლიან
   const { total, critical } = useInventoryCounts()
   const { setStatus } = useInventory()
@@ -75,6 +77,16 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
             <span className="header__counter-label"> ნივთი</span>
           </span>
         </Link>
+
+        {/* თემის გადამრთველი: მზე ↔ მთვარე */}
+        <button
+          className="header__icon-btn header__theme"
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'ღია თემაზე გადართვა' : 'მუქ თემაზე გადართვა'}
+          title={theme === 'dark' ? 'ღია თემა' : 'მუქი თემა'}
+        >
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
 
         {/* ზარი: კრიტიკული მარაგის რაოდენობა. დაჭერით — მარაგები „კრიტიკული" ფილტრით */}
         <button
