@@ -1,0 +1,139 @@
+.top-value {
+  margin-bottom: var(--space-lg);
+}
+
+.top-value__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  font-size: 1.05rem;
+}
+
+.top-value__title svg {
+  color: #f59e0b;
+}
+
+/* ჰორიზონტალური ზოლი — ვიწრო ეკრანზე გვერდულად სქროლდება */
+.top-value__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(195px, 1fr);
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 10px 2px var(--space-sm) 10px; /* ადგილი ნომრის ნიშნისთვის */
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.top-value__list li {
+  scroll-snap-align: start;
+}
+
+.top-value__card {
+  position: relative;
+  display: flex;
+  gap: var(--space-sm);
+  height: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.top-value__card:hover {
+  border-color: var(--color-primary-500);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* ადგილის ნიშანი: 1 — ოქრო, 2 — ვერცხლი, 3 — ბრინჯაო */
+.top-value__rank {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #78716c;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.3);
+}
+
+.top-value__rank--1 {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+}
+
+.top-value__rank--2 {
+  background: linear-gradient(135deg, #e5e7eb, #9ca3af);
+  color: #1f2937;
+}
+
+.top-value__rank--3 {
+  background: linear-gradient(135deg, #f59e0b, #92400e);
+}
+
+.top-value__image {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+.top-value__body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.top-value__name {
+  overflow: hidden;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top-value__value {
+  color: var(--primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.top-value__meta,
+.top-value__share {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.top-value__bar {
+  display: block;
+  height: 5px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.top-value__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary-500), #fbbf24);
+}

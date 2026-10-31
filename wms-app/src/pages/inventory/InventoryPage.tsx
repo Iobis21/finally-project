@@ -18,6 +18,7 @@ import type { Item } from '../../types'
 import InventoryCards from './components/InventoryCards'
 import InventoryFilters from './components/InventoryFilters'
 import InventoryTable from './components/InventoryTable'
+import TopValueStrip from './components/TopValueStrip'
 import './InventoryPage.css'
 
 // რომელი მოდალია ღია: დამატება, რედაქტირება ან წაშლის დადასტურება
@@ -148,6 +149,8 @@ function InventoryPage() {
       </div>
 
       <OfflineBanner source={source} onRetry={reload} />
+
+      <TopValueStrip items={items} />
 
       <InventoryFilters
         search={filters.search}

@@ -192,12 +192,6 @@
   font-size: 0.9rem;
 }
 
-.dashboard__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--space-md);
-}
-
 /* ძალიან ვიწრო ეკრანზე (375px) — 2 კომპაქტური კარტა ხაზზე */
 @media (max-width: 480px) {
   .dashboard__hero {

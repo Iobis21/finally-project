@@ -9,7 +9,6 @@ import {
   Warehouse as WarehouseIcon,
 } from 'lucide-react'
 import StatCard from '../../components/StatCard/StatCard'
-import ProductCard from '../../components/ProductCard/ProductCard'
 import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
 import OfflineBanner from '../../components/OfflineBanner/OfflineBanner'
 import { deliveryStatuses, formatDate, orderStatuses } from '../../config/statuses'
@@ -77,8 +76,6 @@ function DashboardPage() {
           value: value(list),
         }
       }),
-      // ყველაზე ღირებული მარაგი — მთავარ გვერდზე მხოლოდ 8 ნივთი
-      featured: [...items].sort((a, b) => b.quantity * b.price - a.quantity * a.price).slice(0, 8),
     }
   }, [items])
 
@@ -300,20 +297,6 @@ function DashboardPage() {
                 </p>
               </div>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section aria-labelledby="products-title" className="dashboard__section">
-        <div className="dashboard__panel-head">
-          <h2 id="products-title">ყველაზე ღირებული მარაგი</h2>
-          <Link to="/inventory" className="dashboard__more">
-            ყველა ნივთი ({items.length}) <ArrowRight size={14} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="dashboard__grid">
-          {stats.featured.map((item) => (
-            <ProductCard key={item.id} item={item} />
           ))}
         </div>
       </section>
