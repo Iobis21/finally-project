@@ -17,7 +17,7 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
   const { theme, toggleTheme } = useTheme()
   // გლობალური Store-იდან — Header ავტომატურად განახლდება, როცა მოდალში ნივთს დაამატებენ ან წაშლიან
   const { total, critical } = useInventoryCounts()
-  const { setStatus } = useInventory()
+  const { setStatus, resetFilters } = useInventory()
   const navigate = useNavigate()
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const profileRef = useRef<HTMLDivElement>(null)
@@ -70,7 +70,13 @@ function Header({ isMenuOpen, onMenuClick }: HeaderProps) {
       </div>
 
       <div className="header__right">
-        <Link to="/inventory" className="header__counter" title="ნივთები საწყობში">
+        {/* მრიცხველი — ყველა ნივთი, ამიტომ ფილტრები სუფთავდება */}
+        <Link
+          to="/inventory"
+          className="header__counter"
+          title="ნივთები საწყობში"
+          onClick={resetFilters}
+        >
           <Boxes size={18} aria-hidden="true" />
           <span>
             <strong>{total}</strong>

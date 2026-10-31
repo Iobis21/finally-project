@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { NavLink } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
+import { useInventory } from '../../store/inventory/useInventory'
 import './Sidebar.css'
 
 const menu = [
@@ -33,6 +34,7 @@ interface SidebarProps {
 
 function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { canOpen } = useAuth()
+  const { resetFilters } = useInventory()
   // მენიუში მხოლოდ ის გვერდები ჩანს, რაზეც როლს წვდომა აქვს
   const visibleMenu = menu.filter((item) => canOpen(item.href))
 
@@ -53,6 +55,8 @@ function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <NavLink
                   to={item.href}
                   end={item.href === '/'}
+                  /* მენიუდან მარაგებში — ყოველთვის სრული სია, ძველი ფილტრი აღარ რჩება */
+                  onClick={item.href === '/inventory' ? resetFilters : undefined}
                   className={({ isActive }) =>
                     `sidebar__link ${isActive ? 'sidebar__link--active' : ''}`
                   }

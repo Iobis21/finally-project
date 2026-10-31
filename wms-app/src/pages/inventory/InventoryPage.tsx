@@ -132,6 +132,11 @@ function InventoryPage() {
           <h1>მარაგები</h1>
           <p className="inventory__count">
             ნაჩვენებია {filters.visibleItems.length} / {items.length}
+            {filters.hasFilters && (
+              <button className="inventory__reset" onClick={filters.resetFilters}>
+                ✕ ფილტრის გასუფთავება
+              </button>
+            )}
           </p>
         </div>
         {canManage && (
