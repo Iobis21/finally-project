@@ -50,13 +50,13 @@
 :root {
   color-scheme: light;
   --bg: rgb(255 255 255 / 0.45); /* მსუბუქი შევსება (ცხრილის სათაური, ზოლები) */
-  --surface: rgb(255 255 255 / 0.62); /* მინის პანელი */
+  --surface: rgb(255 255 255 / 0.42); /* მინის პანელი — მკრთალი, გამჭვირვალე */
   --border: rgb(255 255 255 / 0.7);
   --text: #1c1917; /* მთავარი ტექსტი */
   --text-muted: #57534e; /* მეორეხარისხოვანი ტექსტი */
   --primary: #c2410c; /* მთავარი ფერი */
-  --overlay: rgb(255 247 237 / 0.72); /* ფოტოს ზემოთ ფენა — ტექსტი რომ კარგად იკითხებოდეს */
-  --glass-blur: blur(22px) saturate(160%);
+  --overlay: rgb(255 247 237 / 0.45); /* ფოტოს ზემოთ ფენა — ტექსტი რომ კარგად იკითხებოდეს */
+  --glass-blur: blur(36px) saturate(180%) brightness(1.05); /* ძლიერი ბუნდოვნება */
 
   /* დაშორებები (Spacing) */
   --space-xs: 0.25rem; /* 4px */
@@ -79,12 +79,12 @@
 .dark {
   color-scheme: dark; /* სქროლბარი, date-picker და select-ები — მუქად */
   --bg: rgb(255 255 255 / 0.06);
-  --surface: rgb(22 22 26 / 0.55);
-  --border: rgb(255 255 255 / 0.1);
+  --surface: rgb(60 56 54 / 0.32);
+  --border: rgb(255 255 255 / 0.16);
   --text: #fafaf9;
   --text-muted: #a8a29e;
   --primary: #fb923c;
-  --overlay: rgb(8 8 10 / 0.62);
+  --overlay: rgb(8 8 10 / 0.45);
   --shadow-sm: 0 8px 32px rgb(0 0 0 / 0.35);
 }
 
