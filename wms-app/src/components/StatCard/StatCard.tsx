@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import { Link } from 'react-router'
 import type { LucideIcon } from 'lucide-react'
 import './StatCard.css'
 
@@ -8,11 +9,13 @@ interface StatCardProps {
   change: string
   icon: LucideIcon
   color: 'blue' | 'green' | 'orange' | 'red'
+  to?: string // თუ მითითებულია — ბარათი ბმულია და დაჭერით სხვა გვერდზე გადადის
+  onClick?: () => void
 }
 
-function StatCard({ title, value, change, icon: Icon, color }: StatCardProps) {
-  return (
-    <article className="stat-card lift">
+function StatCard({ title, value, change, icon: Icon, color, to, onClick }: StatCardProps) {
+  const content = (
+    <>
       <div className={`stat-card__icon stat-card__icon--${color}`}>
         <Icon size={24} />
       </div>
@@ -21,8 +24,23 @@ function StatCard({ title, value, change, icon: Icon, color }: StatCardProps) {
         <p className="stat-card__value">{value}</p>
         <p className="stat-card__change">{change}</p>
       </div>
-    </article>
+    </>
   )
+
+  if (to) {
+    return (
+      <Link
+        to={to}
+        onClick={onClick}
+        className="stat-card stat-card--link lift"
+        aria-label={`${title}: ${value}`}
+      >
+        {content}
+      </Link>
+    )
+  }
+
+  return <article className="stat-card lift">{content}</article>
 }
 
 export default memo(StatCard)

@@ -60,3 +60,14 @@
   color: var(--text-muted);
   font-size: 0.8rem;
 }
+
+/* ბარათი-ბმული: ტექსტის ფერი არ იცვლება, ხაზი არ ესმება */
+.stat-card--link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.stat-card--link:hover {
+  text-decoration: none;
+}

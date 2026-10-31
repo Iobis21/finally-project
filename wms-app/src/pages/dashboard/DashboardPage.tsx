@@ -17,6 +17,7 @@ import { warehouses } from '../../config/warehouses'
 import { useAuth } from '../../context/AuthContext'
 import { useFetch } from '../../hooks/useFetch'
 import { useItems } from '../../hooks/useItems'
+import { useInventory } from '../../store/inventory/useInventory'
 import { getDeliveries, getOrders } from '../../services/warehouseService'
 import type { Delivery, PurchaseOrder } from '../../types'
 import { maybeCrash } from '../../utils/crashTest'
@@ -47,11 +48,11 @@ const monthNames = [
   'დეკემბერი',
 ]
 
-
 function DashboardPage() {
   maybeCrash('DashboardPage')
   const { user, canOpen } = useAuth()
   const { items, isLoading, error, reload, source } = useItems()
+  const { setStatus } = useInventory()
   const deliveries = useFetch<Delivery>(getDeliveries, 'მიწოდებები ვერ ჩაიტვირთა.')
   const orders = useFetch<PurchaseOrder>(getOrders, 'შეკვეთები ვერ ჩაიტვირთა.')
 
@@ -140,6 +141,7 @@ function DashboardPage() {
             value={formatPrice(Math.round(stats.totalValue))}
             change={`${items.length} სახეობის ნივთი`}
             icon={Wallet}
+            to={canOpen('/reports') ? '/reports' : undefined}
             color="blue"
           />
           <StatCard
@@ -147,6 +149,8 @@ function DashboardPage() {
             value={stats.totalUnits.toLocaleString('ka-GE')}
             change={`${warehouses.length} საწყობში`}
             icon={Boxes}
+            to="/inventory"
+            onClick={() => setStatus('')}
             color="green"
           />
           <StatCard
@@ -154,6 +158,7 @@ function DashboardPage() {
             value={String(activeDeliveries.length)}
             change={`${activeDeliveries.filter((d) => d.status === 'in_transit').length} გზაშია`}
             icon={Truck}
+            to={canOpen('/deliveries') ? '/deliveries' : undefined}
             color="orange"
           />
           <StatCard
@@ -161,6 +166,8 @@ function DashboardPage() {
             value={String(stats.lowStock.length)}
             change={`${stats.outOfStock} ამოწურულია`}
             icon={AlertTriangle}
+            to="/inventory"
+            onClick={() => setStatus('low_stock')} // მარაგები — მხოლოდ კრიტიკულები
             color="red"
           />
         </div>
