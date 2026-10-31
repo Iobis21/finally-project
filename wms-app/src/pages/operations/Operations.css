@@ -1,0 +1,175 @@
+/* საერთო სტილები: შეკვეთები, მიღება, გაცემა, მიწოდებები, ანგარიშები */
+.ops__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.ops__hint {
+  margin-top: var(--space-xs);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.ops__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.ops__message {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-success-light);
+  color: var(--color-success-text);
+  font-size: 0.9rem;
+}
+
+.ops__error {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-light);
+  color: var(--color-danger-text);
+  font-size: 0.9rem;
+}
+
+.ops__section {
+  margin-top: var(--space-xl);
+}
+
+.ops__section-title {
+  margin-bottom: var(--space-md);
+  font-size: 1.1rem;
+}
+
+.ops__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.ops__tab[aria-pressed='true'] {
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-600);
+  font-weight: 600;
+}
+
+/* ცხრილი */
+.ops__table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.ops__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.ops__table th,
+.ops__table td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.ops__table th {
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.ops__table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+.ops__muted {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.ops__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.ops__actions button {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.ops__empty {
+  padding: var(--space-lg);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ფორმა Modal-ში / ბარათში */
+.ops__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.ops__form-footer {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+.ops__form .ops__error,
+.ops__summary {
+  grid-column: 1 / -1;
+}
+
+.ops__summary {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.ops__card {
+  padding: var(--space-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* მობილური: ცხრილის რიგი ბარათად, ფორმა ერთ სვეტად */
+@media (max-width: 768px) {
+  .ops__form {
+    grid-template-columns: 1fr;
+  }
+
+  .ops__table thead {
+    display: none;
+  }
+
+  .ops__table tr {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+  }
+
+  .ops__table td {
+    padding: 0;
+  }
+
+  .ops__table td[data-label]::before {
+    content: attr(data-label) ': ';
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+}

@@ -13,16 +13,16 @@ const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
 const DashboardPage = lazy(() => import('./pages/dashboard/DashboardPage'))
 const InventoryPage = lazy(() => import('./pages/inventory/InventoryPage'))
 const UsersPage = lazy(() => import('./pages/users/UsersPage'))
-const MapPage = lazy(() => import('./pages/map/MapPage'))
-const ComingSoonPage = lazy(() => import('./pages/errors/ComingSoonPage'))
 const NotFoundPage = lazy(() => import('./pages/errors/NotFoundPage'))
 
-const comingSoon = [
-  { path: 'inbound', title: 'მიღება' },
-  { path: 'outbound', title: 'გაცემა' },
-  { path: 'orders', title: 'შეკვეთები' },
-  { path: 'deliveries', title: 'მიწოდებები' },
-  { path: 'reports', title: 'ანგარიშები' },
+// საწყობის ოპერაციები — გვერდი და მისამართი (წვდომას RoleRoute ამოწმებს roles.ts-დან)
+const operations = [
+  { path: 'orders', Page: lazy(() => import('./pages/operations/OrdersPage')) },
+  { path: 'inbound', Page: lazy(() => import('./pages/operations/InboundPage')) },
+  { path: 'outbound', Page: lazy(() => import('./pages/operations/OutboundPage')) },
+  { path: 'deliveries', Page: lazy(() => import('./pages/operations/DeliveriesPage')) },
+  { path: 'map', Page: lazy(() => import('./pages/map/MapPage')) },
+  { path: 'reports', Page: lazy(() => import('./pages/operations/ReportsPage')) },
 ]
 
 function App() {
@@ -55,21 +55,13 @@ function App() {
                 </RoleRoute>
               }
             />
-            <Route
-              path="map"
-              element={
-                <RoleRoute path="/map">
-                  <MapPage />
-                </RoleRoute>
-              }
-            />
-            {comingSoon.map((page) => (
+            {operations.map(({ path, Page }) => (
               <Route
-                key={page.path}
-                path={page.path}
+                key={path}
+                path={path}
                 element={
-                  <RoleRoute path={`/${page.path}`}>
-                    <ComingSoonPage title={page.title} />
+                  <RoleRoute path={`/${path}`}>
+                    <Page />
                   </RoleRoute>
                 }
               />

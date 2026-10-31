@@ -6,7 +6,7 @@ export type { DataSource } from '../store/inventory/inventoryReducer'
 // ადრე თითო გვერდი თავის useState-ს ინახავდა და სერვერს ცალ-ცალკე ეკითხებოდა;
 // ახლა Dashboard, მარაგები და Header ერთსა და იმავე მონაცემებს ხედავენ.
 export function useItems() {
-  const { state, reload, addItem, editItem, writeOffItem, removeItem } = useInventory()
+  const { state, reload, addItem, editItem, writeOffItem, removeItem, changeStock } = useInventory()
 
   return {
     items: state.items,
@@ -19,5 +19,6 @@ export function useItems() {
     editItem,
     writeOffItem,
     removeItem,
+    changeStock,
   }
 }

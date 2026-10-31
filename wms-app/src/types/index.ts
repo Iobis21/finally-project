@@ -60,6 +60,7 @@ export interface PurchaseOrder {
   note?: string
   createdBy: number
   createdAt: string
+  receivedAt?: string // როდის მიიღო საწყობმა
   items: OrderLine[]
 }
 
@@ -87,4 +88,7 @@ export interface Delivery {
   courier: string
   address: string
   status: DeliveryStatus
+  itemId?: number // გაცემული ნივთი (გაცემის გვერდიდან შექმნილზე)
+  quantity?: number
+  createdAt?: string
 }

@@ -20,6 +20,7 @@ export interface InventoryContextValue {
   editItem: (id: number, data: NewItem) => Promise<void>
   writeOffItem: (id: number, amount: number) => Promise<void>
   removeItem: (id: number) => Promise<void>
+  changeStock: (id: number, delta: number) => Promise<void> // მიღება (+) / გაცემა (−)
   // ფილტრები
   setSearch: (search: string) => void
   setCategory: (category: string) => void
@@ -98,6 +99,18 @@ export function InventoryProvider({ children }: { children: ReactNode }) {
     })
   }, [])
 
+  // მიღება / გაცემა — იგივე დაცვა: უახლესი ნაშთი სერვერიდან, უარყოფითი ნაშთი არ დაიშვება
+  const changeStock = useCallback(async (id: number, delta: number) => {
+    const fresh: Item = await getItem(id)
+    if (fresh.quantity + delta < 0) {
+      throw new Error(`${fresh.name}: მარაგში მხოლოდ ${fresh.quantity} ერთეულია`)
+    }
+    dispatch({
+      type: 'UPDATE_ITEM',
+      item: await updateItem(id, { quantity: fresh.quantity + delta }),
+    })
+  }, [])
+
   const removeItem = useCallback(async (id: number) => {
     await deleteItem(id)
     dispatch({ type: 'DELETE_ITEM', id })
@@ -127,6 +140,7 @@ export function InventoryProvider({ children }: { children: ReactNode }) {
       editItem,
       writeOffItem,
       removeItem,
+      changeStock,
       setSearch,
       setCategory,
       setStatus,
@@ -140,6 +154,7 @@ export function InventoryProvider({ children }: { children: ReactNode }) {
       editItem,
       writeOffItem,
       removeItem,
+      changeStock,
       setSearch,
       setCategory,
       setStatus,
