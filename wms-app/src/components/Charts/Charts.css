@@ -1,0 +1,167 @@
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chart__grid {
+  stroke: var(--border);
+  stroke-dasharray: 4 4;
+}
+
+.chart__bar {
+  transition:
+    filter 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.chart__column:hover .chart__bar {
+  filter: brightness(1.2) drop-shadow(0 4px 8px rgb(249 115 22 / 0.4));
+}
+
+.chart__value {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chart__column:hover .chart__value {
+  opacity: 1;
+}
+
+.chart__label {
+  fill: var(--text-muted);
+  font-size: 11px;
+}
+
+/* ჰორიზონტალური სვეტები */
+.chart-bars {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chart-bars__row {
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1.3fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+}
+
+.chart-bars__rank {
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.chart-bars__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chart-bars__track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.chart-bars__bar {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  transition: filter 0.2s ease;
+}
+
+.chart-bars__row:hover .chart-bars__bar {
+  filter: brightness(1.2);
+}
+
+.chart-bars__value {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* წრიული დიაგრამები + ლეგენდა */
+/* დიაგრამა ზემოთ, ლეგენდა ქვემოთ — ვიწრო ბარათშიც ტექსტი არ იჭრება */
+.chart-pie {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.chart-pie__svg {
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.chart-pie3d {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.chart-pie__slice {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.chart-pie__center {
+  fill: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chart-legend {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.chart-legend__item {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  cursor: default;
+  transition: background 0.15s ease;
+}
+
+.chart-legend__item--active {
+  background: var(--bg);
+}
+
+.chart-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.chart-legend__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chart-legend__value {
+  color: var(--text-muted);
+  white-space: nowrap;
+}

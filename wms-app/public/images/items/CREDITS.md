@@ -29,3 +29,7 @@
 | TAP-048 | [Packaging-Tape-Brown-Parcel-Tape 286011-480x360 (4817475710).jpg](https://commons.wikimedia.org/wiki/File:Packaging-Tape-Brown-Parcel-Tape_286011-480x360_(4817475710).jpg) | Emilian Robert Vicol from Com. Balanesti, Romania | CC BY 2.0 |
 | USB-064 | [2015 Pendrive SanDisk 4GB.jpg](https://commons.wikimedia.org/wiki/File:2015_Pendrive_SanDisk_4GB.jpg) | Jacek Halicki | CC BY-SA 4.0 |
 | WEB-920 | [Logitech Brio 301 webcam HS1.jpg](https://commons.wikimedia.org/wiki/File:Logitech_Brio_301_webcam_HS1.jpg) | Hayden Schiff | CC BY 4.0 |
+
+## ფონის ფოტო
+
+`/images/bg-warehouse.webp` — [Modern warehouse with pallet rack storage system](https://commons.wikimedia.org/wiki/File:Modern_warehouse_with_pallet_rack_storage_system.jpg), ავტორი: Axisadman, ლიცენზია: CC BY-SA 3.0 (ზომა შეცვლილია).

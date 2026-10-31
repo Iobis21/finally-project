@@ -92,3 +92,15 @@ export interface Delivery {
   quantity?: number
   createdAt?: string
 }
+
+// შესვლების ჟურნალი — ვინ, როდის და რა მოწყობილობით შევიდა
+export interface LoginRecord {
+  id: number
+  userId: number
+  name: string
+  role: Role
+  at: string
+  device: string // კომპიუტერი / მობილური / პლანშეტი
+  os: string
+  browser: string
+}

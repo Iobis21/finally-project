@@ -1,3 +1,14 @@
+.report__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.report__periods {
+  margin: 0;
+}
+
 .report__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -5,74 +16,42 @@
   margin-bottom: var(--space-lg);
 }
 
+.report__wide {
+  margin-bottom: var(--space-md);
+}
+
 .report__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: var(--space-md);
 }
 
-.report__bars {
-  display: grid;
-  gap: var(--space-sm);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.report__subtitle {
+  margin-top: var(--space-lg);
 }
 
-.report__bar-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+.report__device {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  font-size: 0.85rem;
-}
-
-.report__bar-label {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.report__bar-track {
-  height: 10px;
-  border-radius: 999px;
-  background: var(--bg);
-  overflow: hidden;
-}
-
-.report__bar {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: var(--color-primary-500);
-}
-
-.report__bar-value {
-  font-weight: 600;
-  white-space: nowrap;
+  gap: var(--space-xs);
 }
 
 @media (max-width: 480px) {
   .report__grid {
     grid-template-columns: 1fr;
   }
-
-  .report__bar-row {
-    grid-template-columns: 1fr auto;
-  }
-
-  .report__bar-track {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
 }
 
-/* ბეჭდვისას — მხოლოდ ანგარიში, მენიუს და ღილაკის გარეშე */
+/* ბეჭდვისას — მხოლოდ სტატისტიკა, მენიუს და ღილაკების გარეშე */
 @media print {
-  .report__print,
+  .report__toolbar,
   .sidebar,
   .header,
   .footer {
     display: none !important;
+  }
+
+  .ops__card {
+    break-inside: avoid;
   }
 }

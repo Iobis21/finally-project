@@ -23,7 +23,7 @@ const menu = [
   { label: 'მიწოდებები', icon: Truck, href: '/deliveries' },
   { label: 'საწყობის რუკა', icon: Map, href: '/map' },
   { label: 'თანამშრომლები', icon: Users, href: '/users' },
-  { label: 'ანგარიშები', icon: BarChart3, href: '/reports' },
+  { label: 'სტატისტიკა', icon: BarChart3, href: '/reports' },
 ]
 
 interface SidebarProps {

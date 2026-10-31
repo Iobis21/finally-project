@@ -2,6 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from 'react'
 import { roles, type Permission } from '../config/roles'
 import { TOKEN_KEY } from '../services/apiClient'
 import * as authService from '../services/authService'
+import { logLogin } from '../services/loginService'
 import type { User } from '../types'
 
 const USER_KEY = 'wms-user'
@@ -43,6 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       throw new Error('ანგარიში დაბლოკილია, მიმართეთ მენეჯერს')
     }
     saveSession(response)
+    logLogin(response.user) // ჟურნალში ჩაწერა (სტატისტიკისთვის)
   }
 
   async function register(data: authService.RegisterData) {

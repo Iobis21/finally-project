@@ -433,25 +433,1230 @@
   ],
   "deliveries": [
     {
-      "id": 7,
+      "id": 100,
+      "orderNumber": "SO-0001",
+      "courier": "Wolt",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 11,
+      "quantity": 2,
+      "createdAt": "2026-10-02T15:30:00.000Z"
+    },
+    {
+      "id": 101,
+      "orderNumber": "SO-0002",
+      "courier": "Glovo",
+      "address": "თბილისი, რუსთაველის 12",
+      "status": "delivered",
+      "itemId": 11,
+      "quantity": 10,
+      "createdAt": "2026-10-02T10:14:00.000Z"
+    },
+    {
+      "id": 102,
+      "orderNumber": "SO-0003",
+      "courier": "Glovo",
+      "address": "თბილისი, რუსთაველის 12",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 6,
+      "createdAt": "2026-10-03T14:44:00.000Z"
+    },
+    {
+      "id": 103,
+      "orderNumber": "SO-0004",
+      "courier": "FastCourier",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 11,
+      "quantity": 5,
+      "createdAt": "2026-10-04T10:14:00.000Z"
+    },
+    {
+      "id": 104,
+      "orderNumber": "SO-0005",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 1,
+      "quantity": 2,
+      "createdAt": "2026-10-05T13:37:00.000Z"
+    },
+    {
+      "id": 105,
+      "orderNumber": "SO-0006",
+      "courier": "Glovo",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 7,
+      "createdAt": "2026-10-05T09:03:00.000Z"
+    },
+    {
+      "id": 106,
+      "orderNumber": "SO-0007",
+      "courier": "Glovo",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 1,
+      "createdAt": "2026-10-06T15:32:00.000Z"
+    },
+    {
+      "id": 107,
+      "orderNumber": "SO-0008",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 2,
+      "createdAt": "2026-10-06T11:59:00.000Z"
+    },
+    {
+      "id": 108,
+      "orderNumber": "SO-0009",
+      "courier": "Wolt",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 8,
+      "createdAt": "2026-10-06T07:48:00.000Z"
+    },
+    {
+      "id": 109,
+      "orderNumber": "SO-0010",
+      "courier": "FastCourier",
+      "address": "თბილისი, რუსთაველის 12",
+      "status": "delivered",
+      "itemId": 20,
+      "quantity": 2,
+      "createdAt": "2026-10-06T09:14:00.000Z"
+    },
+    {
+      "id": 110,
+      "orderNumber": "SO-0011",
+      "courier": "FastCourier",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 8,
+      "createdAt": "2026-10-07T08:39:00.000Z"
+    },
+    {
+      "id": 111,
+      "orderNumber": "SO-0012",
+      "courier": "Glovo",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 23,
+      "quantity": 5,
+      "createdAt": "2026-10-07T15:19:00.000Z"
+    },
+    {
+      "id": 112,
+      "orderNumber": "SO-0013",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 19,
+      "quantity": 3,
+      "createdAt": "2026-10-07T11:18:00.000Z"
+    },
+    {
+      "id": 113,
+      "orderNumber": "SO-0014",
+      "courier": "Glovo",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 7,
+      "createdAt": "2026-10-07T06:29:00.000Z"
+    },
+    {
+      "id": 114,
+      "orderNumber": "SO-0015",
+      "courier": "Wolt",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 1,
+      "quantity": 3,
+      "createdAt": "2026-10-08T07:25:00.000Z"
+    },
+    {
+      "id": 115,
+      "orderNumber": "SO-0016",
+      "courier": "Glovo",
+      "address": "თბილისი, ჭავჭავაძის 33",
+      "status": "delivered",
+      "itemId": 7,
+      "quantity": 8,
+      "createdAt": "2026-10-08T15:01:00.000Z"
+    },
+    {
+      "id": 116,
+      "orderNumber": "SO-0017",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 5,
+      "createdAt": "2026-10-08T07:48:00.000Z"
+    },
+    {
+      "id": 117,
+      "orderNumber": "SO-0018",
+      "courier": "Wolt",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 4,
+      "createdAt": "2026-10-09T09:36:00.000Z"
+    },
+    {
+      "id": 118,
+      "orderNumber": "SO-0019",
+      "courier": "Glovo",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 7,
+      "createdAt": "2026-10-09T11:47:00.000Z"
+    },
+    {
+      "id": 119,
+      "orderNumber": "SO-0020",
+      "courier": "Glovo",
+      "address": "თბილისი, ჭავჭავაძის 33",
+      "status": "delivered",
+      "itemId": 3,
+      "quantity": 1,
+      "createdAt": "2026-10-09T15:43:00.000Z"
+    },
+    {
+      "id": 120,
+      "orderNumber": "SO-0021",
+      "courier": "Glovo",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 4,
+      "createdAt": "2026-10-10T10:25:00.000Z"
+    },
+    {
+      "id": 121,
+      "orderNumber": "SO-0022",
+      "courier": "Glovo",
+      "address": "თბილისი, რუსთაველის 12",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 5,
+      "createdAt": "2026-10-10T06:21:00.000Z"
+    },
+    {
+      "id": 122,
+      "orderNumber": "SO-0023",
+      "courier": "FastCourier",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 11,
+      "quantity": 10,
+      "createdAt": "2026-10-10T13:13:00.000Z"
+    },
+    {
+      "id": 123,
+      "orderNumber": "SO-0024",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "failed",
+      "itemId": 4,
+      "quantity": 4,
+      "createdAt": "2026-10-11T12:40:00.000Z"
+    },
+    {
+      "id": 124,
+      "orderNumber": "SO-0025",
+      "courier": "FastCourier",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "failed",
+      "itemId": 23,
+      "quantity": 10,
+      "createdAt": "2026-10-11T07:22:00.000Z"
+    },
+    {
+      "id": 125,
+      "orderNumber": "SO-0026",
+      "courier": "Wolt",
+      "address": "თბილისი, ჭავჭავაძის 33",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 2,
+      "createdAt": "2026-10-11T13:15:00.000Z"
+    },
+    {
+      "id": 126,
+      "orderNumber": "SO-0027",
+      "courier": "Wolt",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "failed",
+      "itemId": 8,
+      "quantity": 6,
+      "createdAt": "2026-10-12T10:38:00.000Z"
+    },
+    {
+      "id": 127,
+      "orderNumber": "SO-0028",
+      "courier": "Glovo",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 23,
+      "quantity": 8,
+      "createdAt": "2026-10-12T07:34:00.000Z"
+    },
+    {
+      "id": 128,
+      "orderNumber": "SO-0029",
+      "courier": "Glovo",
+      "address": "თბილისი, ჭავჭავაძის 33",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 5,
+      "createdAt": "2026-10-13T12:30:00.000Z"
+    },
+    {
+      "id": 129,
+      "orderNumber": "SO-0030",
+      "courier": "Wolt",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 9,
+      "createdAt": "2026-10-13T08:02:00.000Z"
+    },
+    {
+      "id": 130,
       "orderNumber": "SO-0031",
+      "courier": "Wolt",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 1,
+      "createdAt": "2026-10-13T12:22:00.000Z"
+    },
+    {
+      "id": 131,
+      "orderNumber": "SO-0032",
+      "courier": "Glovo",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 9,
+      "createdAt": "2026-10-13T15:33:00.000Z"
+    },
+    {
+      "id": 132,
+      "orderNumber": "SO-0033",
+      "courier": "Glovo",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 17,
+      "quantity": 5,
+      "createdAt": "2026-10-14T12:52:00.000Z"
+    },
+    {
+      "id": 133,
+      "orderNumber": "SO-0034",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 5,
+      "createdAt": "2026-10-14T14:01:00.000Z"
+    },
+    {
+      "id": 134,
+      "orderNumber": "SO-0035",
+      "courier": "Wolt",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 7,
+      "createdAt": "2026-10-15T11:37:00.000Z"
+    },
+    {
+      "id": 135,
+      "orderNumber": "SO-0036",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "failed",
+      "itemId": 3,
+      "quantity": 2,
+      "createdAt": "2026-10-15T06:26:00.000Z"
+    },
+    {
+      "id": 136,
+      "orderNumber": "SO-0037",
+      "courier": "Glovo",
+      "address": "თბილისი, პეკინის 20",
+      "status": "failed",
+      "itemId": 24,
+      "quantity": 8,
+      "createdAt": "2026-10-16T09:18:00.000Z"
+    },
+    {
+      "id": 137,
+      "orderNumber": "SO-0038",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 8,
+      "createdAt": "2026-10-16T14:08:00.000Z"
+    },
+    {
+      "id": 138,
+      "orderNumber": "SO-0039",
+      "courier": "FastCourier",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 5,
+      "createdAt": "2026-10-16T13:43:00.000Z"
+    },
+    {
+      "id": 139,
+      "orderNumber": "SO-0040",
+      "courier": "Glovo",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 5,
+      "quantity": 2,
+      "createdAt": "2026-10-16T14:48:00.000Z"
+    },
+    {
+      "id": 140,
+      "orderNumber": "SO-0041",
+      "courier": "FastCourier",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 7,
+      "quantity": 4,
+      "createdAt": "2026-10-16T08:37:00.000Z"
+    },
+    {
+      "id": 141,
+      "orderNumber": "SO-0042",
+      "courier": "Glovo",
+      "address": "თბილისი, ჭავჭავაძის 33",
+      "status": "delivered",
+      "itemId": 12,
+      "quantity": 2,
+      "createdAt": "2026-10-17T09:55:00.000Z"
+    },
+    {
+      "id": 142,
+      "orderNumber": "SO-0043",
+      "courier": "Glovo",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 6,
+      "createdAt": "2026-10-18T06:47:00.000Z"
+    },
+    {
+      "id": 143,
+      "orderNumber": "SO-0044",
+      "courier": "FastCourier",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 3,
+      "quantity": 1,
+      "createdAt": "2026-10-19T12:11:00.000Z"
+    },
+    {
+      "id": 144,
+      "orderNumber": "SO-0045",
+      "courier": "Wolt",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 9,
+      "createdAt": "2026-10-19T11:30:00.000Z"
+    },
+    {
+      "id": 145,
+      "orderNumber": "SO-0046",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 18,
+      "quantity": 1,
+      "createdAt": "2026-10-19T11:39:00.000Z"
+    },
+    {
+      "id": 146,
+      "orderNumber": "SO-0047",
+      "courier": "Wolt",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 9,
+      "quantity": 3,
+      "createdAt": "2026-10-20T09:29:00.000Z"
+    },
+    {
+      "id": 147,
+      "orderNumber": "SO-0048",
+      "courier": "Glovo",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 9,
+      "createdAt": "2026-10-20T10:25:00.000Z"
+    },
+    {
+      "id": 148,
+      "orderNumber": "SO-0049",
+      "courier": "Glovo",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "failed",
+      "itemId": 4,
+      "quantity": 9,
+      "createdAt": "2026-10-21T12:31:00.000Z"
+    },
+    {
+      "id": 149,
+      "orderNumber": "SO-0050",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 1,
+      "quantity": 3,
+      "createdAt": "2026-10-21T09:26:00.000Z"
+    },
+    {
+      "id": 150,
+      "orderNumber": "SO-0051",
+      "courier": "FastCourier",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 8,
+      "createdAt": "2026-10-21T12:43:00.000Z"
+    },
+    {
+      "id": 151,
+      "orderNumber": "SO-0052",
+      "courier": "Wolt",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 10,
+      "quantity": 8,
+      "createdAt": "2026-10-22T12:11:00.000Z"
+    },
+    {
+      "id": 152,
+      "orderNumber": "SO-0053",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 10,
+      "createdAt": "2026-10-22T14:21:00.000Z"
+    },
+    {
+      "id": 153,
+      "orderNumber": "SO-0054",
+      "courier": "Glovo",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 9,
+      "createdAt": "2026-10-22T14:22:00.000Z"
+    },
+    {
+      "id": 154,
+      "orderNumber": "SO-0055",
+      "courier": "Glovo",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 7,
+      "createdAt": "2026-10-23T13:16:00.000Z"
+    },
+    {
+      "id": 155,
+      "orderNumber": "SO-0056",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, რუსთაველის 12",
+      "status": "delivered",
+      "itemId": 13,
+      "quantity": 2,
+      "createdAt": "2026-10-23T14:35:00.000Z"
+    },
+    {
+      "id": 156,
+      "orderNumber": "SO-0057",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 8,
+      "quantity": 5,
+      "createdAt": "2026-10-24T07:04:00.000Z"
+    },
+    {
+      "id": 157,
+      "orderNumber": "SO-0058",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 1,
+      "createdAt": "2026-10-24T06:13:00.000Z"
+    },
+    {
+      "id": 158,
+      "orderNumber": "SO-0059",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 12,
+      "quantity": 3,
+      "createdAt": "2026-10-25T06:57:00.000Z"
+    },
+    {
+      "id": 159,
+      "orderNumber": "SO-0060",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 5,
+      "quantity": 1,
+      "createdAt": "2026-10-25T11:31:00.000Z"
+    },
+    {
+      "id": 160,
+      "orderNumber": "SO-0061",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 8,
+      "createdAt": "2026-10-26T11:17:00.000Z"
+    },
+    {
+      "id": 161,
+      "orderNumber": "SO-0062",
+      "courier": "FastCourier",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 5,
+      "quantity": 3,
+      "createdAt": "2026-10-26T14:33:00.000Z"
+    },
+    {
+      "id": 162,
+      "orderNumber": "SO-0063",
+      "courier": "FastCourier",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 21,
+      "quantity": 10,
+      "createdAt": "2026-10-26T07:58:00.000Z"
+    },
+    {
+      "id": 163,
+      "orderNumber": "SO-0064",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 23,
+      "quantity": 10,
+      "createdAt": "2026-10-27T08:23:00.000Z"
+    },
+    {
+      "id": 164,
+      "orderNumber": "SO-0065",
+      "courier": "FastCourier",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 4,
+      "quantity": 8,
+      "createdAt": "2026-10-27T07:11:00.000Z"
+    },
+    {
+      "id": 165,
+      "orderNumber": "SO-0066",
+      "courier": "Glovo",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 6,
+      "quantity": 1,
+      "createdAt": "2026-10-28T11:06:00.000Z"
+    },
+    {
+      "id": 166,
+      "orderNumber": "SO-0067",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "ქუთაისი, წერეთლის 8",
+      "status": "delivered",
+      "itemId": 7,
+      "quantity": 7,
+      "createdAt": "2026-10-28T13:31:00.000Z"
+    },
+    {
+      "id": 167,
+      "orderNumber": "SO-0068",
+      "courier": "Glovo",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "delivered",
+      "itemId": 16,
+      "quantity": 3,
+      "createdAt": "2026-10-28T12:26:00.000Z"
+    },
+    {
+      "id": 168,
+      "orderNumber": "SO-0069",
+      "courier": "Glovo",
+      "address": "გორი, სტალინის 14",
+      "status": "delivered",
+      "itemId": 20,
+      "quantity": 3,
+      "createdAt": "2026-10-28T06:48:00.000Z"
+    },
+    {
+      "id": 169,
+      "orderNumber": "SO-0070",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, პეკინის 20",
+      "status": "delivered",
+      "itemId": 6,
+      "quantity": 2,
+      "createdAt": "2026-10-28T13:55:00.000Z"
+    },
+    {
+      "id": 170,
+      "orderNumber": "SO-0071",
+      "courier": "Glovo",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 22,
+      "quantity": 5,
+      "createdAt": "2026-10-29T13:35:00.000Z"
+    },
+    {
+      "id": 171,
+      "orderNumber": "SO-0072",
+      "courier": "Wolt",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "delivered",
+      "itemId": 2,
+      "quantity": 3,
+      "createdAt": "2026-10-29T12:11:00.000Z"
+    },
+    {
+      "id": 172,
+      "orderNumber": "SO-0073",
+      "courier": "Glovo",
+      "address": "ბათუმი, ჭავჭავაძის 51",
+      "status": "delivered",
+      "itemId": 14,
+      "quantity": 3,
+      "createdAt": "2026-10-29T08:06:00.000Z"
+    },
+    {
+      "id": 173,
+      "orderNumber": "SO-0074",
+      "courier": "Glovo",
+      "address": "თბილისი, პეკინის 20",
+      "status": "in_transit",
+      "itemId": 17,
+      "quantity": 9,
+      "createdAt": "2026-10-30T13:58:00.000Z"
+    },
+    {
+      "id": 174,
+      "orderNumber": "SO-0075",
+      "courier": "Wolt",
+      "address": "თბილისი, ვაჟა-ფშაველას 45",
+      "status": "waiting",
+      "itemId": 5,
+      "quantity": 2,
+      "createdAt": "2026-10-30T09:16:00.000Z"
+    },
+    {
+      "id": 175,
+      "orderNumber": "SO-0076",
+      "courier": "FastCourier",
+      "address": "რუსთავი, მეგობრობის 5",
+      "status": "waiting",
+      "itemId": 9,
+      "quantity": 3,
+      "createdAt": "2026-10-30T06:29:00.000Z"
+    },
+    {
+      "id": 176,
+      "orderNumber": "SO-0077",
+      "courier": "საკუთარი ტრანსპორტი",
+      "address": "თბილისი, ჭავჭავაძის 33",
+      "status": "in_transit",
+      "itemId": 17,
+      "quantity": 1,
+      "createdAt": "2026-10-30T12:09:00.000Z"
+    },
+    {
+      "id": 177,
+      "orderNumber": "SO-0078",
+      "courier": "FastCourier",
+      "address": "გორი, სტალინის 14",
+      "status": "waiting",
+      "itemId": 7,
+      "quantity": 1,
+      "createdAt": "2026-10-31T10:18:00.000Z"
+    },
+    {
+      "id": 7,
+      "orderNumber": "SO-0079",
       "courier": "FastCourier",
       "address": "თბილისი, ჭავჭავაძის 12",
-      "status": "in_transit"
+      "status": "in_transit",
+      "createdAt": "2026-10-31T09:15:00.000Z"
     },
     {
       "id": 8,
-      "orderNumber": "SO-0032",
+      "orderNumber": "SO-0080",
       "courier": "Glovo",
       "address": "თბილისი, ვაჟა-ფშაველას 71",
-      "status": "waiting"
+      "status": "waiting",
+      "createdAt": "2026-10-30T09:15:00.000Z"
     },
     {
       "id": 9,
-      "orderNumber": "SO-0029",
+      "orderNumber": "SO-0081",
       "courier": "FastCourier",
       "address": "ბათუმი, რუსთაველის 5",
-      "status": "delivered"
+      "status": "delivered",
+      "createdAt": "2026-10-29T09:15:00.000Z"
+    }
+  ],
+  "visits": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-18T07:08:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Chrome"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-18T08:27:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Firefox"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-18T07:11:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-19T07:17:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-19T05:30:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-19T07:54:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Firefox"
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-19T05:35:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-20T06:35:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Chrome"
+    },
+    {
+      "id": 9,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-20T07:46:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 10",
+      "browser": "Edge"
+    },
+    {
+      "id": 10,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-20T08:25:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Firefox"
+    },
+    {
+      "id": 11,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-20T07:10:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 12,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-21T08:19:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 10",
+      "browser": "Edge"
+    },
+    {
+      "id": 13,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-21T07:50:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Firefox"
+    },
+    {
+      "id": 14,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-21T05:57:00.000Z",
+      "device": "პლანშეტი",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-22T07:26:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 16,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-22T07:08:00.000Z",
+      "device": "პლანშეტი",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 17,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-23T07:42:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 18,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-23T07:25:00.000Z",
+      "device": "პლანშეტი",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 19,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-24T08:56:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Chrome"
+    },
+    {
+      "id": 20,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-24T07:19:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 21,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-24T08:03:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 22,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-25T08:41:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 23,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-25T07:01:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 24,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-26T08:52:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 10",
+      "browser": "Edge"
+    },
+    {
+      "id": 25,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-27T07:16:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 26,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-27T07:46:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 27,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-27T06:19:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 28,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-27T05:02:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 29,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-28T08:00:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Chrome"
+    },
+    {
+      "id": 30,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-28T06:05:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 31,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-28T05:55:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 32,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-28T06:30:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 33,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-29T06:33:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 34,
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-30T06:06:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 11",
+      "browser": "Chrome"
+    },
+    {
+      "id": 35,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-30T08:26:00.000Z",
+      "device": "კომპიუტერი",
+      "os": "Windows 10",
+      "browser": "Edge"
+    },
+    {
+      "id": 36,
+      "userId": 3,
+      "name": "ნიკა გელაშვილი",
+      "role": "operator",
+      "at": "2026-10-30T08:32:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 37,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-30T08:22:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "id": 38,
+      "userId": 2,
+      "name": "ნინო კაპანაძე",
+      "role": "purchasing",
+      "at": "2026-10-31T07:29:00.000Z",
+      "device": "მობილური",
+      "os": "Android",
+      "browser": "Chrome"
+    },
+    {
+      "id": 39,
+      "userId": 4,
+      "name": "ლევან მამულაშვილი",
+      "role": "logistics",
+      "at": "2026-10-31T08:33:00.000Z",
+      "device": "მობილური",
+      "os": "iOS",
+      "browser": "Safari"
+    },
+    {
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-31T11:15:12.372Z",
+      "device": "კომპიუტერი",
+      "os": "Windows",
+      "browser": "Chrome",
+      "id": 40
+    },
+    {
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-31T11:15:50.982Z",
+      "device": "კომპიუტერი",
+      "os": "Windows",
+      "browser": "Chrome",
+      "id": 41
+    },
+    {
+      "userId": 1,
+      "name": "ლაშა მესხი",
+      "role": "manager",
+      "at": "2026-10-31T11:16:29.438Z",
+      "device": "კომპიუტერი",
+      "os": "Windows",
+      "browser": "Chrome",
+      "id": 42
     }
   ]
 }

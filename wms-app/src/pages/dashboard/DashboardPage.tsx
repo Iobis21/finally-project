@@ -26,6 +26,30 @@ import { maybeCrash } from '../../utils/crashTest'
 import { formatPrice } from '../../utils/stock'
 import './DashboardPage.css'
 
+const weekdayNames = [
+  'კვირა',
+  'ორშაბათი',
+  'სამშაბათი',
+  'ოთხშაბათი',
+  'ხუთშაბათი',
+  'პარასკევი',
+  'შაბათი',
+]
+const monthNames = [
+  'იანვარი',
+  'თებერვალი',
+  'მარტი',
+  'აპრილი',
+  'მაისი',
+  'ივნისი',
+  'ივლისი',
+  'აგვისტო',
+  'სექტემბერი',
+  'ოქტომბერი',
+  'ნოემბერი',
+  'დეკემბერი',
+]
+
 // სწრაფი მოქმედებები — ჩანს მხოლოდ ის, რაზეც მომხმარებლის როლს წვდომა აქვს
 const quickActions = [
   { to: '/inbound', label: 'მიღება', icon: PackagePlus },
@@ -98,11 +122,9 @@ function DashboardPage() {
       })),
   ]
   const recentDeliveries = [...deliveries.data].sort((a, b) => b.id - a.id).slice(0, 5)
-  const today = new Date().toLocaleDateString('ka-GE', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-  })
+  // თარიღი ქართულად — ზოგი ბრაუზერი ka-GE ლოკალს არ იცნობს და ინგლისურად წერს
+  const now = new Date()
+  const today = `${weekdayNames[now.getDay()]}, ${now.getDate()} ${monthNames[now.getMonth()]}`
 
   return (
     <>
