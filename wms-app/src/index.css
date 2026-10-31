@@ -14,12 +14,12 @@
   --font-sans: 'Inter', 'Noto Sans Georgian', system-ui, sans-serif;
   --font-mono: ui-monospace, 'Consolas', monospace; /* SKU და შტრიხკოდებისთვის */
 
-  /* მთავარი ფერი (ლურჯი) — ღილაკები, ბმულები, აქტიური მენიუ */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
+  /* მთავარი ფერი (ინდიგო) — ღილაკები, ბმულები, აქტიური მენიუ */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
 
   /* სტატუსების ფერები */
   --color-success: #16a34a; /* მარაგშია, მიწოდებულია */
@@ -46,12 +46,12 @@
 
 /* ---------- 2. სემანტიკური ცვლადები (ღია / მუქი თემა) ---------- */
 :root {
-  --bg: #f8fafc; /* გვერდის ფონი */
+  --bg: #f5f7fb; /* გვერდის ფონი */
   --surface: #ffffff; /* ბარათები, ცხრილები */
   --border: #e2e8f0;
   --text: #0f172a; /* მთავარი ტექსტი */
   --text-muted: #64748b; /* მეორეხარისხოვანი ტექსტი */
-  --primary: #2563eb; /* მთავარი ფერი */
+  --primary: #4f46e5; /* მთავარი ფერი */
 
   /* დაშორებები (Spacing) */
   --space-xs: 0.25rem; /* 4px */
@@ -291,4 +291,209 @@
 .page-loading {
   min-height: 100vh;
   background: var(--bg);
+}
+
+/* ==========================================================
+   ახალი დიზაინი — Hover ეფექტები და მიკრო-ანიმაციები
+   (ძირითადად transform / opacity / ფერი — სწრაფი და გლუვი)
+   ========================================================== */
+
+/* ღილაკები: მთავარი — გრადიენტით, hover-ზე იწევა და „ანათებს" */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-500), #8b5cf6);
+  box-shadow: 0 4px 14px rgb(99 102 241 / 0.3);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgb(99 102 241 / 0.45);
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-500);
+  color: var(--primary);
+}
+
+.btn-danger:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgb(220 38 38 / 0.35);
+}
+
+/* მენიუ: hover-ზე ოდნავ გადაიწევს მარჯვნივ, აქტიურს — ფერადი ზოლი მარცხნივ */
+.sidebar__link {
+  position: relative;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar__link:hover {
+  transform: translateX(4px);
+  background: color-mix(in srgb, var(--color-primary-500) 10%, transparent);
+  color: var(--primary);
+}
+
+.sidebar__link svg {
+  transition: transform 0.25s ease;
+}
+
+.sidebar__link:hover svg {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.sidebar__link--active {
+  background: color-mix(in srgb, var(--color-primary-500) 15%, transparent);
+  color: var(--primary);
+}
+
+.sidebar__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(var(--color-primary-500), #8b5cf6);
+}
+
+/* ცხრილები: hover-ზე რიგი ფერდება */
+.inventory__table tbody tr,
+.users__table tbody tr,
+.ops__table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.inventory__table tbody tr:hover,
+.users__table tbody tr:hover,
+.ops__table tbody tr:hover {
+  background: color-mix(in srgb, var(--color-primary-500) 7%, transparent);
+}
+
+/* ბარათები და ბლოკები: hover-ზე ჩარჩო ფერდება */
+.ops__card,
+.ops__table-wrap,
+.users__table-wrap,
+.inventory__table-wrap,
+.empty-state {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ops__card:hover,
+.ops__table-wrap:hover,
+.users__table-wrap:hover,
+.inventory__table-wrap:hover {
+  border-color: color-mix(in srgb, var(--color-primary-500) 45%, var(--border));
+  box-shadow: 0 10px 30px rgb(15 23 42 / 0.08);
+}
+
+/* სტატისტიკის ბარათის აიქონი hover-ზე ტრიალდება */
+.stat-card__icon {
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-card__icon {
+  transform: scale(1.12) rotate(-8deg);
+}
+
+/* Header-ის ღილაკები */
+.header__icon-btn,
+.header__counter,
+.header__profile {
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.header__icon-btn:hover,
+.header__counter:hover,
+.header__profile:hover {
+  transform: scale(1.08);
+}
+
+/* ველები: hover-ზე ჩარჩო ფერდება */
+.input {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input:hover:not(:disabled):not(:focus) {
+  border-color: color-mix(in srgb, var(--color-primary-500) 50%, var(--border));
+}
+
+/* სტატუსის Badge */
+[class^='badge-'] {
+  transition: transform 0.15s ease;
+}
+
+[class^='badge-']:hover {
+  transform: scale(1.06);
+}
+
+/* საწყობების სია რუკის ქვეშ და ფილტრის ტაბები */
+.map__pin,
+.ops__tab {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.map__pin:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgb(99 102 241 / 0.18);
+}
+
+/* ანგარიშის სვეტები — გრადიენტი და hover */
+.report__bar {
+  background: linear-gradient(90deg, var(--color-primary-500), #8b5cf6);
+  transition: filter 0.2s ease;
+}
+
+.report__bar-row:hover .report__bar {
+  filter: brightness(1.2);
+}
+
+.report__bar-row:hover .report__bar-label {
+  color: var(--primary);
+}
+
+/* ბმულები: ხაზი ნელა გამოდის ქვემოდან */
+.auth__switch a,
+.auth__hint a {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 2px;
+  text-decoration: none;
+  transition: background-size 0.25s ease;
+}
+
+.auth__switch a:hover,
+.auth__hint a:hover {
+  background-size: 100% 2px;
+  text-decoration: none;
+}
+
+/* მუქ თემაში — ცხრილის სათაური და ჩრდილები შესაბამისად */
+.dark .ops__card:hover,
+.dark .ops__table-wrap:hover,
+.dark .users__table-wrap:hover,
+.dark .inventory__table-wrap:hover {
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.4);
 }

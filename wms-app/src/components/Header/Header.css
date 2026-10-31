@@ -178,7 +178,7 @@
 }
 
 .header__dropdown-item--active {
-  background: #eff6ff;
+  background: var(--color-primary-50);
   color: var(--primary);
   font-weight: 600;
 }

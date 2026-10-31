@@ -21,8 +21,8 @@
 }
 
 .stat-card__icon--blue {
-  background: #dbeafe;
-  color: #2563eb;
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
 }
 .stat-card__icon--green {
   background: #dcfce7;
