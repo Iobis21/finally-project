@@ -25,13 +25,15 @@ function MapPage() {
     [items, opened],
   )
 
-  // რამდენი ნივთია თითო საწყობში (რუკაზე და სიაში ჩანს)
+  // რამდენი ერთეული მარაგია თითო საწყობში (რუკაზე და სიაში ჩანს)
   const counts = useMemo(
     () =>
       Object.fromEntries(
         warehouses.map((w) => [
           w.id,
-          items.filter((item) => w.zones.includes(item.location[0])).length,
+          items
+            .filter((item) => w.zones.includes(item.location[0]))
+            .reduce((sum, item) => sum + item.quantity, 0),
         ]),
       ),
     [items],
@@ -105,7 +107,7 @@ function MapPage() {
             <button className="map__pin" onClick={() => openDialog(warehouse)}>
               <WarehouseIcon size={22} aria-hidden="true" />
               <span className="map__pin-name">{warehouse.name}</span>
-              <span className="map__pin-count">{counts[warehouse.id]} ნივთი</span>
+              <span className="map__pin-count">{counts[warehouse.id]} ც.</span>
               <Lock size={14} aria-hidden="true" />
             </button>
           </li>
