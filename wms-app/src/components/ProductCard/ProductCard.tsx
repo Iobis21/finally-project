@@ -16,7 +16,7 @@ function ProductCard({ item }: ProductCardProps) {
           width/height — გვერდი არ „ხტება" ჩატვირთვისას */}
       <img
         className="product-card__image"
-        src={getCategoryImage(item.category)}
+        src={item.imageUrl ?? getCategoryImage(item.category)}
         alt=""
         width={480}
         height={360}

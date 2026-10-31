@@ -9,7 +9,8 @@
       "quantity": 25,
       "minQuantity": 10,
       "price": 1899,
-      "location": "A-01-03"
+      "location": "A-01-03",
+      "imageUrl": "/images/items/LAP-001.webp"
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "quantity": 4,
       "minQuantity": 20,
       "price": 39,
-      "location": "A-02-01"
+      "location": "A-02-01",
+      "imageUrl": "/images/items/MOU-014.webp"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "quantity": 12,
       "minQuantity": 5,
       "price": 389,
-      "location": "B-04-02"
+      "location": "B-04-02",
+      "imageUrl": "/images/items/CHR-220.webp"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "quantity": 0,
       "minQuantity": 50,
       "price": 17.9,
-      "location": "C-01-01"
+      "location": "C-01-01",
+      "imageUrl": "/images/items/PAP-500.webp"
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
       "quantity": 18,
       "minQuantity": 8,
       "price": 949,
-      "location": "A-03-04"
+      "location": "A-03-04",
+      "imageUrl": "/images/items/MON-027.webp"
     },
     {
       "id": 6,
@@ -64,7 +69,8 @@
       "quantity": 7,
       "minQuantity": 3,
       "price": 459,
-      "location": "B-02-01"
+      "location": "B-02-01",
+      "imageUrl": "/images/items/DSK-140.webp"
     },
     {
       "id": 7,
@@ -75,7 +81,8 @@
       "quantity": 9,
       "minQuantity": 15,
       "price": 35,
-      "location": "A-02-03"
+      "location": "A-02-03",
+      "imageUrl": "/images/items/KEY-101.webp"
     },
     {
       "id": 8,
@@ -86,7 +93,8 @@
       "quantity": 340,
       "minQuantity": 100,
       "price": 4.2,
-      "location": "D-01-01"
+      "location": "D-01-01",
+      "imageUrl": "/images/items/BOX-L.webp"
     },
     {
       "id": 9,
@@ -97,7 +105,8 @@
       "quantity": 31,
       "minQuantity": 10,
       "price": 169,
-      "location": "A-04-01"
+      "location": "A-04-01",
+      "imageUrl": "/images/items/HDP-055.webp"
     },
     {
       "id": 10,
@@ -108,7 +117,8 @@
       "quantity": 120,
       "minQuantity": 40,
       "price": 9.5,
-      "location": "C-02-02"
+      "location": "C-02-02",
+      "imageUrl": "/images/items/PEN-010.webp"
     },
     {
       "id": 11,
@@ -119,7 +129,8 @@
       "quantity": 15,
       "minQuantity": 30,
       "price": 3.5,
-      "location": "D-01-02"
+      "location": "D-01-02",
+      "imageUrl": "/images/items/TAP-048.webp"
     },
     {
       "id": 12,
@@ -130,7 +141,8 @@
       "quantity": 22,
       "minQuantity": 6,
       "price": 119,
-      "location": "B-03-01"
+      "location": "B-03-01",
+      "imageUrl": "/images/items/LMP-300.webp"
     },
     {
       "id": 13,
@@ -141,7 +153,8 @@
       "quantity": 6,
       "minQuantity": 3,
       "price": 3499,
-      "location": "A-01-04"
+      "location": "A-01-04",
+      "imageUrl": "/images/items/LAP-002.webp"
     },
     {
       "id": 14,
@@ -152,7 +165,8 @@
       "quantity": 11,
       "minQuantity": 5,
       "price": 1299,
-      "location": "A-01-05"
+      "location": "A-01-05",
+      "imageUrl": "/images/items/LAP-003.webp"
     },
     {
       "id": 15,
@@ -163,7 +177,8 @@
       "quantity": 14,
       "minQuantity": 6,
       "price": 349,
-      "location": "A-03-02"
+      "location": "A-03-02",
+      "imageUrl": "/images/items/MON-024.webp"
     },
     {
       "id": 16,
@@ -174,7 +189,8 @@
       "quantity": 3,
       "minQuantity": 4,
       "price": 399,
-      "location": "A-05-01"
+      "location": "A-05-01",
+      "imageUrl": "/images/items/PRN-111.webp"
     },
     {
       "id": 17,
@@ -185,7 +201,8 @@
       "quantity": 85,
       "minQuantity": 30,
       "price": 25,
-      "location": "A-05-03"
+      "location": "A-05-03",
+      "imageUrl": "/images/items/USB-064.webp"
     },
     {
       "id": 18,
@@ -196,7 +213,8 @@
       "quantity": 0,
       "minQuantity": 5,
       "price": 229,
-      "location": "A-04-02"
+      "location": "A-04-02",
+      "imageUrl": "/images/items/WEB-920.webp"
     },
     {
       "id": 19,
@@ -207,7 +225,8 @@
       "quantity": 4,
       "minQuantity": 2,
       "price": 279,
-      "location": "B-01-02"
+      "location": "B-01-02",
+      "imageUrl": "/images/items/CAB-003.webp"
     },
     {
       "id": 20,
@@ -218,7 +237,8 @@
       "quantity": 9,
       "minQuantity": 4,
       "price": 189,
-      "location": "B-05-01"
+      "location": "B-05-01",
+      "imageUrl": "/images/items/SHF-180.webp"
     },
     {
       "id": 21,
@@ -229,7 +249,8 @@
       "quantity": 18,
       "minQuantity": 10,
       "price": 22,
-      "location": "C-01-02"
+      "location": "C-01-02",
+      "imageUrl": "/images/items/STP-024.webp"
     },
     {
       "id": 22,
@@ -240,7 +261,8 @@
       "quantity": 7,
       "minQuantity": 15,
       "price": 12,
-      "location": "C-02-01"
+      "location": "C-02-01",
+      "imageUrl": "/images/items/FLD-050.webp"
     },
     {
       "id": 23,
@@ -251,7 +273,8 @@
       "quantity": 200,
       "minQuantity": 60,
       "price": 4.5,
-      "location": "C-03-01"
+      "location": "C-03-01",
+      "imageUrl": "/images/items/NTB-096.webp"
     },
     {
       "id": 24,
@@ -262,7 +285,8 @@
       "quantity": 26,
       "minQuantity": 10,
       "price": 32,
-      "location": "D-02-01"
+      "location": "D-02-01",
+      "imageUrl": "/images/items/STR-500.webp"
     },
     {
       "id": 25,
@@ -273,14 +297,15 @@
       "quantity": 3,
       "minQuantity": 5,
       "price": 65,
-      "location": "D-02-02"
+      "location": "D-02-02",
+      "imageUrl": "/images/items/BUB-100.webp"
     }
   ],
   "users": [
     {
       "id": 1,
-      "firstName": "გიორგი",
-      "lastName": "ბერიძე",
+      "firstName": "ლაშა",
+      "lastName": "მესხი",
       "email": "manager@wms.ge",
       "role": "manager",
       "userType": "individual",

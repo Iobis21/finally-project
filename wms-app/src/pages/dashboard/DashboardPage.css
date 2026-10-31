@@ -1,5 +1,61 @@
-.dashboard__title {
+/* მისალმება + სწრაფი მოქმედებები */
+.dashboard__hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
   margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 90% 10%, rgb(139 92 246 / 0.35), transparent 45%),
+    linear-gradient(135deg, var(--color-primary-600), #7c3aed);
+  color: #fff;
+}
+
+.dashboard__date {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.dashboard__title {
+  margin: var(--space-xs) 0;
+}
+
+.dashboard__subtitle {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.dashboard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.dashboard__action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: var(--radius-sm);
+  background: rgb(255 255 255 / 0.12);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dashboard__action:hover {
+  background: rgb(255 255 255 / 0.25);
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 /* Auto-fit Grid: კარტები თავისით გადადიან ახალ ხაზზე, მედია-ქიერის გარეშე */
@@ -9,8 +65,179 @@
   gap: var(--space-md);
 }
 
-/* ძალიან ვიწრო ეკრანზე (375px) — 2 კომპაქტური კარტა ხაზზე, რომ პროდუქტები ზედმეტად დაბლა არ ჩავიდეს */
+/* ორი პანელი გვერდიგვერდ: კრიტიკული მარაგი | ბოლო მიწოდებები */
+.dashboard__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.dashboard__panel {
+  padding: var(--space-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard__panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.dashboard__panel-head h2 {
+  font-size: 1.1rem;
+}
+
+.dashboard__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.dashboard__more svg {
+  transition: transform 0.2s ease;
+}
+
+.dashboard__more:hover svg {
+  transform: translateX(3px);
+}
+
+.dashboard__list {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dashboard__empty,
+.dashboard__muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.dashboard__muted {
+  display: block;
+}
+
+/* კრიტიკული ნივთი + პროგრეს-ბარი (ნაშთი / მინიმუმი) */
+.dashboard__low-top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.dashboard__low-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__low-qty {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.dashboard__progress {
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.dashboard__fill,
+.dashboard__fill--empty {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--color-warning);
+}
+
+.dashboard__fill--empty {
+  background: var(--color-danger);
+}
+
+.dashboard__delivery {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.dashboard__delivery:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.dashboard__section {
+  margin-top: var(--space-xl);
+}
+
+/* საწყობების ბარათები */
+.dashboard__warehouses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+
+.dashboard__warehouse {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.dashboard__warehouse h3 {
+  font-size: 1rem;
+}
+
+.dashboard__warehouse-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-primary-500) 15%, transparent);
+  color: var(--primary);
+}
+
+.dashboard__warehouse-stats {
+  margin-top: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ძალიან ვიწრო ეკრანზე (375px) — 2 კომპაქტური კარტა ხაზზე */
 @media (max-width: 480px) {
+  .dashboard__hero {
+    padding: var(--space-md);
+  }
+
+  .dashboard__columns {
+    grid-template-columns: 1fr;
+  }
+
   .dashboard__stats {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-sm);
@@ -29,20 +256,46 @@
   }
 
   .dashboard__stats .stat-card__value {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 }
 
-.dashboard__products {
-  margin-top: var(--space-xl);
+/* შემოსული მოთხოვნები */
+.dashboard__requests {
+  margin-top: var(--space-lg);
 }
 
-.dashboard__products h2 {
-  margin-bottom: var(--space-md);
+.dashboard__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  margin-left: var(--space-xs);
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--color-danger);
+  color: #fff;
+  font-size: 0.8rem;
 }
 
-.dashboard__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--space-md);
+.dashboard__request {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+a.dashboard__request:hover {
+  border-color: var(--color-primary-500);
+  transform: translateX(4px);
+  text-decoration: none;
 }

@@ -12,6 +12,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 10,
     price: 1899,
     location: 'A-01-03',
+    imageUrl: '/images/items/LAP-001.webp',
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 20,
     price: 39,
     location: 'A-02-01',
+    imageUrl: '/images/items/MOU-014.webp',
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 5,
     price: 389,
     location: 'B-04-02',
+    imageUrl: '/images/items/CHR-220.webp',
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 50,
     price: 17.9,
     location: 'C-01-01',
+    imageUrl: '/images/items/PAP-500.webp',
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 8,
     price: 949,
     location: 'A-03-04',
+    imageUrl: '/images/items/MON-027.webp',
   },
   {
     id: 6,
@@ -67,6 +72,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 3,
     price: 459,
     location: 'B-02-01',
+    imageUrl: '/images/items/DSK-140.webp',
   },
   {
     id: 7,
@@ -78,6 +84,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 15,
     price: 35,
     location: 'A-02-03',
+    imageUrl: '/images/items/KEY-101.webp',
   },
   {
     id: 8,
@@ -89,6 +96,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 100,
     price: 4.2,
     location: 'D-01-01',
+    imageUrl: '/images/items/BOX-L.webp',
   },
   {
     id: 9,
@@ -100,6 +108,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 10,
     price: 169,
     location: 'A-04-01',
+    imageUrl: '/images/items/HDP-055.webp',
   },
   {
     id: 10,
@@ -111,6 +120,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 40,
     price: 9.5,
     location: 'C-02-02',
+    imageUrl: '/images/items/PEN-010.webp',
   },
   {
     id: 11,
@@ -122,6 +132,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 30,
     price: 3.5,
     location: 'D-01-02',
+    imageUrl: '/images/items/TAP-048.webp',
   },
   {
     id: 12,
@@ -133,6 +144,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 6,
     price: 119,
     location: 'B-03-01',
+    imageUrl: '/images/items/LMP-300.webp',
   },
   {
     id: 13,
@@ -144,6 +156,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 3,
     price: 3499,
     location: 'A-01-04',
+    imageUrl: '/images/items/LAP-002.webp',
   },
   {
     id: 14,
@@ -155,6 +168,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 5,
     price: 1299,
     location: 'A-01-05',
+    imageUrl: '/images/items/LAP-003.webp',
   },
   {
     id: 15,
@@ -166,6 +180,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 6,
     price: 349,
     location: 'A-03-02',
+    imageUrl: '/images/items/MON-024.webp',
   },
   {
     id: 16,
@@ -177,6 +192,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 4,
     price: 399,
     location: 'A-05-01',
+    imageUrl: '/images/items/PRN-111.webp',
   },
   {
     id: 17,
@@ -188,6 +204,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 30,
     price: 25,
     location: 'A-05-03',
+    imageUrl: '/images/items/USB-064.webp',
   },
   {
     id: 18,
@@ -199,6 +216,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 5,
     price: 229,
     location: 'A-04-02',
+    imageUrl: '/images/items/WEB-920.webp',
   },
   {
     id: 19,
@@ -210,6 +228,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 2,
     price: 279,
     location: 'B-01-02',
+    imageUrl: '/images/items/CAB-003.webp',
   },
   {
     id: 20,
@@ -221,6 +240,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 4,
     price: 189,
     location: 'B-05-01',
+    imageUrl: '/images/items/SHF-180.webp',
   },
   {
     id: 21,
@@ -232,6 +252,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 10,
     price: 22,
     location: 'C-01-02',
+    imageUrl: '/images/items/STP-024.webp',
   },
   {
     id: 22,
@@ -243,6 +264,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 15,
     price: 12,
     location: 'C-02-01',
+    imageUrl: '/images/items/FLD-050.webp',
   },
   {
     id: 23,
@@ -254,6 +276,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 60,
     price: 4.5,
     location: 'C-03-01',
+    imageUrl: '/images/items/NTB-096.webp',
   },
   {
     id: 24,
@@ -265,6 +288,7 @@ export const fallbackItems: Item[] = [
     minQuantity: 10,
     price: 32,
     location: 'D-02-01',
+    imageUrl: '/images/items/STR-500.webp',
   },
   {
     id: 25,
@@ -276,5 +300,6 @@ export const fallbackItems: Item[] = [
     minQuantity: 5,
     price: 65,
     location: 'D-02-02',
+    imageUrl: '/images/items/BUB-100.webp',
   },
 ]
