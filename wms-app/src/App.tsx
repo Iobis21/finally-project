@@ -13,6 +13,7 @@ const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
 const DashboardPage = lazy(() => import('./pages/dashboard/DashboardPage'))
 const InventoryPage = lazy(() => import('./pages/inventory/InventoryPage'))
 const UsersPage = lazy(() => import('./pages/users/UsersPage'))
+const MapPage = lazy(() => import('./pages/map/MapPage'))
 const ComingSoonPage = lazy(() => import('./pages/errors/ComingSoonPage'))
 const NotFoundPage = lazy(() => import('./pages/errors/NotFoundPage'))
 
@@ -21,7 +22,6 @@ const comingSoon = [
   { path: 'outbound', title: 'გაცემა' },
   { path: 'orders', title: 'შეკვეთები' },
   { path: 'deliveries', title: 'მიწოდებები' },
-  { path: 'map', title: 'საწყობის რუკა' },
   { path: 'reports', title: 'ანგარიშები' },
 ]
 
@@ -52,6 +52,14 @@ function App() {
               element={
                 <RoleRoute path="/users">
                   <UsersPage />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="map"
+              element={
+                <RoleRoute path="/map">
+                  <MapPage />
                 </RoleRoute>
               }
             />
