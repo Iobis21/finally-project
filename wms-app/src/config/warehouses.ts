@@ -4,8 +4,8 @@ export interface Warehouse {
   address: string
   zones: string[] // რომელი ზონის თაროები ეკუთვნის (ლოკაციის პირველი ასო, მაგ. "A-01-03" → A)
   password: string
-  x: number // ადგილი რუკაზე (%)
-  y: number
+  lat: number // კოორდინატები რეალურ რუკაზე
+  lng: number
 }
 
 // სასწავლო პროექტისთვის პაროლები აქ ინახება; რეალურ სისტემაში შემოწმება სერვერზე უნდა მოხდეს
@@ -16,8 +16,8 @@ export const warehouses: Warehouse[] = [
     address: 'თბილისი, ვაჟა-ფშაველას 71',
     zones: ['A'],
     password: '1111',
-    x: 75,
-    y: 55,
+    lat: 41.7255,
+    lng: 44.7275,
   },
   {
     id: 'kutaisi',
@@ -25,8 +25,8 @@ export const warehouses: Warehouse[] = [
     address: 'ქუთაისი, ჭავჭავაძის 15',
     zones: ['B'],
     password: '2222',
-    x: 45,
-    y: 35,
+    lat: 42.2679,
+    lng: 42.6946,
   },
   {
     id: 'batumi',
@@ -34,7 +34,7 @@ export const warehouses: Warehouse[] = [
     address: 'ბათუმი, გორგილაძის 30',
     zones: ['C', 'D'],
     password: '3333',
-    x: 22,
-    y: 72,
+    lat: 41.6461,
+    lng: 41.6405,
   },
 ]

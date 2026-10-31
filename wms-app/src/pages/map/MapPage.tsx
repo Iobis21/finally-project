@@ -8,6 +8,7 @@ import { ErrorState, SkeletonGrid } from '../../components/Loader/Loader'
 import { warehouses, type Warehouse } from '../../config/warehouses'
 import { useItems } from '../../hooks/useItems'
 import { formatPrice } from '../../utils/stock'
+import WarehouseMap from './WarehouseMap'
 import './MapPage.css'
 
 // საწყობის რუკა: საწყობზე დაჭერისას ითხოვს პაროლს და აჩვენებს მხოლოდ იმ საწყობის მარაგს
@@ -22,6 +23,18 @@ function MapPage() {
   const warehouseItems = useMemo(
     () => (opened ? items.filter((item) => opened.zones.includes(item.location[0])) : []),
     [items, opened],
+  )
+
+  // რამდენი ნივთია თითო საწყობში (რუკაზე და სიაში ჩანს)
+  const counts = useMemo(
+    () =>
+      Object.fromEntries(
+        warehouses.map((w) => [
+          w.id,
+          items.filter((item) => w.zones.includes(item.location[0])).length,
+        ]),
+      ),
+    [items],
   )
 
   function openDialog(warehouse: Warehouse) {
@@ -54,8 +67,8 @@ function MapPage() {
         </button>
         <h1 className="map__title">{opened.name}</h1>
         <p className="map__subtitle">
-          <MapPin size={14} aria-hidden="true" /> {opened.address} · ზონა{' '}
-          {opened.zones.join(', ')} · {warehouseItems.length} სახეობა, სულ {total} ერთეული
+          <MapPin size={14} aria-hidden="true" /> {opened.address} · ზონა {opened.zones.join(', ')}{' '}
+          · {warehouseItems.length} სახეობა, სულ {total} ერთეული
         </p>
 
         <ul className="map__items">
@@ -83,17 +96,17 @@ function MapPage() {
       <h1 className="map__title">საწყობის რუკა</h1>
       <p className="map__subtitle">აირჩიე საწყობი — შესასვლელად საჭიროა პაროლი</p>
 
-      <ul className="map__board">
+      <WarehouseMap counts={counts} onSelect={openDialog} />
+
+      {/* იგივე საწყობები სიად — კლავიატურით / ეკრანის წამკითხველით სარგებლობისთვის */}
+      <ul className="map__list">
         {warehouses.map((warehouse) => (
-          <li
-            key={warehouse.id}
-            className="map__point"
-            style={{ left: `${warehouse.x}%`, top: `${warehouse.y}%` }}
-          >
+          <li key={warehouse.id}>
             <button className="map__pin" onClick={() => openDialog(warehouse)}>
-              <WarehouseIcon size={28} aria-hidden="true" />
+              <WarehouseIcon size={22} aria-hidden="true" />
               <span className="map__pin-name">{warehouse.name}</span>
-              <Lock size={12} aria-hidden="true" />
+              <span className="map__pin-count">{counts[warehouse.id]} ნივთი</span>
+              <Lock size={14} aria-hidden="true" />
             </button>
           </li>
         ))}
