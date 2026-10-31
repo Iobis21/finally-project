@@ -14,6 +14,7 @@ const DashboardPage = lazy(() => import('./pages/dashboard/DashboardPage'))
 const InventoryPage = lazy(() => import('./pages/inventory/InventoryPage'))
 const ItemDetailPage = lazy(() => import('./pages/inventory/ItemDetailPage'))
 const UsersPage = lazy(() => import('./pages/users/UsersPage'))
+const OrderDetailPage = lazy(() => import('./pages/operations/OrderDetailPage'))
 const NotFoundPage = lazy(() => import('./pages/errors/NotFoundPage'))
 
 // საწყობის ოპერაციები — გვერდი და მისამართი (წვდომას RoleRoute ამოწმებს roles.ts-დან)
@@ -68,6 +69,14 @@ function App() {
                 }
               />
             ))}
+            <Route
+              path="orders/:id"
+              element={
+                <RoleRoute path="/orders">
+                  <OrderDetailPage />
+                </RoleRoute>
+              }
+            />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>

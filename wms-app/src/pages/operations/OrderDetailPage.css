@@ -1,0 +1,195 @@
+.order__back {
+  margin-bottom: var(--space-md);
+  text-decoration: none;
+}
+
+.order__back:hover {
+  text-decoration: none;
+}
+
+.order__status {
+  font-size: 0.9rem;
+  padding: 0.35rem 0.9rem;
+}
+
+/* სტატუსის ეტაპები: 1 → 2 → 3 */
+.order__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: 0 0 var(--space-md);
+  list-style: none;
+}
+
+.order__step {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 160px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.order__step small {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+
+.order__step-dot {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.order__step--done {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.order__step--done .order__step-dot {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--color-primary-500), #fbbf24);
+  color: #fff;
+}
+
+.order__step--rejected .order__step-dot {
+  border-color: transparent;
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.order__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.order__side {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* ნივთის ხაზი — ფოტო, ინფორმაცია, ჯამი */
+.order__lines {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order__line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.order__line:hover {
+  border-color: var(--color-primary-500);
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.order__image {
+  flex-shrink: 0;
+  width: 96px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.order__line-body {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+
+.order__line-total {
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.order__total {
+  margin-top: var(--space-md);
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.order__total strong {
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.order__vendor {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.order__vendor li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.order__actions {
+  margin-top: var(--space-md);
+  text-decoration: none;
+}
+
+/* შეკვეთების ცხრილი: ნივთების მინიატურები და დაჭერადი რიგი */
+.order__thumbs {
+  display: flex;
+  align-items: center;
+}
+
+.order__thumbs img {
+  width: 36px;
+  height: 36px;
+  margin-left: -8px;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.order__thumbs img:first-child {
+  margin-left: 0;
+}
+
+.order__row {
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .order__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .order__image {
+    width: 64px;
+    height: 56px;
+  }
+}

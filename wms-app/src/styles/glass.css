@@ -203,3 +203,20 @@ html .map__board {
     --surface: rgb(28 25 23 / 0.94);
   }
 }
+
+/* მუქ თემაში ფოტოზე პირდაპირ მდგარი სათაურები — ჩრდილით, რომ კარგად იკითხებოდეს */
+.dark .layout__main > h1,
+.dark .ops__header h1,
+.dark .ops__hint,
+.dark .inventory__count,
+.dark .top-value__title,
+.dark .map__title,
+.dark .map__subtitle {
+  text-shadow: 0 1px 10px rgb(0 0 0 / 0.75);
+}
+
+.dark .ops__hint,
+.dark .inventory__count,
+.dark .map__subtitle {
+  color: #e7e5e4;
+}

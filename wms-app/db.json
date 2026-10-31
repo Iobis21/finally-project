@@ -373,8 +373,434 @@
   ],
   "orders": [
     {
+      "id": 1,
+      "number": "PO-0001",
+      "vendorId": 1,
+      "status": "received",
+      "expectedDate": "2026-09-06",
+      "note": "ფასდაკლებით შესყიდვა",
+      "createdBy": 2,
+      "createdAt": "2026-09-01T09:20:00.000Z",
+      "items": [
+        {
+          "itemId": 1,
+          "quantity": 7,
+          "price": 1557.18
+        },
+        {
+          "itemId": 9,
+          "quantity": 16,
+          "price": 138.58
+        },
+        {
+          "itemId": 14,
+          "quantity": 9,
+          "price": 1065.18
+        }
+      ],
+      "receivedAt": "2026-09-05T12:50:00.000Z"
+    },
+    {
+      "id": 2,
+      "number": "PO-0002",
+      "vendorId": 1,
+      "status": "received",
+      "expectedDate": "2026-09-09",
+      "note": "ახალი ოფისის მოწყობა",
+      "createdBy": 1,
+      "createdAt": "2026-09-04T09:31:00.000Z",
+      "items": [
+        {
+          "itemId": 5,
+          "quantity": 4,
+          "price": 778.18
+        },
+        {
+          "itemId": 15,
+          "quantity": 12,
+          "price": 286.18
+        }
+      ],
+      "receivedAt": "2026-09-08T12:36:00.000Z"
+    },
+    {
+      "id": 3,
+      "number": "PO-0003",
+      "vendorId": 1,
+      "status": "received",
+      "expectedDate": "2026-09-12",
+      "note": "კრიტიკული ნაშთი",
+      "createdBy": 2,
+      "createdAt": "2026-09-07T09:35:00.000Z",
+      "items": [
+        {
+          "itemId": 1,
+          "quantity": 7,
+          "price": 1557.18
+        }
+      ],
+      "receivedAt": "2026-09-11T12:08:00.000Z"
+    },
+    {
+      "id": 4,
+      "number": "PO-0004",
+      "vendorId": 3,
+      "status": "received",
+      "expectedDate": "2026-09-15",
+      "note": "კრიტიკული ნაშთი",
+      "createdBy": 1,
+      "createdAt": "2026-09-10T09:00:00.000Z",
+      "items": [
+        {
+          "itemId": 8,
+          "quantity": 134,
+          "price": 3.44
+        },
+        {
+          "itemId": 11,
+          "quantity": 61,
+          "price": 2.87
+        },
+        {
+          "itemId": 24,
+          "quantity": 21,
+          "price": 26.24
+        }
+      ],
+      "receivedAt": "2026-09-14T12:37:00.000Z"
+    },
+    {
+      "id": 5,
+      "number": "PO-0005",
+      "vendorId": 1,
+      "status": "received",
+      "expectedDate": "2026-09-18",
+      "note": "კვარტალური შევსება",
+      "createdBy": 2,
+      "createdAt": "2026-09-13T09:07:00.000Z",
+      "items": [
+        {
+          "itemId": 2,
+          "quantity": 127,
+          "price": 31.98
+        },
+        {
+          "itemId": 1,
+          "quantity": 5,
+          "price": 1557.18
+        },
+        {
+          "itemId": 5,
+          "quantity": 2,
+          "price": 778.18
+        }
+      ],
+      "receivedAt": "2026-09-17T12:41:00.000Z"
+    },
+    {
+      "id": 6,
+      "number": "PO-0006",
+      "vendorId": 3,
+      "status": "received",
+      "expectedDate": "2026-09-21",
+      "note": "ფასდაკლებით შესყიდვა",
+      "createdBy": 2,
+      "createdAt": "2026-09-16T09:14:00.000Z",
+      "items": [
+        {
+          "itemId": 11,
+          "quantity": 82,
+          "price": 2.87
+        },
+        {
+          "itemId": 8,
+          "quantity": 57,
+          "price": 3.44
+        },
+        {
+          "itemId": 24,
+          "quantity": 129,
+          "price": 26.24
+        }
+      ],
+      "receivedAt": "2026-09-20T12:24:00.000Z"
+    },
+    {
+      "id": 7,
+      "number": "PO-0007",
+      "vendorId": 3,
+      "status": "received",
+      "expectedDate": "2026-09-24",
+      "note": "ფასდაკლებით შესყიდვა",
+      "createdBy": 2,
+      "createdAt": "2026-09-19T09:37:00.000Z",
+      "items": [
+        {
+          "itemId": 8,
+          "quantity": 83,
+          "price": 3.44
+        },
+        {
+          "itemId": 11,
+          "quantity": 49,
+          "price": 2.87
+        },
+        {
+          "itemId": 25,
+          "quantity": 11,
+          "price": 53.3
+        }
+      ],
+      "receivedAt": "2026-09-23T12:52:00.000Z"
+    },
+    {
+      "id": 8,
+      "number": "PO-0008",
+      "vendorId": 3,
+      "status": "received",
+      "expectedDate": "2026-09-27",
+      "note": "კრიტიკული ნაშთი",
+      "createdBy": 2,
+      "createdAt": "2026-09-22T09:31:00.000Z",
+      "items": [
+        {
+          "itemId": 24,
+          "quantity": 92,
+          "price": 26.24
+        },
+        {
+          "itemId": 11,
+          "quantity": 48,
+          "price": 2.87
+        },
+        {
+          "itemId": 8,
+          "quantity": 87,
+          "price": 3.44
+        }
+      ],
+      "receivedAt": "2026-09-26T12:33:00.000Z"
+    },
+    {
+      "id": 9,
+      "number": "PO-0009",
+      "vendorId": 2,
+      "status": "rejected",
+      "expectedDate": "2026-09-30",
+      "note": "კვარტალური შევსება",
+      "createdBy": 1,
+      "createdAt": "2026-09-25T09:05:00.000Z",
+      "items": [
+        {
+          "itemId": 22,
+          "quantity": 154,
+          "price": 9.84
+        },
+        {
+          "itemId": 4,
+          "quantity": 25,
+          "price": 14.68
+        },
+        {
+          "itemId": 10,
+          "quantity": 40,
+          "price": 7.79
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "number": "PO-0010",
+      "vendorId": 1,
+      "status": "received",
+      "expectedDate": "2026-10-03",
+      "note": "კრიტიკული ნაშთი",
+      "createdBy": 2,
+      "createdAt": "2026-09-28T09:33:00.000Z",
+      "items": [
+        {
+          "itemId": 9,
+          "quantity": 6,
+          "price": 138.58
+        }
+      ],
+      "receivedAt": "2026-10-02T12:28:00.000Z"
+    },
+    {
       "id": 11,
       "number": "PO-0011",
+      "vendorId": 3,
+      "status": "approved",
+      "expectedDate": "2026-10-06",
+      "note": "ახალი ოფისის მოწყობა",
+      "createdBy": 1,
+      "createdAt": "2026-10-01T09:14:00.000Z",
+      "items": [
+        {
+          "itemId": 25,
+          "quantity": 5,
+          "price": 53.3
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "number": "PO-0012",
+      "vendorId": 3,
+      "status": "received",
+      "expectedDate": "2026-10-09",
+      "note": "ახალი ოფისის მოწყობა",
+      "createdBy": 2,
+      "createdAt": "2026-10-04T09:29:00.000Z",
+      "items": [
+        {
+          "itemId": 8,
+          "quantity": 119,
+          "price": 3.44
+        },
+        {
+          "itemId": 11,
+          "quantity": 105,
+          "price": 2.87
+        },
+        {
+          "itemId": 24,
+          "quantity": 72,
+          "price": 26.24
+        }
+      ],
+      "receivedAt": "2026-10-08T12:34:00.000Z"
+    },
+    {
+      "id": 13,
+      "number": "PO-0013",
+      "vendorId": 2,
+      "status": "pending",
+      "expectedDate": "2026-10-12",
+      "note": "კვარტალური შევსება",
+      "createdBy": 2,
+      "createdAt": "2026-10-07T09:48:00.000Z",
+      "items": [
+        {
+          "itemId": 4,
+          "quantity": 51,
+          "price": 14.68
+        },
+        {
+          "itemId": 19,
+          "quantity": 9,
+          "price": 228.78
+        },
+        {
+          "itemId": 10,
+          "quantity": 139,
+          "price": 7.79
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "number": "PO-0014",
+      "vendorId": 2,
+      "status": "received",
+      "expectedDate": "2026-10-15",
+      "note": "კვარტალური შევსება",
+      "createdBy": 2,
+      "createdAt": "2026-10-10T09:53:00.000Z",
+      "items": [
+        {
+          "itemId": 4,
+          "quantity": 79,
+          "price": 14.68
+        }
+      ],
+      "receivedAt": "2026-10-14T12:10:00.000Z"
+    },
+    {
+      "id": 15,
+      "number": "PO-0015",
+      "vendorId": 1,
+      "status": "rejected",
+      "expectedDate": "2026-10-18",
+      "note": "კრიტიკული ნაშთი",
+      "createdBy": 2,
+      "createdAt": "2026-10-13T09:03:00.000Z",
+      "items": [
+        {
+          "itemId": 1,
+          "quantity": 7,
+          "price": 1557.18
+        },
+        {
+          "itemId": 7,
+          "quantity": 141,
+          "price": 28.7
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "number": "PO-0016",
+      "vendorId": 2,
+      "status": "approved",
+      "expectedDate": "2026-10-21",
+      "note": "ფასდაკლებით შესყიდვა",
+      "createdBy": 2,
+      "createdAt": "2026-10-16T09:57:00.000Z",
+      "items": [
+        {
+          "itemId": 10,
+          "quantity": 59,
+          "price": 7.79
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "number": "PO-0017",
+      "vendorId": 1,
+      "status": "pending",
+      "expectedDate": "2026-10-24",
+      "createdBy": 2,
+      "createdAt": "2026-10-19T09:25:00.000Z",
+      "items": [
+        {
+          "itemId": 2,
+          "quantity": 29,
+          "price": 31.98
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "number": "PO-0018",
+      "vendorId": 2,
+      "status": "approved",
+      "expectedDate": "2026-10-27",
+      "note": "ახალი ოფისის მოწყობა",
+      "createdBy": 2,
+      "createdAt": "2026-10-22T09:47:00.000Z",
+      "items": [
+        {
+          "itemId": 19,
+          "quantity": 5,
+          "price": 228.78
+        },
+        {
+          "itemId": 20,
+          "quantity": 20,
+          "price": 154.98
+        },
+        {
+          "itemId": 12,
+          "quantity": 11,
+          "price": 97.58
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "number": "PO-0019",
       "vendorId": 2,
       "status": "approved",
       "expectedDate": "2026-10-14",
@@ -394,8 +820,8 @@
       ]
     },
     {
-      "id": 12,
-      "number": "PO-0012",
+      "id": 20,
+      "number": "PO-0020",
       "vendorId": 1,
       "status": "pending",
       "expectedDate": "2026-10-16",
@@ -413,7 +839,7 @@
   "shipments": [
     {
       "id": 891,
-      "orderId": 11,
+      "orderId": 19,
       "status": "expected",
       "items": [
         {
@@ -1627,36 +2053,6 @@
       "device": "მობილური",
       "os": "iOS",
       "browser": "Safari"
-    },
-    {
-      "userId": 1,
-      "name": "ლაშა მესხი",
-      "role": "manager",
-      "at": "2026-10-31T11:15:12.372Z",
-      "device": "კომპიუტერი",
-      "os": "Windows",
-      "browser": "Chrome",
-      "id": 40
-    },
-    {
-      "userId": 1,
-      "name": "ლაშა მესხი",
-      "role": "manager",
-      "at": "2026-10-31T11:15:50.982Z",
-      "device": "კომპიუტერი",
-      "os": "Windows",
-      "browser": "Chrome",
-      "id": 41
-    },
-    {
-      "userId": 1,
-      "name": "ლაშა მესხი",
-      "role": "manager",
-      "at": "2026-10-31T11:16:29.438Z",
-      "device": "კომპიუტერი",
-      "os": "Windows",
-      "browser": "Chrome",
-      "id": 42
     }
   ]
 }

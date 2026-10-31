@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react'
+import { useNavigate } from 'react-router'
 import { Plus } from 'lucide-react'
 import Modal from '../../components/ui/Modal/Modal'
 import Button from '../../components/ui/Button/Button'
@@ -10,8 +11,9 @@ import { useFetch } from '../../hooks/useFetch'
 import { useItems } from '../../hooks/useItems'
 import { createOrder, getOrders, getVendors, updateOrder } from '../../services/warehouseService'
 import type { OrderStatus, PurchaseOrder, Vendor } from '../../types'
-import { formatPrice } from '../../utils/stock'
+import { formatPrice, getCategoryImage } from '../../utils/stock'
 import './Operations.css'
+import './OrderDetailPage.css'
 
 const orderTotal = (order: PurchaseOrder) =>
   order.items.reduce((sum, line) => sum + line.quantity * line.price, 0)
@@ -19,6 +21,7 @@ const orderTotal = (order: PurchaseOrder) =>
 // შესყიდვის შეკვეთები: შექმნა (შესყიდვები / მენეჯერი) → დადასტურება (მენეჯერი) → მიღება (მიღების გვერდი)
 function OrdersPage() {
   const { user, can } = useAuth()
+  const navigate = useNavigate()
   const { items } = useItems()
   const orders = useFetch<PurchaseOrder>(getOrders, 'შეკვეთები ვერ ჩაიტვირთა.')
   const vendors = useFetch<Vendor>(getVendors, 'მომწოდებლები ვერ ჩაიტვირთა.')
@@ -128,13 +131,39 @@ function OrdersPage() {
           </thead>
           <tbody>
             {sorted.map((order) => (
-              <tr key={order.id}>
+              <tr
+                key={order.id}
+                className="order__row"
+                onClick={(e) => {
+                  // რიგზე დაჭერა — შეკვეთის გვერდი (დადასტურების ღილაკები გამონაკლისია)
+                  if (!(e.target as HTMLElement).closest('button')) navigate(`/orders/${order.id}`)
+                }}
+              >
                 <td data-label="ნომერი">
                   <strong>{order.number}</strong>
                   <span className="ops__muted">{formatDate(order.createdAt)}</span>
                 </td>
                 <td data-label="მომწოდებელი">{vendorName(order.vendorId)}</td>
                 <td data-label="ნივთები">
+                  <span className="order__thumbs">
+                    {order.items.map((line) => {
+                      const item = items.find((i) => i.id === line.itemId)
+                      return (
+                        <img
+                          key={line.itemId}
+                          src={
+                            item
+                              ? (item.imageUrl ?? getCategoryImage(item.category))
+                              : getCategoryImage('')
+                          }
+                          alt=""
+                          width={36}
+                          height={36}
+                          loading="lazy"
+                        />
+                      )
+                    })}
+                  </span>
                   {order.items.map((line) => (
                     <span key={line.itemId} className="ops__muted">
                       {itemName(line.itemId)} × {line.quantity}

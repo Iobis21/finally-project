@@ -11,6 +11,10 @@ export function getOrders() {
   return apiGet<PurchaseOrder[]>('/orders')
 }
 
+export function getOrder(id: number) {
+  return apiGet<PurchaseOrder>(`/orders/${id}`)
+}
+
 export function createOrder(order: Omit<PurchaseOrder, 'id'>) {
   return apiPost<PurchaseOrder>('/orders', order)
 }
