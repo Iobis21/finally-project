@@ -53,7 +53,8 @@ interface InventoryRowProps {
 // (ძებნისას / სხვა რიგის რედაქტირებისას დანარჩენი რიგები არ გადაიხატება)
 const InventoryRow = memo(function InventoryRow({ item, canEdit, canWriteOff }: InventoryRowProps) {
   return (
-    <tr>
+    // data-action="open" — რიგზე დაჭერით იხსნება ნივთის გვერდი (ღილაკებს თავისი data-action აქვს)
+    <tr className="inventory__row" data-action="open" data-id={item.id}>
       <td className="inventory__sku">{item.sku}</td>
       <td className="inventory__name">{item.name}</td>
       <td>{item.category}</td>

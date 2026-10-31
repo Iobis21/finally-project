@@ -212,3 +212,8 @@
 .inventory-card__actions {
   margin-top: var(--space-sm);
 }
+
+/* რიგი / ბარათი დაჭერადია — იხსნება ნივთის გვერდი */
+.inventory__row {
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import { useNavigate } from 'react-router'
 import { PackageSearch, Plus } from 'lucide-react'
 import ConfirmDialog from '../../components/ConfirmDialog/ConfirmDialog'
 import EmptyState from '../../components/EmptyState/EmptyState'
@@ -50,6 +51,7 @@ function InventoryPage() {
   const canWriteOff = can('adjust:stock') && !isOffline
   const [modal, setModal] = useState<ModalState>(null)
 
+  const navigate = useNavigate()
   const closeModal = () => setModal(null)
 
   // ცხრილიდან / ბარათებიდან მოსული მოქმედება (Event Delegation)
@@ -58,11 +60,12 @@ function InventoryPage() {
     (action: string, id: number) => {
       const item = items.find((i) => i.id === id)
       if (!item) return
+      if (action === 'open') navigate(`/inventory/${id}`) // რიგზე დაჭერა — ნივთის გვერდი
       if (action === 'writeoff' && canWriteOff) setModal({ mode: 'writeoff', item })
       if (action === 'edit' && canManage) setModal({ mode: 'edit', item })
       if (action === 'delete' && canManage) setModal({ mode: 'delete', item })
     },
-    [items, canManage, canWriteOff],
+    [items, canManage, canWriteOff, navigate],
   )
 
   async function handleSave(values: ItemFormValues) {

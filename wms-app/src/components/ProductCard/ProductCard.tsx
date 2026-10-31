@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import { Link } from 'react-router'
 import { MapPin } from 'lucide-react'
 import type { Item } from '../../types'
 import { getCategoryImage } from '../../utils/stock'
@@ -11,7 +12,7 @@ interface ProductCardProps {
 
 function ProductCard({ item }: ProductCardProps) {
   return (
-    <article className="product-card lift" tabIndex={0}>
+    <Link to={`/inventory/${item.id}`} className="product-card product-card--link lift">
       {/* loading="lazy" — სურათი იტვირთება მხოლოდ ეკრანთან მიახლოებისას;
           width/height — გვერდი არ „ხტება" ჩატვირთვისას */}
       <img
@@ -38,7 +39,7 @@ function ProductCard({ item }: ProductCardProps) {
           {item.location}
         </span>
       </div>
-    </article>
+    </Link>
   )
 }
 

@@ -12,6 +12,7 @@ const LoginPage = lazy(() => import('./pages/auth/LoginPage'))
 const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
 const DashboardPage = lazy(() => import('./pages/dashboard/DashboardPage'))
 const InventoryPage = lazy(() => import('./pages/inventory/InventoryPage'))
+const ItemDetailPage = lazy(() => import('./pages/inventory/ItemDetailPage'))
 const UsersPage = lazy(() => import('./pages/users/UsersPage'))
 const NotFoundPage = lazy(() => import('./pages/errors/NotFoundPage'))
 
@@ -47,6 +48,7 @@ function App() {
           >
             <Route index element={<DashboardPage />} />
             <Route path="inventory" element={<InventoryPage />} />
+            <Route path="inventory/:id" element={<ItemDetailPage />} />
             <Route
               path="users"
               element={

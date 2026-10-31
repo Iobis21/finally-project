@@ -26,7 +26,7 @@ const InventoryCard = memo(function InventoryCard({
   canWriteOff,
 }: InventoryCardProps) {
   return (
-    <li className="inventory-card lift">
+    <li className="inventory-card inventory__row lift" data-action="open" data-id={item.id}>
       <div className="inventory-card__top">
         <h2 className="inventory-card__name">{item.name}</h2>
         <StatusBadge item={item} />

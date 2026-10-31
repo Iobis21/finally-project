@@ -55,3 +55,13 @@
   gap: var(--space-xs);
   color: var(--text-muted);
 }
+
+/* ბარათი-ბმული — დაჭერით იხსნება ნივთის გვერდი */
+.product-card--link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card--link:hover {
+  text-decoration: none;
+}
