@@ -486,15 +486,13 @@
 }
 
 /* ბმულები: ხაზი ნელა გამოდის ქვემოდან */
-.auth__switch a,
-.auth__hint a {
+.auth__switch a {
   background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 2px;
   text-decoration: none;
   transition: background-size 0.25s ease;
 }
 
-.auth__switch a:hover,
-.auth__hint a:hover {
+.auth__switch a:hover {
   background-size: 100% 2px;
   text-decoration: none;
 }

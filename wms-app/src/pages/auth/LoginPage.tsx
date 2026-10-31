@@ -72,11 +72,6 @@ function LoginPage() {
         არ გაქვს ანგარიში? <Link to="/register">რეგისტრაცია</Link>
       </p>
 
-      <p className="auth__hint">
-        სატესტო ანგარიშები (პაროლი: <strong>Wms12345!</strong>):
-        <br />
-        manager@wms.ge · purchasing@wms.ge · operator@wms.ge · logistics@wms.ge
-      </p>
     </AuthLayout>
   )
 }
