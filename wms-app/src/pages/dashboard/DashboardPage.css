@@ -1,4 +1,4 @@
-/* მისალმება + სწრაფი მოქმედებები */
+/* მისალმება */
 .dashboard__hero {
   display: flex;
   flex-wrap: wrap;
@@ -28,35 +28,8 @@
   font-size: 0.95rem;
 }
 
-.dashboard__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-}
 
-.dashboard__action {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid rgb(255 255 255 / 0.3);
-  border-radius: var(--radius-sm);
-  background: rgb(255 255 255 / 0.12);
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  backdrop-filter: blur(4px);
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
 
-.dashboard__action:hover {
-  background: rgb(255 255 255 / 0.25);
-  transform: translateY(-2px);
-  text-decoration: none;
-}
 
 /* Auto-fit Grid: კარტები თავისით გადადიან ახალ ხაზზე, მედია-ქიერის გარეშე */
 .dashboard__stats {

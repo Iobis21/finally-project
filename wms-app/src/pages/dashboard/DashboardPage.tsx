@@ -4,9 +4,6 @@ import {
   AlertTriangle,
   ArrowRight,
   Boxes,
-  ClipboardList,
-  PackageMinus,
-  PackagePlus,
   Truck,
   Wallet,
   Warehouse as WarehouseIcon,
@@ -50,13 +47,6 @@ const monthNames = [
   'დეკემბერი',
 ]
 
-// სწრაფი მოქმედებები — ჩანს მხოლოდ ის, რაზეც მომხმარებლის როლს წვდომა აქვს
-const quickActions = [
-  { to: '/inbound', label: 'მიღება', icon: PackagePlus },
-  { to: '/outbound', label: 'გაცემა', icon: PackageMinus },
-  { to: '/orders', label: 'შეკვეთები', icon: ClipboardList },
-  { to: '/deliveries', label: 'მიწოდებები', icon: Truck },
-]
 
 function DashboardPage() {
   maybeCrash('DashboardPage')
@@ -136,16 +126,6 @@ function DashboardPage() {
             საწყობის მიმდინარე მდგომარეობა — {stats.lowStock.length} ნივთი საჭიროებს ყურადღებას
           </p>
         </div>
-        <nav className="dashboard__actions" aria-label="სწრაფი მოქმედებები">
-          {quickActions
-            .filter((action) => canOpen(action.to))
-            .map(({ to, label, icon: Icon }) => (
-              <Link key={to} to={to} className="dashboard__action">
-                <Icon size={18} aria-hidden="true" />
-                {label}
-              </Link>
-            ))}
-        </nav>
       </section>
 
       <OfflineBanner source={source} onRetry={reload} />
