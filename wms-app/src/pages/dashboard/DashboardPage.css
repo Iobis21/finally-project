@@ -31,7 +31,7 @@
 /* Auto-fit Grid: კარტები თავისით გადადიან ახალ ხაზზე, მედია-ქიერის გარეშე */
 .dashboard__stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* 5 ბარათი ერთ ხაზზე */
   gap: var(--space-md);
 }
 
@@ -262,4 +262,21 @@ a.dashboard__request:hover {
   border-color: var(--color-primary-500);
   transform: translateX(4px);
   text-decoration: none;
+}
+
+/* 5 ბარათი ერთ ხაზზე — აიქონი ზემოთ, ციფრი ქვემოთ, რომ ტექსტი არ გადაიტეხოს */
+.dashboard__stats .stat-card {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.dashboard__stats .stat-card__icon {
+  width: 44px;
+  height: 44px;
+}
+
+.dashboard__stats .stat-card__value {
+  white-space: nowrap;
 }

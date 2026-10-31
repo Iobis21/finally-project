@@ -4,6 +4,7 @@ import {
   ClipboardList,
   LayoutDashboard,
   Map,
+  MessageSquare,
   PackageCheck,
   PackageOpen,
   Truck,
@@ -25,6 +26,7 @@ const menu = [
   { label: 'საწყობის რუკა', icon: Map, href: '/map' },
   { label: 'თანამშრომლები', icon: Users, href: '/users' },
   { label: 'სტატისტიკა', icon: BarChart3, href: '/reports' },
+  { label: 'შეტყობინებები', icon: MessageSquare, href: '/messages' },
 ]
 
 interface SidebarProps {

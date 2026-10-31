@@ -22,22 +22,23 @@ export const roles: Record<Role, RoleConfig> = {
       '/map',
       '/users',
       '/reports',
+      '/messages',
     ],
     permissions: ['manage:items', 'manage:users', 'adjust:stock', 'approve:orders'],
   },
   purchasing: {
     label: 'შესყიდვების მენეჯერი',
-    pages: ['/', '/inventory', '/inbound', '/orders', '/reports'],
+    pages: ['/', '/inventory', '/inbound', '/orders', '/reports', '/messages'],
     permissions: [],
   },
   operator: {
     label: 'ოპერატორი',
-    pages: ['/', '/inventory', '/inbound', '/outbound'],
+    pages: ['/', '/inventory', '/inbound', '/outbound', '/messages'],
     permissions: ['adjust:stock'], // ოპერატორს შეუძლია დაზიანებული / დაკარგული საქონლის ჩამოწერა
   },
   logistics: {
     label: 'ლოჯისტიკის თანამშრომელი',
-    pages: ['/', '/inventory', '/outbound', '/deliveries'],
+    pages: ['/', '/inventory', '/outbound', '/deliveries', '/messages'],
     permissions: [],
   },
 }

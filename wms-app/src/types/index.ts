@@ -104,3 +104,14 @@ export interface LoginRecord {
   os: string
   browser: string
 }
+
+// თანამშრომლების შეტყობინებები (მთავარი გვერდი → შეტყობინებები)
+export interface Message {
+  id: number
+  userId: number
+  name: string
+  role: Role
+  text: string
+  priority: 'normal' | 'important'
+  createdAt: string
+}

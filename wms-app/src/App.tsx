@@ -25,6 +25,7 @@ const operations = [
   { path: 'deliveries', Page: lazy(() => import('./pages/operations/DeliveriesPage')) },
   { path: 'map', Page: lazy(() => import('./pages/map/MapPage')) },
   { path: 'reports', Page: lazy(() => import('./pages/operations/ReportsPage')) },
+  { path: 'messages', Page: lazy(() => import('./pages/messages/MessagesPage')) },
 ]
 
 function App() {

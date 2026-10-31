@@ -1,0 +1,148 @@
+/* ახალი შეტყობინების ფორმა */
+.messages__compose {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.messages__compose-body {
+  display: grid;
+  flex: 1;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.messages__textarea {
+  resize: vertical;
+  min-height: 80px;
+  font: inherit;
+}
+
+.messages__compose-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.messages__important {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.messages__important input {
+  accent-color: var(--color-danger);
+}
+
+.messages__counter {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ავატარი — ინიციალები, ფერი როლის მიხედვით */
+.messages__avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #78716c;
+  color: #fff;
+  font-weight: 700;
+}
+
+.messages__avatar--me,
+.messages__avatar--manager {
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+}
+
+.messages__avatar--purchasing {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.messages__avatar--operator {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.messages__avatar--logistics {
+  background: linear-gradient(135deg, #06b6d4, #0284c7);
+}
+
+/* შეტყობინებების სია */
+.messages__list {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages__item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  transition: transform 0.2s ease;
+}
+
+.messages__item:hover {
+  transform: translateX(4px);
+}
+
+/* მნიშვნელოვანი — წითელი ზოლი მარცხნივ */
+.messages__item--important {
+  border-left: 4px solid var(--color-danger);
+}
+
+.messages__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.messages__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.messages__role {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.messages__time {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.messages__text {
+  margin-top: var(--space-xs);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .messages__compose {
+    flex-direction: column;
+  }
+
+  .messages__avatar--me {
+    display: none;
+  }
+
+  .messages__item {
+    padding: var(--space-md);
+  }
+
+  .messages__time {
+    width: 100%;
+    margin-left: 0;
+  }
+}

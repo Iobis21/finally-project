@@ -4,6 +4,7 @@ import {
   AlertTriangle,
   ArrowRight,
   Boxes,
+  MessageSquare,
   Truck,
   Wallet,
   Warehouse as WarehouseIcon,
@@ -17,8 +18,9 @@ import { useAuth } from '../../context/AuthContext'
 import { useFetch } from '../../hooks/useFetch'
 import { useItems } from '../../hooks/useItems'
 import { useInventory } from '../../store/inventory/useInventory'
+import { countUnread, getMessages } from '../../services/messageService'
 import { getDeliveries, getOrders } from '../../services/warehouseService'
-import type { Delivery, PurchaseOrder } from '../../types'
+import type { Delivery, Message, PurchaseOrder } from '../../types'
 import { maybeCrash } from '../../utils/crashTest'
 import { formatPrice } from '../../utils/stock'
 import './DashboardPage.css'
@@ -54,6 +56,7 @@ function DashboardPage() {
   const { setStatus } = useInventory()
   const deliveries = useFetch<Delivery>(getDeliveries, 'მიწოდებები ვერ ჩაიტვირთა.')
   const orders = useFetch<PurchaseOrder>(getOrders, 'შეკვეთები ვერ ჩაიტვირთა.')
+  const messages = useFetch<Message>(getMessages, 'შეტყობინებები ვერ ჩაიტვირთა.')
 
   // useMemo — ყველა ციფრი ითვლება რეალური მარაგიდან, მხოლოდ items-ის შეცვლისას
   const stats = useMemo(() => {
@@ -166,6 +169,14 @@ function DashboardPage() {
             to="/inventory"
             onClick={() => setStatus('low_stock')} // მარაგები — მხოლოდ კრიტიკულები
             color="red"
+          />
+          <StatCard
+            title="შეტყობინებები"
+            value={String(user ? countUnread(messages.data, user.id) : 0)}
+            change={`წაუკითხავი · სულ ${messages.data.length}`}
+            icon={MessageSquare}
+            color="blue"
+            to="/messages"
           />
         </div>
       </section>
