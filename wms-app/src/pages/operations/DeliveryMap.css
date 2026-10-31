@@ -1,0 +1,92 @@
+.delivery-map {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+}
+
+.delivery-map__map {
+  height: 420px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  z-index: 0; /* Modal რუკის ზემოთ რომ გამოჩნდეს */
+}
+
+/* ნიშნულები — ფერადი წრე აიქონით */
+.delivery-map__marker {
+  display: grid;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.35);
+}
+
+.delivery-map__marker--courier {
+  background: #f97316;
+}
+
+.delivery-map__marker--courier svg {
+  animation: courier-bounce 1s ease-in-out infinite;
+}
+
+.delivery-map__marker--done {
+  background: #16a34a;
+}
+
+.delivery-map__marker--failed {
+  background: #dc2626;
+}
+
+.delivery-map__marker--waiting {
+  background: #d97706;
+}
+
+.delivery-map__marker--warehouse {
+  background: #44403c;
+}
+
+@keyframes courier-bounce {
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.delivery-map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.delivery-map__legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delivery-map__dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+/* არჩეული მიწოდების რიგი ცხრილში */
+.ops__table tr.delivery__row--selected {
+  background: color-mix(in srgb, var(--color-primary-500) 14%, transparent);
+}
+
+.delivery__row {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .delivery-map__map {
+    height: 320px;
+  }
+}

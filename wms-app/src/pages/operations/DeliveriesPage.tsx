@@ -5,6 +5,7 @@ import { useFetch } from '../../hooks/useFetch'
 import { useItems } from '../../hooks/useItems'
 import { getDeliveries, updateDelivery } from '../../services/warehouseService'
 import type { Delivery, DeliveryStatus } from '../../types'
+import DeliveryMap from './DeliveryMap'
 import './Operations.css'
 
 const nextLabels: Partial<Record<DeliveryStatus, string>> = {
@@ -18,6 +19,7 @@ function DeliveriesPage() {
   const deliveries = useFetch<Delivery>(getDeliveries, 'მიწოდებები ვერ ჩაიტვირთა.')
   const [filter, setFilter] = useState<DeliveryStatus | ''>('')
   const [message, setMessage] = useState<string | null>(null)
+  const [selectedId, setSelectedId] = useState<number | null>(null) // რუკაზე მონიშნული მიწოდება
 
   const itemName = (id?: number) => items.find((i) => i.id === id)?.name
 
@@ -50,6 +52,8 @@ function DeliveriesPage() {
           ✓ {message}
         </p>
       )}
+
+      <DeliveryMap deliveries={deliveries.data} items={items} selectedId={selectedId} />
 
       <div className="ops__tabs">
         <button
@@ -89,7 +93,21 @@ function DeliveriesPage() {
               {list.map((d) => {
                 const next = nextDeliveryStatus[d.status]
                 return (
-                  <tr key={d.id}>
+                  <tr
+                    key={d.id}
+                    className={
+                      d.id === selectedId
+                        ? 'delivery__row delivery__row--selected'
+                        : 'delivery__row'
+                    }
+                    onClick={() => {
+                      // რიგზე დაჭერა — გვერდი რუკაზე ადის და რუკა ამ მიწოდებაზე გადადის
+                      setSelectedId(d.id)
+                      document
+                        .querySelector('.delivery-map')
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }}
+                  >
                     <td data-label="ნომერი">
                       <strong>{d.orderNumber}</strong>
                       {itemName(d.itemId) && (
